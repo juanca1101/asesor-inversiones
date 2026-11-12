@@ -1,0 +1,2001 @@
+es_primera_vez_invirtiendo,monto_inversion_usd,plazo_meses,perfil_riesgo,tipo_activo_recomendado,plataforma_recomendada,comision_pct,rendimiento_esperado_pct,fuente
+Si,200,60,Medio,ETFs,Interactive Brokers,1.14,12.46,simulado
+Si,500,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.05,5.5,simulado
+No,25000,24,Medio,Fondos Indexados,Hapi,0.94,10.01,original
+Si,25000,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.07,4.22,simulado
+Si,5000,60,Alto,ETFs Sectoriales,eToro,1.79,17.17,simulado
+Si,50,60,Medio,Fondos Indexados,Hapi,0.94,12.97,original
+Si,500,36,Alto,Acciones Individuales,Interactive Brokers,1.6,17.08,simulado
+No,200,48,Alto,Acciones Individuales,Hapi,1.16,23.28,simulado
+Si,100,36,Medio,ETFs,Interactive Brokers,0.6,10.98,simulado
+No,1000,6,Medio,Fondos Indexados,Hapi,0.74,4.86,simulado
+No,1000,6,Medio,Fondos Indexados,Hapi,1.03,8.16,simulado
+Si,200,6,Bajo,Fondo de Deuda,tyba,0.26,4.23,simulado
+No,200,120,Alto,Acciones Individuales,Interactive Brokers,1.92,16.12,simulado
+Si,500,36,Alto,ETFs Sectoriales,Hapi,1.7,18.42,simulado
+No,50000,12,Bajo,CDT,Lulo Bank,0.29,6.16,simulado
+Si,500,24,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.32,2.16,simulado
+No,50,24,Bajo,Bonos de Gobierno,Lulo Bank,0.21,7.24,simulado
+Si,25000,1,Alto,Criptomonedas,Wenia,2.25,25.43,simulado
+Si,50,60,Alto,ETFs Sectoriales,Hapi,1.69,17.6,simulado
+Si,50,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.0,4.7,simulado
+Si,500,3,Medio,Carteras Colectivas,Trii,0.49,12.25,simulado
+No,1000,24,Alto,ETFs Sectoriales,Hapi,1.18,19.98,simulado
+Si,50,60,Alto,Acciones Individuales,Interactive Brokers,2.36,19.18,original
+Si,25000,120,Alto,Acciones Individuales,Interactive Brokers,1.98,24.24,simulado
+No,50000,3,Bajo,CDT,Lulo Bank,0.37,7.05,original
+Si,10000,3,Medio,Carteras Colectivas,Trii,1.09,13.79,simulado
+No,200,1,Medio,Fondos Indexados,Interactive Brokers,0.94,12.6,simulado
+Si,500,120,Alto,Acciones Individuales,eToro,1.87,21.75,original
+Si,200,12,Alto,Criptomonedas,Buda,1.87,15.03,simulado
+Si,500,3,Bajo,Fondo de Deuda,Lulo Bank,0.28,7.23,original
+Si,5000,120,Alto,ETFs Sectoriales,Hapi,1.64,16.99,simulado
+Si,500,48,Alto,Acciones Individuales,Interactive Brokers,1.63,17.57,simulado
+No,500,1,Alto,Criptomonedas,Buda,1.86,27.54,original
+Si,5000,1,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.09,4.94,simulado
+No,200,3,Medio,ETFs,Trii,1.02,10.78,simulado
+No,5000,3,Medio,Carteras Colectivas,Trii,1.05,10.24,simulado
+No,10000,6,Medio,ETFs,Hapi,1.23,10.68,simulado
+No,10000,6,Bajo,Fondo de Deuda,Bancolombia eTrading,0.15,6.47,original
+No,50000,60,Medio,Fondo de Pensión Voluntaria,Porvenir,1.62,8.42,simulado
+Si,1000,24,Alto,ETFs Sectoriales,Hapi,2.36,17.36,original
+Si,100,36,Alto,Acciones Individuales,Interactive Brokers,1.67,14.94,simulado
+No,50000,48,Medio,Fondos Indexados,Hapi,1.09,14.02,simulado
+No,25000,48,Alto,ETFs Sectoriales,Interactive Brokers,1.26,13.08,simulado
+No,50,60,Alto,Acciones Individuales,eToro,1.88,21.79,simulado
+No,50000,1,Alto,Criptomonedas,Buda,1.57,15.12,simulado
+No,50,1,Alto,Criptomonedas,Bitso,2.0,26.47,simulado
+Si,5000,1,Bajo,Bonos de Gobierno,tyba,0.24,8.12,simulado
+Si,10000,3,Medio,Fondos Indexados,Trii,0.89,12.25,simulado
+Si,25000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.05,6.09,simulado
+No,1000,1,Medio,Carteras Colectivas,Hapi,0.6,9.53,simulado
+Si,1000,120,Alto,ETFs Sectoriales,Hapi,2.33,18.62,simulado
+No,500,24,Alto,Acciones Individuales,Interactive Brokers,1.45,20.89,simulado
+Si,10000,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.04,4.73,simulado
+No,1000,12,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.07,6.37,simulado
+Si,50,6,Medio,Carteras Colectivas,Hapi,0.89,11.86,simulado
+Si,50,6,Bajo,Fondo de Deuda,Davivienda,0.21,6.94,simulado
+No,5000,24,Medio,Carteras Colectivas,Hapi,1.03,8.08,simulado
+Si,5000,24,Medio,Fondos Indexados,Trii,0.73,13.19,original
+Si,5000,36,Alto,ETFs Sectoriales,Interactive Brokers,1.87,18.32,simulado
+No,500,24,Alto,Acciones Individuales,eToro,2.0,18.94,simulado
+No,10000,60,Alto,Acciones Individuales,Interactive Brokers,2.21,14.08,original
+Si,10000,1,Bajo,Bonos de Gobierno,Lulo Bank,0.0,8.22,simulado
+Si,5000,60,Alto,ETFs Sectoriales,Hapi,1.99,17.41,simulado
+Si,1000,12,Medio,ETFs,Trii,1.04,11.31,simulado
+No,1000,60,Alto,Acciones Individuales,Interactive Brokers,2.08,18.31,original
+No,100,6,Medio,Carteras Colectivas,Interactive Brokers,0.67,13.48,original
+Si,1000,60,Medio,Carteras Colectivas,Hapi,0.7,13.67,original
+No,500,60,Alto,ETFs Sectoriales,eToro,1.31,19.74,original
+Si,100,24,Bajo,CDT,Lulo Bank,0.24,7.26,simulado
+Si,100,60,Medio,Fondos Indexados,Hapi,1.15,11.68,simulado
+No,500,120,Alto,ETFs Sectoriales,eToro,1.94,15.9,simulado
+Si,10000,6,Bajo,Fondo de Deuda,Bancolombia eTrading,0.14,6.59,simulado
+Si,50000,1,Bajo,CDT,Davivienda,0.28,6.84,simulado
+Si,10000,36,Alto,ETFs Sectoriales,eToro,2.42,14.08,original
+Si,5000,6,Medio,Carteras Colectivas,Trii,0.99,9.45,simulado
+Si,200,6,Medio,ETFs,Trii,0.87,7.16,simulado
+Si,200,48,Medio,ETFs,Interactive Brokers,1.02,11.42,original
+Si,500,60,Medio,Fondo de Pensión Voluntaria,tyba,1.32,10.8,simulado
+No,50,6,Alto,Criptomonedas,Buda,1.88,18.74,simulado
+Si,500,36,Medio,ETFs,Interactive Brokers,0.49,10.96,simulado
+Si,5000,6,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.41,6.05,simulado
+Si,200,3,Medio,Fondos Indexados,Trii,0.63,8.37,simulado
+No,10000,36,Alto,Acciones Individuales,Hapi,0.89,17.83,simulado
+Si,25000,3,Medio,ETFs,Trii,1.04,8.98,simulado
+No,500,1,Medio,Carteras Colectivas,Hapi,0.73,12.22,simulado
+Si,50000,120,Medio,Carteras Colectivas,Davivienda,1.07,10.49,simulado
+Si,200,60,Medio,Carteras Colectivas,Trii,0.77,9.9,original
+Si,10000,1,Medio,Fondos Indexados,Interactive Brokers,0.63,8.72,original
+Si,1000,12,Medio,Carteras Colectivas,Hapi,0.95,9.05,simulado
+Si,10000,36,Medio,Carteras Colectivas,Davivienda,1.12,13.91,simulado
+Si,50000,3,Medio,ETFs,Hapi,1.13,8.1,simulado
+Si,1000,24,Medio,Carteras Colectivas,Hapi,0.96,10.37,original
+No,100,3,Medio,ETFs,Trii,0.95,12.43,simulado
+Si,100,6,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.12,4.8,simulado
+No,1000,3,Alto,Criptomonedas,Binance,1.41,16.36,simulado
+No,1000,36,Alto,Acciones Individuales,eToro,1.14,16.25,simulado
+Si,100,60,Medio,Fondos Indexados,Trii,0.71,11.83,original
+Si,50000,60,Alto,Acciones Individuales,Hapi,1.99,16.73,simulado
+Si,50,120,Alto,ETFs Sectoriales,eToro,1.98,18.97,simulado
+No,100,6,Medio,Fondos Indexados,Interactive Brokers,1.2,13.98,original
+No,10000,36,Medio,Carteras Colectivas,Interactive Brokers,0.64,10.31,original
+Si,50,1,Bajo,Fondo de Deuda,tyba,0.14,7.56,original
+No,5000,6,Bajo,Fondo de Deuda,tyba,0.31,5.24,original
+No,50000,60,Alto,Acciones Individuales,eToro,2.01,16.71,simulado
+No,5000,60,Alto,ETFs Sectoriales,Hapi,1.4,16.52,original
+No,50,24,Alto,Acciones Individuales,Interactive Brokers,1.83,16.4,simulado
+No,100,120,Medio,Fondos Indexados,Hapi,0.68,9.58,simulado
+Si,1000,1,Bajo,CDT,Trii,0.2,6.8,simulado
+No,25000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.05,5.02,simulado
+Si,200,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.0,5.4,simulado
+Si,200,6,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.34,6.0,simulado
+Si,100,24,Bajo,CDT,tyba,0.11,5.99,simulado
+No,200,60,Medio,Fondo de Pensión Voluntaria,tyba,1.42,8.5,simulado
+Si,25000,3,Bajo,CDT,tyba,0.41,5.74,original
+Si,50000,6,Bajo,Bonos de Gobierno,Trii,0.38,6.12,simulado
+No,200,60,Medio,Carteras Colectivas,Trii,0.67,9.55,simulado
+Si,500,60,Alto,ETFs Sectoriales,Hapi,1.98,19.17,simulado
+Si,1000,36,Alto,ETFs Sectoriales,Hapi,2.33,19.59,simulado
+No,5000,3,Alto,Criptomonedas,Kraken,1.82,24.75,original
+No,50000,3,Bajo,CDT,Nu Colombia,0.28,6.88,simulado
+Si,1000,24,Alto,ETFs Sectoriales,eToro,1.83,19.88,simulado
+Si,50,24,Alto,ETFs Sectoriales,Interactive Brokers,1.74,17.11,simulado
+Si,200,12,Medio,Fondos Indexados,Interactive Brokers,1.14,10.95,simulado
+Si,50,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.09,4.94,simulado
+Si,25000,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.05,4.92,simulado
+Si,200,48,Alto,ETFs Sectoriales,Hapi,2.68,17.91,simulado
+Si,1000,36,Alto,Acciones Individuales,Hapi,1.92,20.51,simulado
+No,50,120,Medio,ETFs,Trii,1.06,13.07,simulado
+Si,1000,1,Bajo,CDT,Bancolombia eTrading,0.2,8.39,simulado
+No,50,12,Bajo,Fondo de Deuda,tyba,0.35,4.21,original
+Si,5000,60,Alto,Acciones Individuales,Interactive Brokers,1.85,16.2,original
+Si,50000,60,Medio,ETFs,Trii,0.73,13.82,original
+Si,1000,36,Alto,Acciones Individuales,eToro,1.29,16.52,simulado
+Si,25000,24,Medio,ETFs,Trii,1.19,10.11,simulado
+No,25000,36,Medio,ETFs,Trii,0.93,13.24,simulado
+Si,1000,48,Alto,ETFs Sectoriales,Interactive Brokers,1.53,20.55,simulado
+Si,10000,6,Bajo,Fondo de Deuda,tyba,0.41,6.17,original
+Si,50,24,Bajo,Bonos de Gobierno,tyba,0.47,6.03,simulado
+No,200,120,Alto,ETFs Sectoriales,Hapi,2.28,16.4,simulado
+No,5000,3,Medio,ETFs,Trii,0.93,6.46,simulado
+Si,1000,48,Alto,Acciones Individuales,Interactive Brokers,2.44,14.73,original
+No,1000,60,Alto,ETFs Sectoriales,eToro,1.94,20.47,simulado
+Si,25000,120,Alto,Acciones Individuales,eToro,1.11,18.96,simulado
+Si,100,36,Alto,ETFs Sectoriales,Interactive Brokers,2.01,17.64,original
+No,50,60,Medio,Fondos Indexados,Interactive Brokers,0.88,13.38,simulado
+Si,1000,3,Medio,ETFs,Trii,1.08,12.53,simulado
+No,1000,12,Medio,ETFs,Interactive Brokers,0.59,11.23,simulado
+No,50,3,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.23,4.99,simulado
+Si,100,1,Medio,ETFs,Trii,0.88,12.16,simulado
+Si,25000,120,Alto,ETFs Sectoriales,Interactive Brokers,2.13,19.21,original
+No,100,60,Medio,ETFs,Trii,0.75,12.52,original
+Si,10000,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.03,6.43,simulado
+Si,25000,36,Alto,ETFs Sectoriales,Interactive Brokers,2.11,19.57,simulado
+Si,200,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.07,4.13,simulado
+Si,10000,60,Alto,Acciones Individuales,eToro,2.13,18.83,simulado
+No,5000,60,Medio,ETFs,Hapi,0.33,10.06,simulado
+No,500,1,Medio,ETFs,Hapi,0.98,11.22,original
+Si,1000,120,Alto,ETFs Sectoriales,Hapi,1.47,21.01,original
+Si,50,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.01,5.59,simulado
+No,25000,24,Bajo,Bonos de Gobierno,tyba,0.38,8.8,simulado
+Si,50,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.13,6.4,simulado
+No,500,3,Medio,Carteras Colectivas,Trii,1.02,12.33,simulado
+Si,1000,24,Bajo,Bonos de Gobierno,tyba,0.0,3.79,simulado
+No,100,36,Alto,ETFs Sectoriales,eToro,1.74,15.52,simulado
+No,10000,36,Alto,ETFs Sectoriales,Hapi,1.46,19.43,simulado
+Si,5000,60,Medio,Fondos Indexados,Hapi,0.84,13.12,simulado
+Si,100,36,Alto,Acciones Individuales,eToro,1.34,19.38,original
+Si,1000,48,Alto,ETFs Sectoriales,eToro,2.73,22.42,simulado
+Si,200,36,Medio,Fondos Indexados,Interactive Brokers,0.84,10.68,simulado
+Si,50000,36,Alto,Acciones Individuales,Interactive Brokers,2.76,19.65,simulado
+Si,50000,1,Bajo,CDT,Pibank,0.29,7.35,simulado
+Si,100,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,5.71,simulado
+Si,500,3,Medio,Fondos Indexados,Hapi,1.1,12.87,simulado
+No,100,6,Alto,Criptomonedas,Binance,2.18,23.32,simulado
+No,25000,1,Medio,Fondos Indexados,Hapi,0.95,9.57,original
+No,10000,3,Bajo,Bonos de Gobierno,Lulo Bank,0.06,8.43,original
+Si,200,36,Alto,ETFs Sectoriales,Hapi,1.67,20.98,original
+No,25000,60,Medio,Fondos Indexados,Hapi,0.94,8.66,simulado
+Si,50000,3,Medio,ETFs,Interactive Brokers,1.19,11.95,original
+No,200,3,Medio,Fondos Indexados,Trii,0.98,10.99,simulado
+Si,1000,120,Medio,Fondos Indexados,Interactive Brokers,0.45,11.27,simulado
+Si,500,1,Bajo,CDT,tyba,0.23,5.42,original
+No,10000,36,Alto,ETFs Sectoriales,eToro,1.95,18.68,original
+Si,500,60,Alto,ETFs Sectoriales,eToro,1.97,15.09,simulado
+No,25000,120,Medio,Fondo de Pensión Voluntaria,Porvenir,1.71,8.3,simulado
+Si,200,6,Bajo,Bonos de Gobierno,Lulo Bank,0.01,6.43,original
+Si,10000,12,Medio,ETFs,Interactive Brokers,1.12,13.89,simulado
+Si,25000,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.11,5.27,simulado
+Si,5000,120,Medio,ETFs,Hapi,1.17,13.2,simulado
+Si,500,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.05,4.7,simulado
+No,50,120,Alto,Acciones Individuales,Interactive Brokers,2.42,17.63,simulado
+No,50,60,Alto,ETFs Sectoriales,Interactive Brokers,1.56,16.4,simulado
+Si,10000,60,Alto,ETFs Sectoriales,Hapi,1.16,19.31,simulado
+Si,1000,60,Medio,Fondo de Pensión Voluntaria,Protección,1.25,9.64,simulado
+No,25000,60,Alto,Acciones Individuales,eToro,1.08,18.14,original
+Si,100,12,Medio,Fondo de Pensión Voluntaria,tyba,0.96,6.4,simulado
+Si,25000,1,Medio,Carteras Colectivas,Interactive Brokers,0.94,9.58,original
+Si,25000,36,Alto,ETFs Sectoriales,eToro,1.32,15.66,original
+No,50000,120,Alto,Acciones Individuales,eToro,1.8,18.04,simulado
+No,50,36,Alto,ETFs Sectoriales,Hapi,1.34,16.88,simulado
+No,500,6,Alto,Criptomonedas,Binance,1.32,17.78,original
+Si,200,60,Alto,ETFs Sectoriales,Interactive Brokers,1.3,19.71,simulado
+Si,50000,24,Bajo,Bonos de Gobierno,tyba,0.11,5.31,simulado
+Si,500,60,Medio,Fondos Indexados,Trii,0.66,12.24,original
+Si,100,6,Bajo,Bonos de Gobierno,tyba,0.15,5.3,simulado
+No,500,48,Alto,ETFs Sectoriales,Hapi,1.92,21.83,simulado
+Si,1000,120,Alto,ETFs Sectoriales,Interactive Brokers,1.55,19.42,simulado
+Si,50,6,Medio,ETFs,Hapi,0.6,9.52,simulado
+No,200,12,Medio,Fondos Indexados,Hapi,0.77,13.29,simulado
+No,1000,36,Alto,Acciones Individuales,Interactive Brokers,2.0,16.75,simulado
+Si,50,60,Medio,ETFs,Hapi,0.36,11.7,simulado
+No,50000,36,Alto,ETFs Sectoriales,eToro,1.48,18.33,simulado
+Si,100,3,Medio,ETFs,Hapi,0.37,9.0,simulado
+No,10000,36,Alto,ETFs Sectoriales,Interactive Brokers,1.44,21.94,original
+Si,1000,60,Medio,ETFs,Interactive Brokers,0.58,10.61,original
+No,200,48,Medio,Fondos Indexados,Hapi,0.77,10.12,simulado
+Si,1000,6,Bajo,Fondo de Deuda,Lulo Bank,0.02,6.73,original
+Si,5000,36,Alto,Acciones Individuales,eToro,1.04,14.62,simulado
+No,200,3,Alto,Criptomonedas,Binance,1.61,20.11,simulado
+Si,200,1,Bajo,Fondo de Deuda,Bancolombia eTrading,0.04,6.83,original
+No,50,48,Alto,ETFs Sectoriales,Hapi,2.18,22.54,simulado
+No,1000,48,Alto,Acciones Individuales,Interactive Brokers,2.64,20.92,simulado
+Si,5000,48,Medio,Fondo de Pensión Voluntaria,Porvenir,1.2,8.19,simulado
+Si,500,12,Bajo,CDT,tyba,0.4,5.46,simulado
+Si,500,1,Alto,Criptomonedas,Buda,2.45,27.15,simulado
+Si,10000,1,Bajo,Fondo de Deuda,Bancolombia eTrading,0.13,6.25,simulado
+Si,100,120,Alto,ETFs Sectoriales,eToro,2.31,16.12,original
+Si,5000,120,Medio,Fondos Indexados,Trii,0.47,8.62,simulado
+Si,5000,60,Medio,ETFs,Interactive Brokers,0.53,8.61,simulado
+Si,500,36,Alto,Acciones Individuales,Hapi,2.25,16.19,original
+Si,1000,3,Medio,Carteras Colectivas,Interactive Brokers,1.18,13.16,original
+Si,5000,48,Medio,Fondos Indexados,Hapi,0.55,11.79,original
+Si,1000,60,Alto,Acciones Individuales,eToro,2.22,19.16,simulado
+Si,50,12,Alto,Criptomonedas,Wenia,1.25,25.44,simulado
+No,200,1,Medio,ETFs,Interactive Brokers,0.81,9.28,original
+Si,100,120,Medio,Fondo de Pensión Voluntaria,tyba,1.22,9.11,simulado
+Si,25000,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.0,4.47,simulado
+Si,10000,48,Alto,ETFs Sectoriales,Hapi,2.07,18.63,simulado
+No,50000,6,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.37,5.49,original
+Si,50000,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,4.39,simulado
+No,25000,12,Alto,Criptomonedas,Binance,2.13,25.81,simulado
+No,200,36,Alto,Acciones Individuales,Interactive Brokers,1.96,20.83,simulado
+Si,5000,6,Bajo,CDT,Pibank,0.18,4.06,simulado
+Si,10000,48,Alto,Acciones Individuales,Hapi,1.88,19.6,simulado
+Si,500,3,Bajo,CDT,Davivienda,0.08,3.67,simulado
+No,50,120,Alto,Acciones Individuales,eToro,2.07,15.97,simulado
+No,200,48,Medio,Carteras Colectivas,Trii,0.92,12.05,original
+Si,500,60,Medio,Fondos Indexados,Hapi,1.1,9.6,simulado
+No,200,1,Bajo,Fondo de Deuda,tyba,0.35,5.24,original
+No,200,12,Medio,ETFs,Hapi,0.83,11.31,simulado
+No,50000,120,Medio,Fondos Indexados,Trii,0.73,11.29,simulado
+Si,25000,36,Alto,ETFs Sectoriales,Hapi,1.93,15.83,simulado
+Si,50,6,Medio,ETFs,Hapi,0.39,7.58,simulado
+Si,1000,1,Bajo,Bonos de Gobierno,tyba,0.21,4.13,original
+Si,100,36,Alto,ETFs Sectoriales,Hapi,1.16,17.97,simulado
+Si,25000,3,Alto,Criptomonedas,Buda,1.34,18.82,simulado
+Si,50,12,Alto,Criptomonedas,Binance,1.63,26.88,original
+Si,50,36,Medio,Fondo de Pensión Voluntaria,Porvenir,1.16,9.07,simulado
+No,50000,60,Alto,ETFs Sectoriales,eToro,1.74,16.96,simulado
+No,100,48,Alto,Acciones Individuales,eToro,1.72,19.82,simulado
+No,500,6,Medio,Fondos Indexados,Trii,0.99,13.42,original
+Si,1000,48,Medio,Fondos Indexados,Interactive Brokers,0.92,12.4,simulado
+Si,500,24,Alto,ETFs Sectoriales,Hapi,1.46,18.5,original
+Si,200,6,Bajo,CDT,Trii,0.15,6.53,simulado
+Si,10000,48,Medio,ETFs,Hapi,0.43,7.61,simulado
+Si,25000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.11,3.7,simulado
+Si,100,36,Medio,Carteras Colectivas,tyba,0.78,11.82,simulado
+Si,50000,1,Medio,Carteras Colectivas,Interactive Brokers,0.89,12.91,simulado
+Si,500,36,Alto,ETFs Sectoriales,Interactive Brokers,2.02,21.52,original
+Si,200,60,Alto,ETFs Sectoriales,eToro,1.06,20.1,simulado
+No,500,12,Medio,ETFs,Hapi,0.79,11.9,simulado
+No,10000,120,Alto,ETFs Sectoriales,eToro,1.1,15.58,simulado
+No,50000,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.41,4.32,original
+No,100,120,Alto,Acciones Individuales,eToro,2.17,19.9,simulado
+Si,500,12,Medio,Fondos Indexados,Interactive Brokers,0.81,11.48,original
+Si,100,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.05,5.06,simulado
+Si,1000,12,Medio,Fondos Indexados,Trii,0.71,12.48,original
+Si,100,1,Bajo,Fondo de Deuda,Lulo Bank,0.0,6.85,simulado
+Si,50000,6,Medio,ETFs,Hapi,0.62,8.45,original
+Si,1000,120,Medio,Fondos Indexados,Trii,0.44,9.66,simulado
+No,50,3,Medio,Carteras Colectivas,Interactive Brokers,1.12,13.18,original
+Si,25000,120,Medio,Fondos Indexados,Hapi,0.61,9.78,original
+Si,100,6,Alto,Criptomonedas,Buda,1.4,23.89,simulado
+Si,50,12,Medio,Fondos Indexados,Trii,0.81,9.23,simulado
+Si,50,36,Medio,Carteras Colectivas,Davivienda,0.73,10.45,simulado
+No,200,120,Medio,Fondo de Pensión Voluntaria,tyba,1.35,10.03,simulado
+Si,50000,3,Alto,Criptomonedas,Binance,1.98,30.63,simulado
+No,10000,120,Medio,Fondos Indexados,Hapi,1.06,12.48,original
+Si,200,120,Alto,ETFs Sectoriales,eToro,1.52,17.73,simulado
+Si,500,48,Alto,Acciones Individuales,eToro,1.42,17.38,original
+Si,25000,120,Medio,Carteras Colectivas,Davivienda,0.98,14.43,simulado
+Si,100,12,Medio,Carteras Colectivas,Interactive Brokers,0.73,10.96,simulado
+Si,5000,24,Alto,Acciones Individuales,Interactive Brokers,1.87,20.89,original
+No,200,120,Alto,ETFs Sectoriales,eToro,2.63,17.27,simulado
+Si,5000,48,Alto,ETFs Sectoriales,Hapi,2.3,21.81,simulado
+Si,10000,60,Medio,ETFs,Interactive Brokers,0.89,12.43,simulado
+Si,10000,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.06,4.65,simulado
+No,1000,1,Bajo,Fondo de Deuda,Lulo Bank,0.38,4.63,simulado
+Si,100,3,Bajo,CDT,Lulo Bank,0.33,4.71,original
+No,10000,60,Medio,Fondo de Pensión Voluntaria,Protección,1.27,10.88,simulado
+Si,5000,24,Alto,ETFs Sectoriales,Interactive Brokers,1.7,13.51,simulado
+Si,10000,1,Bajo,CDT,tyba,0.35,4.25,simulado
+Si,500,120,Medio,Carteras Colectivas,Hapi,1.12,11.68,original
+Si,25000,24,Bajo,Fondo de Deuda,Davivienda,0.28,7.38,simulado
+No,50,1,Alto,Criptomonedas,Buda,1.86,21.49,simulado
+No,200,3,Bajo,CDT,Bancolombia eTrading,0.25,5.96,simulado
+Si,100,24,Bajo,CDT,Pibank,0.35,4.98,simulado
+Si,25000,48,Medio,Fondos Indexados,Trii,0.88,12.49,original
+Si,50000,60,Alto,Acciones Individuales,Hapi,2.06,13.7,simulado
+No,10000,1,Bajo,Fondo de Deuda,tyba,0.49,6.23,original
+No,50,12,Medio,Fondos Indexados,Hapi,0.53,10.59,original
+Si,50,6,Medio,ETFs,Trii,0.69,12.85,original
+Si,25000,1,Medio,ETFs,Trii,0.87,8.13,simulado
+No,50000,6,Medio,Fondos Indexados,Hapi,0.93,13.27,simulado
+No,1000,1,Medio,Fondos Indexados,Hapi,0.6,13.68,original
+No,25000,48,Alto,ETFs Sectoriales,Interactive Brokers,2.45,17.76,original
+Si,200,36,Alto,Acciones Individuales,Interactive Brokers,1.66,20.99,original
+No,1000,1,Medio,Fondos Indexados,Interactive Brokers,1.14,12.32,simulado
+Si,1000,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.03,3.7,simulado
+Si,100,120,Alto,Acciones Individuales,Interactive Brokers,1.06,17.13,simulado
+Si,1000,120,Medio,Fondos Indexados,Hapi,1.12,9.13,simulado
+Si,25000,36,Medio,Fondos Indexados,Trii,0.76,11.31,original
+Si,10000,24,Alto,Acciones Individuales,Interactive Brokers,2.2,14.69,simulado
+Si,200,48,Alto,Acciones Individuales,eToro,2.44,16.86,simulado
+Si,5000,60,Alto,Acciones Individuales,Hapi,2.29,17.91,simulado
+No,5000,1,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.03,4.5,simulado
+No,5000,12,Alto,Criptomonedas,Binance,1.35,20.18,simulado
+Si,100,1,Medio,Carteras Colectivas,tyba,0.53,9.55,simulado
+No,200,6,Medio,Carteras Colectivas,tyba,0.79,9.66,simulado
+Si,25000,6,Bajo,CDT,tyba,0.23,8.29,original
+Si,5000,120,Medio,ETFs,Trii,1.16,9.2,original
+No,100,1,Medio,ETFs,Hapi,1.09,9.0,original
+Si,100,12,Bajo,CDT,Lulo Bank,0.35,6.82,original
+No,10000,1,Medio,Fondos Indexados,Trii,0.83,11.68,simulado
+No,25000,60,Alto,Acciones Individuales,Interactive Brokers,1.2,15.75,simulado
+No,5000,60,Alto,ETFs Sectoriales,Hapi,1.19,17.74,original
+Si,200,48,Alto,ETFs Sectoriales,Interactive Brokers,1.93,18.0,simulado
+Si,50000,6,Bajo,CDT,Pibank,0.34,4.63,simulado
+Si,50,6,Bajo,CDT,Lulo Bank,0.08,6.48,original
+No,25000,24,Medio,Carteras Colectivas,Trii,1.05,9.51,simulado
+Si,50,12,Bajo,CDT,Pibank,0.24,6.06,simulado
+No,200,3,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.06,4.81,simulado
+No,50000,60,Medio,ETFs,Hapi,0.78,15.78,simulado
+Si,25000,3,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.26,5.15,simulado
+Si,5000,36,Medio,ETFs,Trii,1.03,11.24,original
+Si,10000,12,Medio,Fondos Indexados,Trii,0.97,9.62,original
+Si,100,6,Bajo,CDT,Nu Colombia,0.23,7.28,simulado
+No,500,48,Medio,Fondos Indexados,Interactive Brokers,0.95,12.83,simulado
+Si,5000,6,Bajo,CDT,tyba,0.21,6.83,original
+Si,5000,1,Bajo,CDT,Bancolombia eTrading,0.25,5.54,original
+No,1000,12,Medio,Fondos Indexados,Interactive Brokers,0.87,10.92,simulado
+No,500,12,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.07,4.83,simulado
+Si,200,6,Bajo,CDT,Davivienda,0.11,6.47,simulado
+Si,500,36,Alto,Acciones Individuales,Interactive Brokers,2.09,23.73,simulado
+Si,1000,1,Medio,Carteras Colectivas,tyba,0.87,11.61,simulado
+Si,200,36,Alto,Acciones Individuales,Interactive Brokers,1.88,15.81,simulado
+Si,200,120,Medio,Fondo de Pensión Voluntaria,Porvenir,1.64,8.18,simulado
+Si,50000,60,Alto,Acciones Individuales,eToro,2.97,19.99,simulado
+No,25000,3,Medio,ETFs,Interactive Brokers,0.83,10.64,original
+Si,25000,3,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.1,5.09,simulado
+No,200,60,Alto,Acciones Individuales,Interactive Brokers,1.45,16.92,simulado
+Si,100,48,Medio,Fondos Indexados,Hapi,0.62,12.37,original
+Si,5000,1,Alto,Criptomonedas,Binance,1.56,28.38,simulado
+Si,1000,3,Alto,Criptomonedas,Buda,1.67,18.74,simulado
+No,50000,24,Medio,ETFs,Interactive Brokers,0.78,11.84,simulado
+Si,1000,48,Medio,Fondos Indexados,Trii,0.62,12.29,simulado
+Si,500,1,Medio,ETFs,Trii,0.88,9.6,simulado
+Si,500,12,Alto,Criptomonedas,Buda,1.82,27.46,original
+Si,5000,12,Medio,ETFs,Interactive Brokers,0.68,9.28,simulado
+Si,200,1,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.05,4.6,simulado
+No,100,120,Alto,Acciones Individuales,Interactive Brokers,2.1,19.25,simulado
+Si,5000,24,Alto,Acciones Individuales,eToro,1.22,18.6,simulado
+No,100,36,Alto,ETFs Sectoriales,eToro,2.66,18.85,simulado
+Si,50000,60,Medio,Fondos Indexados,Trii,1.01,11.31,simulado
+Si,5000,24,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.07,4.38,simulado
+Si,200,48,Medio,Fondos Indexados,Trii,0.85,9.19,simulado
+Si,25000,12,Medio,Carteras Colectivas,Interactive Brokers,0.9,10.13,simulado
+No,5000,120,Alto,Acciones Individuales,eToro,1.6,19.97,simulado
+Si,100,120,Medio,Fondos Indexados,Interactive Brokers,1.06,10.59,simulado
+Si,100,48,Medio,Fondos Indexados,Interactive Brokers,1.08,11.5,original
+Si,50000,3,Medio,ETFs,Hapi,0.57,10.55,original
+Si,100,6,Bajo,Fondo de Deuda,Bancolombia eTrading,0.28,4.23,original
+Si,100,48,Medio,Carteras Colectivas,Trii,0.97,12.46,original
+Si,500,48,Medio,ETFs,Trii,1.08,11.03,simulado
+Si,100,60,Alto,ETFs Sectoriales,eToro,2.13,17.33,simulado
+No,500,120,Medio,ETFs,Trii,0.89,12.75,simulado
+Si,50,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.01,5.44,simulado
+No,100,36,Medio,ETFs,Interactive Brokers,1.17,10.02,original
+No,100,36,Alto,Acciones Individuales,Hapi,1.32,21.36,simulado
+No,500,48,Alto,ETFs Sectoriales,eToro,2.28,17.69,simulado
+Si,500,6,Bajo,Fondo de Deuda,Bancolombia eTrading,0.44,7.86,original
+Si,50,6,Bajo,Fondo de Deuda,Davivienda,0.22,5.28,simulado
+Si,100,12,Alto,Acciones Individuales,Interactive Brokers,1.23,19.64,simulado
+Si,1000,120,Alto,ETFs Sectoriales,Hapi,1.5,19.31,original
+Si,500,1,Bajo,Fondo de Deuda,Lulo Bank,0.2,4.38,simulado
+No,1000,1,Alto,Criptomonedas,Binance,1.76,29.96,original
+Si,500,6,Medio,ETFs,Hapi,0.92,13.67,simulado
+No,200,48,Medio,Fondos Indexados,Hapi,1.07,8.04,original
+No,5000,3,Alto,Criptomonedas,Binance,2.67,21.26,simulado
+Si,200,3,Bajo,Fondo de Deuda,tyba,0.37,6.48,original
+Si,1000,48,Medio,Fondo de Pensión Voluntaria,Protección,1.69,8.09,simulado
+Si,25000,12,Alto,Criptomonedas,Binance,1.15,16.39,original
+No,25000,1,Alto,Criptomonedas,Binance,1.18,21.92,original
+Si,10000,3,Medio,Fondos Indexados,Hapi,0.84,8.05,simulado
+Si,50,6,Bajo,Fondo de Deuda,tyba,0.26,5.96,simulado
+Si,100,3,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.09,5.11,simulado
+Si,25000,24,Bajo,CDT,Trii,0.48,4.49,simulado
+Si,500,36,Medio,Fondos Indexados,Interactive Brokers,0.84,13.44,simulado
+Si,50,60,Medio,Fondos Indexados,Hapi,0.75,13.42,simulado
+Si,5000,12,Bajo,Fondo de Deuda,tyba,0.37,6.29,simulado
+Si,25000,6,Bajo,CDT,Davivienda,0.27,5.37,simulado
+Si,5000,12,Alto,Criptomonedas,Bitso,0.98,16.07,simulado
+No,50000,24,Bajo,Fondo de Deuda,Lulo Bank,0.22,5.86,simulado
+Si,1000,36,Alto,ETFs Sectoriales,eToro,1.88,15.03,simulado
+Si,5000,3,Medio,Fondos Indexados,Trii,0.7,10.58,simulado
+No,50,3,Medio,Carteras Colectivas,tyba,0.81,8.74,simulado
+Si,200,6,Bajo,Bonos de Gobierno,Lulo Bank,0.25,8.07,original
+Si,5000,1,Medio,Carteras Colectivas,Davivienda,0.84,9.95,simulado
+No,200,60,Alto,ETFs Sectoriales,eToro,1.47,15.36,simulado
+Si,5000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.02,3.64,simulado
+Si,5000,24,Medio,ETFs,Trii,0.8,11.14,simulado
+No,5000,24,Medio,ETFs,Interactive Brokers,0.76,9.26,original
+Si,5000,60,Alto,ETFs Sectoriales,Interactive Brokers,1.54,16.22,simulado
+No,1000,6,Bajo,Fondo de Deuda,Lulo Bank,0.41,5.97,simulado
+Si,5000,12,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.02,5.16,simulado
+Si,25000,60,Medio,ETFs,Trii,0.9,14.27,simulado
+No,100,36,Alto,Acciones Individuales,Interactive Brokers,1.28,14.64,original
+Si,50000,1,Bajo,Fondo de Deuda,tyba,0.32,5.64,original
+Si,1000,24,Alto,Acciones Individuales,Interactive Brokers,2.29,19.36,original
+Si,10000,6,Bajo,Fondo de Deuda,tyba,0.17,8.44,simulado
+Si,25000,1,Bajo,Bonos de Gobierno,tyba,0.12,8.15,original
+Si,5000,120,Alto,ETFs Sectoriales,eToro,2.35,16.43,simulado
+Si,1000,3,Medio,ETFs,Hapi,0.73,11.93,simulado
+No,5000,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.24,6.83,simulado
+Si,5000,60,Alto,Acciones Individuales,Interactive Brokers,2.25,21.99,original
+Si,1000,3,Medio,Carteras Colectivas,Trii,0.52,12.45,simulado
+Si,500,3,Bajo,Fondo de Deuda,tyba,0.18,5.85,simulado
+Si,200,24,Medio,Carteras Colectivas,Interactive Brokers,0.71,11.68,simulado
+Si,10000,6,Bajo,CDT,tyba,0.25,4.36,original
+Si,1000,12,Medio,ETFs,Interactive Brokers,0.92,9.41,simulado
+No,50000,48,Alto,Acciones Individuales,eToro,1.81,19.51,simulado
+Si,100,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.0,6.4,simulado
+Si,500,6,Bajo,Bonos de Gobierno,Lulo Bank,0.27,7.48,simulado
+Si,100,12,Medio,ETFs,Trii,0.83,13.27,simulado
+Si,200,3,Medio,ETFs,Trii,1.05,9.5,simulado
+Si,5000,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.12,5.21,simulado
+Si,50,120,Medio,ETFs,Hapi,0.57,10.65,simulado
+No,1000,6,Medio,ETFs,Trii,1.07,13.79,original
+No,1000,48,Alto,ETFs Sectoriales,Interactive Brokers,1.37,21.12,original
+Si,200,24,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.12,4.54,original
+No,200,12,Alto,Criptomonedas,Wenia,0.98,19.81,simulado
+Si,25000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.06,5.07,simulado
+Si,50,120,Alto,ETFs Sectoriales,Hapi,1.03,18.64,simulado
+No,500,24,Medio,Fondos Indexados,Interactive Brokers,0.79,11.87,simulado
+No,25000,120,Medio,Fondos Indexados,Trii,1.26,11.09,simulado
+Si,1000,48,Medio,Carteras Colectivas,Hapi,0.77,12.41,simulado
+Si,50,24,Bajo,Bonos de Gobierno,tyba,0.4,7.89,original
+No,100,36,Alto,Acciones Individuales,Hapi,2.22,17.88,simulado
+Si,25000,120,Alto,ETFs Sectoriales,Interactive Brokers,1.14,19.87,simulado
+No,1000,24,Bajo,Fondo de Deuda,Davivienda,0.46,6.26,simulado
+Si,200,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.06,4.53,simulado
+Si,50000,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.07,4.55,simulado
+Si,5000,12,Medio,ETFs,Hapi,0.84,13.43,original
+No,200,48,Alto,Acciones Individuales,Interactive Brokers,2.28,18.02,original
+Si,5000,24,Medio,Fondo de Pensión Voluntaria,Protección,1.3,13.07,simulado
+No,200,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.27,5.86,original
+Si,50,1,Bajo,Bonos de Gobierno,Lulo Bank,0.01,8.18,original
+Si,25000,3,Medio,Carteras Colectivas,Hapi,0.56,14.53,simulado
+Si,200,3,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.11,4.12,simulado
+No,50000,60,Alto,Acciones Individuales,Interactive Brokers,2.01,19.94,original
+Si,50,24,Bajo,Bonos de Gobierno,Trii,0.12,3.86,simulado
+No,1000,48,Medio,Fondos Indexados,Interactive Brokers,0.82,9.54,simulado
+No,5000,3,Bajo,Fondo de Deuda,Lulo Bank,0.02,8.66,simulado
+Si,10000,12,Alto,Criptomonedas,Buda,1.04,20.68,original
+No,1000,6,Medio,Fondos Indexados,Interactive Brokers,1.07,10.41,simulado
+No,5000,6,Medio,Fondo de Pensión Voluntaria,Davivienda,1.14,5.6,simulado
+Si,50,36,Medio,Carteras Colectivas,Interactive Brokers,1.01,13.79,original
+No,100,12,Alto,Criptomonedas,Binance,1.73,21.34,simulado
+Si,1000,36,Alto,Acciones Individuales,Hapi,2.25,16.66,simulado
+Si,200,1,Bajo,CDT,Bancolombia eTrading,0.04,7.24,original
+Si,50,36,Medio,Fondos Indexados,Interactive Brokers,0.51,9.31,simulado
+No,100,3,Medio,ETFs,Trii,1.18,11.15,original
+No,1000,48,Alto,Acciones Individuales,eToro,2.13,23.43,simulado
+Si,50000,120,Alto,Acciones Individuales,Interactive Brokers,1.72,22.21,simulado
+Si,1000,120,Alto,Acciones Individuales,Interactive Brokers,1.38,16.58,original
+Si,50000,1,Bajo,Bonos de Gobierno,tyba,0.44,7.96,original
+Si,25000,6,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.36,6.12,simulado
+Si,1000,3,Bajo,Fondo de Deuda,Trii,0.23,6.59,simulado
+Si,5000,48,Alto,Acciones Individuales,Hapi,2.27,16.51,original
+Si,50,36,Alto,ETFs Sectoriales,eToro,1.91,19.18,original
+No,200,12,Bajo,Bonos de Gobierno,Lulo Bank,0.4,7.71,simulado
+Si,500,6,Medio,ETFs,Interactive Brokers,0.65,8.66,simulado
+Si,1000,1,Medio,Carteras Colectivas,Trii,0.87,12.22,simulado
+Si,50,1,Medio,Carteras Colectivas,Davivienda,1.07,12.56,simulado
+Si,25000,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.16,3.95,simulado
+No,5000,120,Alto,ETFs Sectoriales,Hapi,1.99,17.51,simulado
+No,200,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.06,4.38,simulado
+No,10000,36,Alto,ETFs Sectoriales,Interactive Brokers,0.81,20.34,simulado
+Si,1000,60,Alto,Acciones Individuales,Interactive Brokers,2.64,22.2,simulado
+No,100,120,Alto,ETFs Sectoriales,Hapi,0.78,22.03,simulado
+No,5000,6,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.04,5.39,simulado
+Si,5000,3,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.11,3.85,simulado
+No,50,12,Medio,Carteras Colectivas,Trii,0.89,13.26,simulado
+No,1000,3,Bajo,Bonos de Gobierno,Lulo Bank,0.19,7.37,simulado
+No,1000,36,Medio,ETFs,Interactive Brokers,0.89,9.31,original
+Si,10000,120,Alto,Acciones Individuales,eToro,1.76,17.78,simulado
+Si,50,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.11,5.18,simulado
+No,1000,12,Alto,Criptomonedas,Buda,1.08,17.77,original
+No,1000,1,Alto,Criptomonedas,Wenia,1.56,31.3,simulado
+No,50,6,Bajo,Fondo de Deuda,tyba,0.11,6.3,simulado
+Si,25000,36,Medio,Carteras Colectivas,Interactive Brokers,0.74,12.83,simulado
+No,100,24,Medio,ETFs,Hapi,1.01,12.99,simulado
+No,100,120,Alto,Acciones Individuales,Hapi,1.97,21.96,original
+Si,50000,36,Medio,ETFs,Interactive Brokers,1.28,10.56,simulado
+No,200,1,Alto,Criptomonedas,Kraken,2.2,21.73,simulado
+No,500,48,Alto,Acciones Individuales,Interactive Brokers,1.78,16.61,simulado
+Si,100,60,Alto,ETFs Sectoriales,eToro,2.15,20.93,simulado
+Si,100,3,Alto,Criptomonedas,Kraken,1.65,27.03,simulado
+Si,25000,1,Bajo,Bonos de Gobierno,Lulo Bank,0.16,6.76,simulado
+Si,10000,24,Medio,Carteras Colectivas,tyba,0.74,12.55,simulado
+Si,100,6,Bajo,Bonos de Gobierno,Trii,0.21,1.94,simulado
+No,50000,60,Alto,Acciones Individuales,Hapi,2.54,19.59,simulado
+Si,5000,12,Medio,Carteras Colectivas,Trii,1.01,9.88,original
+Si,200,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.08,2.91,simulado
+No,500,60,Medio,Carteras Colectivas,Trii,0.96,10.31,simulado
+Si,200,120,Alto,ETFs Sectoriales,eToro,1.4,19.4,simulado
+No,1000,24,Bajo,CDT,tyba,0.2,6.32,original
+No,10000,48,Alto,Acciones Individuales,Hapi,2.05,15.37,simulado
+Si,1000,3,Bajo,Fondo de Deuda,Lulo Bank,0.05,5.25,original
+No,1000,60,Medio,ETFs,Interactive Brokers,0.98,13.54,original
+Si,1000,48,Alto,Acciones Individuales,Interactive Brokers,2.25,19.74,simulado
+No,500,60,Alto,Acciones Individuales,Hapi,1.56,17.99,simulado
+No,100,120,Medio,Fondos Indexados,Hapi,0.65,11.54,original
+No,50,60,Alto,ETFs Sectoriales,eToro,1.78,20.13,original
+No,1000,6,Alto,Criptomonedas,Buda,1.74,19.57,original
+Si,5000,6,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.33,4.02,original
+Si,100,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,5.21,simulado
+Si,1000,3,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.1,4.0,simulado
+Si,25000,6,Bajo,Fondo de Deuda,Lulo Bank,0.29,6.59,original
+Si,200,120,Medio,ETFs,Interactive Brokers,0.84,9.64,simulado
+Si,1000,48,Alto,ETFs Sectoriales,Hapi,2.09,20.46,original
+Si,25000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.06,5.97,simulado
+Si,1000,1,Alto,Acciones Individuales,eToro,1.82,16.79,simulado
+Si,10000,6,Medio,ETFs,Interactive Brokers,0.77,11.27,simulado
+No,50000,36,Medio,Fondos Indexados,Trii,0.82,9.8,simulado
+Si,100,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.05,4.71,simulado
+Si,500,1,Alto,Criptomonedas,Wenia,1.95,25.65,simulado
+Si,100,120,Alto,Acciones Individuales,Hapi,1.75,13.28,simulado
+Si,200,48,Medio,ETFs,Interactive Brokers,1.06,13.95,simulado
+Si,25000,6,Bajo,Bonos de Gobierno,Lulo Bank,0.14,4.56,original
+Si,500,120,Alto,Acciones Individuales,Interactive Brokers,1.75,14.25,simulado
+No,500,48,Medio,ETFs,Interactive Brokers,0.64,8.15,original
+No,50,12,Alto,Criptomonedas,Binance,0.82,20.15,simulado
+No,500,3,Medio,ETFs,Trii,0.95,14.7,simulado
+No,200,1,Medio,Carteras Colectivas,Trii,0.66,12.97,simulado
+Si,25000,120,Medio,Carteras Colectivas,Trii,0.87,10.74,original
+No,50,3,Bajo,CDT,tyba,0.38,5.78,simulado
+No,5000,24,Alto,Acciones Individuales,Interactive Brokers,1.9,17.97,simulado
+Si,5000,12,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.0,5.19,simulado
+Si,200,24,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.09,5.55,simulado
+Si,100,48,Alto,Acciones Individuales,eToro,2.02,21.21,original
+No,25000,120,Alto,Acciones Individuales,Interactive Brokers,1.73,22.39,simulado
+Si,200,1,Medio,Carteras Colectivas,tyba,0.65,13.11,simulado
+Si,10000,1,Alto,Acciones Individuales,Interactive Brokers,1.44,17.12,simulado
+Si,1000,1,Bajo,Fondo de Deuda,tyba,0.33,8.2,original
+Si,50000,48,Medio,Fondos Indexados,Hapi,1.14,10.66,simulado
+No,50,12,Alto,Criptomonedas,Buda,1.52,23.08,original
+Si,5000,12,Medio,Carteras Colectivas,Trii,1.17,14.0,original
+Si,50,120,Alto,Acciones Individuales,Hapi,2.4,16.14,original
+No,500,3,Bajo,CDT,Davivienda,0.01,7.1,simulado
+Si,5000,60,Medio,Carteras Colectivas,Trii,0.6,11.91,simulado
+Si,200,1,Medio,Fondos Indexados,Hapi,1.18,9.07,original
+Si,5000,3,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.07,5.09,simulado
+No,500,1,Medio,Carteras Colectivas,Interactive Brokers,0.7,12.37,simulado
+Si,100,12,Bajo,Bonos de Gobierno,tyba,0.29,8.7,simulado
+No,25000,120,Medio,ETFs,Hapi,0.85,10.49,simulado
+No,50,60,Alto,Acciones Individuales,Hapi,1.96,14.22,original
+No,10000,6,Medio,ETFs,Interactive Brokers,0.91,13.22,original
+Si,200,120,Medio,Fondos Indexados,Interactive Brokers,0.96,16.66,simulado
+No,1000,12,Alto,Criptomonedas,Kraken,1.68,28.67,simulado
+No,10000,12,Bajo,CDT,Lulo Bank,0.06,5.89,original
+No,1000,6,Bajo,Fondo de Deuda,Lulo Bank,0.0,6.9,simulado
+No,10000,120,Medio,Fondos Indexados,Interactive Brokers,1.09,10.83,simulado
+No,5000,12,Medio,ETFs,Interactive Brokers,1.1,10.36,simulado
+No,50,6,Bajo,CDT,Bancolombia eTrading,0.32,5.91,original
+No,100,120,Medio,ETFs,Interactive Brokers,1.13,13.2,simulado
+Si,50000,3,Bajo,Fondo de Deuda,tyba,0.11,5.14,simulado
+Si,1000,120,Medio,ETFs,Trii,1.03,11.68,simulado
+Si,25000,48,Medio,Carteras Colectivas,Trii,0.97,12.11,simulado
+Si,25000,24,Medio,Fondos Indexados,Hapi,1.18,11.95,original
+No,100,1,Medio,ETFs,Interactive Brokers,0.59,13.25,simulado
+No,500,24,Bajo,Bonos de Gobierno,tyba,0.37,4.41,original
+Si,10000,3,Bajo,Bonos de Gobierno,Trii,0.28,6.64,simulado
+Si,25000,1,Medio,Fondos Indexados,Hapi,0.95,11.73,original
+No,50000,24,Alto,Acciones Individuales,eToro,2.46,19.14,simulado
+Si,25000,1,Bajo,Bonos de Gobierno,Lulo Bank,0.26,5.29,simulado
+No,5000,120,Alto,Acciones Individuales,Interactive Brokers,2.26,18.49,simulado
+Si,25000,24,Bajo,Bonos de Gobierno,Lulo Bank,0.17,5.5,original
+Si,200,6,Bajo,CDT,tyba,0.28,8.12,original
+No,50000,48,Medio,Fondo de Pensión Voluntaria,tyba,0.94,8.24,simulado
+No,500,36,Medio,Carteras Colectivas,Trii,1.18,11.89,simulado
+Si,5000,12,Medio,Carteras Colectivas,Hapi,0.87,10.55,original
+Si,50000,6,Bajo,Fondo de Deuda,Lulo Bank,0.35,5.96,original
+Si,10000,48,Alto,Acciones Individuales,Hapi,1.97,14.57,simulado
+No,5000,48,Alto,Acciones Individuales,Interactive Brokers,1.64,18.86,simulado
+Si,100,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,4.78,simulado
+Si,50,48,Alto,Acciones Individuales,Hapi,1.43,14.16,simulado
+No,50,120,Medio,Carteras Colectivas,Davivienda,0.89,12.16,simulado
+No,25000,60,Alto,ETFs Sectoriales,Hapi,2.44,20.68,simulado
+Si,1000,3,Alto,Criptomonedas,Kraken,2.6,19.12,simulado
+Si,1000,36,Alto,Acciones Individuales,eToro,1.9,14.56,simulado
+Si,500,1,Bajo,Bonos de Gobierno,Trii,0.42,6.72,simulado
+Si,10000,48,Alto,Acciones Individuales,Interactive Brokers,1.02,23.14,simulado
+Si,50,60,Alto,ETFs Sectoriales,Interactive Brokers,1.84,16.8,simulado
+No,500,36,Alto,ETFs Sectoriales,Hapi,1.58,19.49,simulado
+Si,1000,60,Alto,Acciones Individuales,eToro,2.29,17.55,original
+Si,500,1,Alto,Criptomonedas,Binance,1.91,22.69,simulado
+No,50000,120,Medio,Fondo de Pensión Voluntaria,Davivienda,1.37,10.39,simulado
+No,100,36,Alto,Acciones Individuales,Interactive Brokers,2.26,18.27,simulado
+No,200,48,Alto,ETFs Sectoriales,Hapi,1.91,16.18,original
+Si,50,36,Medio,Fondos Indexados,Hapi,1.04,12.19,simulado
+Si,200,120,Alto,Acciones Individuales,eToro,1.68,18.9,simulado
+Si,5000,120,Alto,Acciones Individuales,Interactive Brokers,1.12,18.22,simulado
+No,1000,6,Medio,ETFs,Interactive Brokers,0.84,8.89,simulado
+No,5000,48,Alto,ETFs Sectoriales,Hapi,1.44,20.55,simulado
+Si,1000,12,Bajo,CDT,tyba,0.22,7.27,simulado
+Si,50000,6,Bajo,CDT,tyba,0.24,4.02,simulado
+Si,5000,24,Medio,Carteras Colectivas,Hapi,1.1,11.01,simulado
+Si,50,3,Bajo,Fondo de Deuda,Lulo Bank,0.04,4.96,original
+Si,50000,1,Bajo,Fondo de Deuda,Lulo Bank,0.38,4.32,simulado
+No,10000,48,Alto,ETFs Sectoriales,Hapi,1.21,18.38,simulado
+Si,200,24,Alto,Acciones Individuales,Hapi,0.81,22.18,simulado
+Si,5000,3,Bajo,CDT,Davivienda,0.28,4.94,simulado
+Si,10000,60,Alto,Acciones Individuales,Hapi,1.94,14.5,simulado
+No,25000,24,Medio,ETFs,Interactive Brokers,0.51,8.91,original
+Si,10000,60,Alto,ETFs Sectoriales,Interactive Brokers,2.15,19.3,simulado
+Si,500,24,Bajo,Fondo de Deuda,Lulo Bank,0.43,6.05,simulado
+No,1000,24,Medio,Fondos Indexados,Trii,1.12,10.46,simulado
+No,500,60,Alto,Acciones Individuales,eToro,1.8,15.54,simulado
+No,50,120,Alto,ETFs Sectoriales,Hapi,1.67,16.96,original
+No,25000,3,Bajo,CDT,Nu Colombia,0.43,5.51,simulado
+Si,1000,60,Medio,ETFs,Interactive Brokers,0.45,9.1,simulado
+Si,500,12,Bajo,Fondo de Deuda,tyba,0.35,6.04,simulado
+No,25000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,5.93,simulado
+No,50,120,Alto,Acciones Individuales,eToro,2.19,14.37,original
+No,5000,3,Medio,ETFs,Hapi,1.06,13.3,simulado
+No,5000,6,Medio,Fondos Indexados,Hapi,1.07,15.44,simulado
+Si,10000,12,Medio,Fondos Indexados,Trii,0.55,12.56,original
+Si,50,120,Alto,Acciones Individuales,Interactive Brokers,0.93,17.32,simulado
+No,50,1,Medio,Fondos Indexados,Interactive Brokers,0.9,10.14,simulado
+No,50000,120,Alto,ETFs Sectoriales,Interactive Brokers,1.55,14.78,simulado
+Si,1000,48,Medio,Fondos Indexados,Hapi,1.08,10.22,simulado
+Si,200,36,Medio,ETFs,Hapi,0.9,11.23,simulado
+Si,25000,6,Medio,Carteras Colectivas,Interactive Brokers,0.87,10.7,original
+Si,10000,1,Medio,ETFs,Hapi,1.02,13.69,original
+No,50,60,Alto,ETFs Sectoriales,Interactive Brokers,1.38,15.96,simulado
+No,10000,120,Alto,ETFs Sectoriales,eToro,2.05,17.5,original
+Si,50000,48,Medio,Carteras Colectivas,Interactive Brokers,0.91,11.57,simulado
+No,100,36,Alto,ETFs Sectoriales,eToro,1.4,21.01,original
+Si,1000,1,Bajo,Bonos de Gobierno,Lulo Bank,0.63,5.2,simulado
+Si,10000,120,Alto,Acciones Individuales,Interactive Brokers,2.28,22.55,simulado
+No,500,6,Medio,Carteras Colectivas,Interactive Brokers,1.04,8.23,simulado
+Si,50000,3,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.0,8.34,simulado
+No,50,36,Medio,Fondos Indexados,Trii,0.8,11.87,simulado
+No,10000,12,Medio,Carteras Colectivas,Interactive Brokers,0.86,10.55,simulado
+No,100,12,Bajo,Bonos de Gobierno,Lulo Bank,0.4,5.02,original
+No,50,60,Alto,ETFs Sectoriales,Interactive Brokers,2.3,20.99,simulado
+Si,25000,24,Bajo,Fondo de Deuda,Bancolombia eTrading,0.08,5.85,simulado
+Si,500,36,Alto,Acciones Individuales,Interactive Brokers,1.72,21.53,original
+No,500,48,Alto,Acciones Individuales,Interactive Brokers,2.35,15.31,simulado
+No,50,24,Bajo,Bonos de Gobierno,Lulo Bank,0.36,7.36,simulado
+Si,5000,3,Bajo,Bonos de Gobierno,tyba,0.37,7.17,original
+Si,5000,12,Bajo,Fondo de Deuda,Lulo Bank,0.17,7.96,original
+No,5000,120,Alto,Acciones Individuales,eToro,1.57,19.92,simulado
+Si,1000,1,Bajo,Bonos de Gobierno,Lulo Bank,0.14,7.2,simulado
+No,50000,1,Alto,Criptomonedas,Kraken,1.51,24.1,simulado
+No,200,60,Medio,ETFs,Trii,0.46,10.98,simulado
+Si,1000,6,Bajo,CDT,Nu Colombia,0.38,4.31,simulado
+No,100,60,Alto,ETFs Sectoriales,eToro,1.23,21.46,simulado
+Si,50,60,Alto,Acciones Individuales,eToro,2.12,17.86,simulado
+Si,100,6,Bajo,Fondo de Deuda,Lulo Bank,0.21,5.99,simulado
+Si,5000,120,Alto,ETFs Sectoriales,Hapi,1.9,14.81,simulado
+No,500,60,Alto,ETFs Sectoriales,Interactive Brokers,1.31,18.6,simulado
+No,100,60,Alto,ETFs Sectoriales,Hapi,1.88,12.08,simulado
+Si,500,120,Medio,ETFs,Trii,0.63,12.41,simulado
+Si,10000,120,Alto,ETFs Sectoriales,Interactive Brokers,1.74,20.85,simulado
+Si,10000,24,Bajo,Bonos de Gobierno,Lulo Bank,0.23,7.43,simulado
+Si,50000,12,Bajo,Bonos de Gobierno,tyba,0.2,5.52,simulado
+Si,500,36,Alto,Acciones Individuales,Interactive Brokers,1.35,18.57,original
+No,200,120,Medio,Carteras Colectivas,Trii,0.96,10.79,original
+No,10000,24,Medio,Fondos Indexados,Hapi,1.17,8.84,original
+No,10000,3,Medio,Fondo de Pensión Voluntaria,Porvenir,1.64,7.43,simulado
+Si,50000,3,Medio,ETFs,Interactive Brokers,0.99,9.33,simulado
+Si,100,1,Bajo,CDT,tyba,0.09,8.31,original
+Si,1000,60,Alto,Acciones Individuales,Interactive Brokers,1.69,15.09,original
+Si,5000,3,Bajo,Bonos de Gobierno,Lulo Bank,0.07,4.57,original
+Si,50000,24,Medio,Fondos Indexados,Trii,0.59,13.6,simulado
+No,1000,36,Alto,Acciones Individuales,Hapi,1.4,20.26,simulado
+Si,200,6,Bajo,Fondo de Deuda,Bancolombia eTrading,0.18,4.97,simulado
+No,25000,48,Alto,ETFs Sectoriales,eToro,2.73,15.52,simulado
+Si,200,48,Alto,ETFs Sectoriales,eToro,1.86,22.55,simulado
+Si,1000,1,Alto,Criptomonedas,Buda,1.34,23.98,simulado
+Si,5000,60,Alto,Acciones Individuales,eToro,1.66,18.38,simulado
+Si,500,1,Bajo,Fondo de Deuda,Bancolombia eTrading,0.34,4.56,simulado
+Si,50,1,Medio,Carteras Colectivas,tyba,0.7,11.3,simulado
+Si,25000,3,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.05,5.03,simulado
+Si,10000,48,Medio,Fondos Indexados,Trii,1.13,10.88,simulado
+No,25000,36,Alto,Acciones Individuales,eToro,1.01,17.04,original
+Si,200,24,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.0,4.8,simulado
+No,25000,60,Alto,ETFs Sectoriales,Interactive Brokers,1.51,20.46,simulado
+Si,50,3,Medio,ETFs,Trii,0.75,8.42,original
+Si,50,24,Bajo,Fondo de Deuda,Lulo Bank,0.22,4.13,original
+No,10000,48,Alto,ETFs Sectoriales,Interactive Brokers,1.28,18.82,simulado
+Si,100,6,Bajo,Fondo de Deuda,Bancolombia eTrading,0.26,6.86,simulado
+No,5000,120,Alto,Acciones Individuales,Interactive Brokers,2.29,19.87,simulado
+No,200,48,Medio,ETFs,Interactive Brokers,0.9,11.06,simulado
+Si,50,48,Alto,Acciones Individuales,Interactive Brokers,1.82,19.16,simulado
+Si,500,1,Medio,Fondos Indexados,Trii,0.98,11.88,original
+Si,10000,3,Bajo,Fondo de Deuda,Lulo Bank,0.05,8.32,original
+Si,100,36,Alto,ETFs Sectoriales,Hapi,1.11,18.4,simulado
+No,100,48,Alto,ETFs Sectoriales,eToro,2.96,16.33,simulado
+No,50000,60,Medio,Fondos Indexados,Hapi,1.35,11.14,simulado
+No,25000,48,Alto,Acciones Individuales,eToro,1.19,19.58,original
+Si,25000,12,Medio,Carteras Colectivas,tyba,1.22,7.98,simulado
+No,50000,6,Medio,Carteras Colectivas,Trii,1.1,12.36,simulado
+Si,100,48,Alto,Acciones Individuales,Interactive Brokers,2.86,16.05,simulado
+Si,500,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.08,4.97,simulado
+Si,200,24,Alto,Acciones Individuales,eToro,1.54,15.8,simulado
+No,1000,6,Medio,Fondos Indexados,Interactive Brokers,0.9,11.49,simulado
+Si,1000,3,Bajo,CDT,Bancolombia eTrading,0.1,7.22,original
+Si,10000,3,Bajo,Bonos de Gobierno,Trii,0.15,8.22,simulado
+Si,100,120,Medio,Fondos Indexados,Trii,0.68,10.66,simulado
+No,200,120,Medio,Fondos Indexados,Interactive Brokers,0.8,10.22,original
+No,100,120,Alto,ETFs Sectoriales,Interactive Brokers,1.67,13.55,simulado
+No,100,24,Medio,ETFs,Trii,0.9,11.59,simulado
+Si,5000,24,Alto,Acciones Individuales,eToro,1.76,18.25,simulado
+Si,10000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.0,3.61,simulado
+No,500,1,Alto,Criptomonedas,Buda,1.95,20.69,simulado
+Si,1000,12,Medio,Carteras Colectivas,Interactive Brokers,1.17,10.29,simulado
+Si,100,3,Bajo,Bonos de Gobierno,Trii,0.1,5.26,simulado
+No,10000,6,Medio,ETFs,Interactive Brokers,0.98,12.46,simulado
+No,25000,48,Alto,Acciones Individuales,Hapi,1.35,21.46,simulado
+Si,5000,48,Alto,Acciones Individuales,Interactive Brokers,1.46,20.63,simulado
+No,50,6,Medio,ETFs,Hapi,0.56,10.92,original
+Si,1000,12,Alto,Criptomonedas,Binance,1.91,26.47,original
+No,200,60,Medio,Fondo de Pensión Voluntaria,Davivienda,1.57,10.1,simulado
+No,50,48,Alto,ETFs Sectoriales,Hapi,1.61,18.23,simulado
+Si,50,24,Alto,ETFs Sectoriales,Interactive Brokers,2.68,17.38,simulado
+Si,50,120,Medio,Carteras Colectivas,tyba,0.98,12.14,simulado
+No,50,36,Alto,Acciones Individuales,Interactive Brokers,1.48,17.98,simulado
+Si,50,12,Bajo,CDT,tyba,0.17,4.52,original
+Si,25000,3,Medio,ETFs,Interactive Brokers,1.2,10.63,simulado
+No,25000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,6.24,simulado
+Si,500,3,Bajo,CDT,Lulo Bank,0.18,7.56,original
+Si,100,60,Medio,Fondo de Pensión Voluntaria,Porvenir,0.9,9.06,simulado
+Si,50000,36,Alto,Acciones Individuales,eToro,2.35,18.78,simulado
+Si,5000,1,Bajo,Bonos de Gobierno,tyba,0.09,4.06,original
+Si,200,3,Bajo,Fondo de Deuda,Lulo Bank,0.32,4.76,simulado
+Si,5000,36,Alto,ETFs Sectoriales,Interactive Brokers,1.83,13.11,simulado
+Si,10000,1,Bajo,Fondo de Deuda,Lulo Bank,0.0,6.31,simulado
+No,200,36,Alto,ETFs Sectoriales,Interactive Brokers,1.79,20.0,simulado
+Si,5000,6,Bajo,Fondo de Deuda,Bancolombia eTrading,0.42,7.17,original
+No,5000,24,Medio,Fondo de Pensión Voluntaria,Protección,1.28,6.84,simulado
+No,50000,60,Alto,ETFs Sectoriales,eToro,2.01,21.05,simulado
+Si,5000,120,Alto,Acciones Individuales,Hapi,1.68,14.31,simulado
+No,1000,3,Medio,ETFs,Interactive Brokers,1.04,9.67,simulado
+Si,200,3,Alto,Criptomonedas,Buda,1.63,26.06,simulado
+Si,200,36,Alto,ETFs Sectoriales,Interactive Brokers,1.14,17.93,original
+No,50,3,Medio,Carteras Colectivas,tyba,1.21,11.07,simulado
+Si,50000,1,Bajo,Fondo de Deuda,Trii,0.0,5.01,simulado
+Si,1000,12,Medio,ETFs,Hapi,0.72,12.51,original
+Si,100,1,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.05,3.87,simulado
+Si,200,36,Medio,Fondo de Pensión Voluntaria,Porvenir,0.78,9.62,simulado
+No,25000,1,Bajo,Bonos de Gobierno,Lulo Bank,0.38,5.71,original
+Si,50,48,Medio,ETFs,Interactive Brokers,0.91,9.23,simulado
+Si,1000,36,Alto,Acciones Individuales,Interactive Brokers,2.27,20.77,simulado
+Si,100,120,Alto,ETFs Sectoriales,Interactive Brokers,2.1,17.48,original
+No,50,1,Alto,Criptomonedas,Buda,1.74,22.52,simulado
+No,100,120,Alto,ETFs Sectoriales,Interactive Brokers,2.36,15.83,original
+No,50,60,Alto,Acciones Individuales,Interactive Brokers,1.65,14.89,original
+No,100,36,Alto,Acciones Individuales,Interactive Brokers,2.09,21.31,simulado
+Si,50,36,Medio,Fondos Indexados,Hapi,0.63,9.13,simulado
+Si,1000,24,Medio,ETFs,Trii,0.89,9.58,original
+Si,500,24,Medio,Fondos Indexados,Trii,1.09,8.08,simulado
+No,50,1,Alto,Criptomonedas,Buda,2.17,24.75,original
+No,100,1,Medio,Carteras Colectivas,Davivienda,1.11,11.49,simulado
+Si,100,6,Medio,Carteras Colectivas,Trii,0.88,10.97,simulado
+Si,50000,6,Bajo,Fondo de Deuda,tyba,0.12,7.01,original
+Si,200,60,Alto,ETFs Sectoriales,Hapi,1.89,17.45,simulado
+Si,1000,12,Alto,Criptomonedas,Buda,1.11,22.35,simulado
+Si,100,60,Alto,Acciones Individuales,eToro,1.62,16.9,simulado
+Si,50,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.03,5.05,simulado
+No,200,36,Alto,ETFs Sectoriales,eToro,1.96,21.92,original
+No,100,48,Alto,Acciones Individuales,Interactive Brokers,1.76,16.74,simulado
+Si,50,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,4.32,simulado
+No,500,48,Alto,Acciones Individuales,Interactive Brokers,1.64,15.08,simulado
+No,500,120,Alto,Acciones Individuales,eToro,1.52,16.34,simulado
+No,10000,36,Alto,ETFs Sectoriales,Hapi,1.79,17.44,simulado
+No,1000,60,Medio,Fondo de Pensión Voluntaria,Porvenir,1.03,9.1,simulado
+No,200,120,Alto,Acciones Individuales,eToro,1.9,14.87,simulado
+Si,50,120,Medio,ETFs,Interactive Brokers,0.51,9.74,simulado
+No,200,60,Alto,ETFs Sectoriales,Hapi,1.52,18.43,simulado
+Si,25000,60,Alto,Acciones Individuales,eToro,1.97,18.89,simulado
+Si,500,24,Bajo,CDT,Nu Colombia,0.26,4.12,simulado
+Si,1000,1,Bajo,Fondo de Deuda,Lulo Bank,0.29,5.77,simulado
+Si,50000,24,Alto,ETFs Sectoriales,Interactive Brokers,1.79,21.97,original
+Si,10000,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.11,5.21,simulado
+No,1000,120,Medio,ETFs,Interactive Brokers,0.59,9.68,simulado
+No,1000,60,Medio,ETFs,Interactive Brokers,0.88,13.83,original
+Si,200,6,Medio,Carteras Colectivas,Hapi,0.72,13.39,original
+Si,200,120,Medio,ETFs,Interactive Brokers,0.66,10.8,simulado
+Si,10000,24,Bajo,CDT,tyba,0.45,4.44,simulado
+Si,1000,1,Bajo,CDT,Lulo Bank,0.28,5.73,original
+Si,5000,48,Medio,Carteras Colectivas,Trii,0.67,10.37,original
+No,50000,24,Medio,ETFs,Interactive Brokers,0.98,12.2,original
+No,50,6,Medio,ETFs,Interactive Brokers,0.96,8.05,original
+Si,1000,24,Bajo,Fondo de Deuda,Bancolombia eTrading,0.08,6.73,original
+No,100,36,Alto,Acciones Individuales,Interactive Brokers,1.36,18.87,original
+No,100,120,Alto,ETFs Sectoriales,eToro,1.72,19.48,simulado
+No,5000,36,Alto,Acciones Individuales,Interactive Brokers,2.48,19.34,original
+Si,10000,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.29,8.04,original
+No,1000,6,Alto,Criptomonedas,Binance,2.2,21.85,original
+Si,10000,60,Medio,Fondo de Pensión Voluntaria,Davivienda,1.0,10.35,simulado
+No,25000,24,Medio,Fondos Indexados,Trii,0.96,11.77,simulado
+Si,50000,6,Medio,Fondos Indexados,Trii,0.89,9.81,simulado
+Si,5000,120,Alto,Acciones Individuales,Interactive Brokers,1.43,20.82,simulado
+No,25000,6,Medio,Carteras Colectivas,Interactive Brokers,1.02,13.23,simulado
+No,50000,6,Bajo,Bonos de Gobierno,Lulo Bank,0.0,6.23,simulado
+Si,25000,36,Alto,ETFs Sectoriales,Hapi,2.22,18.42,simulado
+No,500,24,Bajo,Bonos de Gobierno,Lulo Bank,0.35,4.34,simulado
+No,1000,3,Bajo,Fondo de Deuda,Lulo Bank,0.34,6.25,simulado
+Si,200,120,Alto,Acciones Individuales,Interactive Brokers,2.56,18.61,simulado
+Si,50,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.09,4.93,simulado
+Si,50000,1,Medio,Carteras Colectivas,tyba,0.97,10.01,simulado
+No,500,3,Medio,ETFs,Trii,0.73,11.88,simulado
+No,1000,48,Alto,ETFs Sectoriales,Interactive Brokers,2.14,19.24,simulado
+No,50000,60,Alto,Acciones Individuales,Interactive Brokers,1.63,16.28,simulado
+Si,5000,3,Bajo,Fondo de Deuda,tyba,0.15,6.09,simulado
+No,10000,48,Medio,Fondos Indexados,Trii,0.76,14.26,simulado
+No,100,48,Medio,Fondos Indexados,Interactive Brokers,1.08,13.64,simulado
+No,10000,36,Alto,Criptomonedas,Binance,2.35,15.71,simulado
+No,200,36,Alto,ETFs Sectoriales,eToro,2.17,20.27,simulado
+Si,25000,48,Medio,Fondo de Pensión Voluntaria,Porvenir,1.39,7.82,simulado
+Si,1000,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.04,5.7,simulado
+No,200,24,Bajo,Bonos de Gobierno,Lulo Bank,0.34,5.83,simulado
+Si,50,60,Alto,ETFs Sectoriales,eToro,1.83,17.24,simulado
+Si,50,120,Medio,ETFs,Interactive Brokers,0.87,10.11,simulado
+No,5000,24,Bajo,CDT,Bancolombia eTrading,0.5,5.37,original
+Si,200,120,Alto,ETFs Sectoriales,eToro,1.21,18.32,original
+No,1000,3,Medio,ETFs,Trii,1.23,11.69,simulado
+Si,5000,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.02,5.42,simulado
+Si,10000,120,Alto,Acciones Individuales,Interactive Brokers,1.93,17.25,original
+Si,10000,3,Medio,Fondos Indexados,Hapi,0.87,13.48,original
+Si,50000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.01,5.27,simulado
+Si,200,60,Alto,Acciones Individuales,Interactive Brokers,1.64,21.99,simulado
+Si,50,6,Bajo,Fondo de Deuda,Lulo Bank,0.06,7.03,simulado
+Si,200,120,Medio,Fondo de Pensión Voluntaria,Porvenir,1.81,9.25,simulado
+Si,5000,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.06,5.56,simulado
+Si,5000,48,Medio,ETFs,Trii,0.31,12.51,simulado
+Si,5000,24,Bajo,Fondo de Deuda,tyba,0.41,7.38,original
+Si,50,6,Bajo,Fondo de Deuda,Lulo Bank,0.45,4.39,original
+Si,50000,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.11,4.82,simulado
+No,100,60,Medio,Fondo de Pensión Voluntaria,tyba,0.85,9.6,simulado
+No,100,1,Medio,Fondos Indexados,Interactive Brokers,0.64,9.46,simulado
+Si,500,3,Medio,ETFs,Trii,0.96,14.2,simulado
+Si,50,3,Medio,ETFs,Interactive Brokers,0.78,11.61,simulado
+Si,1000,36,Medio,Fondos Indexados,Trii,0.96,9.83,simulado
+Si,5000,36,Alto,Acciones Individuales,Interactive Brokers,1.0,19.9,simulado
+No,50,60,Medio,Fondo de Pensión Voluntaria,tyba,1.38,8.06,simulado
+Si,200,6,Bajo,Bonos de Gobierno,Lulo Bank,0.26,9.69,simulado
+Si,50,36,Medio,Fondos Indexados,Hapi,0.75,9.24,simulado
+Si,5000,120,Medio,Fondos Indexados,Hapi,0.77,11.1,simulado
+No,100,120,Alto,Acciones Individuales,Interactive Brokers,2.01,23.05,simulado
+No,50,12,Alto,Criptomonedas,Binance,1.73,23.5,simulado
+No,200,60,Medio,Fondos Indexados,Trii,0.94,8.34,simulado
+Si,5000,36,Alto,Acciones Individuales,Hapi,1.53,12.54,simulado
+No,10000,60,Alto,ETFs Sectoriales,Hapi,1.27,19.75,simulado
+No,100,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.06,5.8,simulado
+Si,50,24,Medio,Carteras Colectivas,tyba,0.74,12.23,simulado
+No,1000,24,Bajo,CDT,Bancolombia eTrading,0.39,7.98,original
+No,200,120,Medio,Fondo de Pensión Voluntaria,tyba,1.2,9.41,simulado
+Si,500,36,Alto,Acciones Individuales,Hapi,1.82,19.01,simulado
+No,25000,60,Medio,Fondos Indexados,Interactive Brokers,0.95,9.85,original
+No,25000,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.06,5.53,simulado
+Si,50,120,Medio,Carteras Colectivas,Trii,1.11,13.86,original
+No,10000,3,Medio,Carteras Colectivas,Trii,0.98,9.84,original
+Si,1000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,4.27,simulado
+Si,5000,120,Alto,Acciones Individuales,Interactive Brokers,1.62,21.41,simulado
+Si,100,120,Alto,ETFs Sectoriales,eToro,1.87,15.74,simulado
+No,25000,60,Alto,Acciones Individuales,Interactive Brokers,1.76,21.37,original
+Si,10000,48,Medio,Fondo de Pensión Voluntaria,Protección,1.09,8.57,simulado
+No,100,1,Bajo,Bonos de Gobierno,Lulo Bank,0.25,7.69,original
+Si,100,120,Alto,Acciones Individuales,eToro,1.9,17.62,simulado
+Si,25000,48,Medio,ETFs,Interactive Brokers,1.03,12.85,simulado
+No,5000,60,Alto,Acciones Individuales,Interactive Brokers,1.81,14.87,simulado
+No,50000,60,Medio,Carteras Colectivas,Davivienda,1.33,10.46,simulado
+Si,500,12,Alto,Criptomonedas,Buda,2.04,22.82,simulado
+No,50000,36,Alto,Acciones Individuales,Hapi,1.14,15.38,simulado
+No,5000,3,Medio,Carteras Colectivas,Trii,0.86,11.89,simulado
+No,1000,1,Alto,Criptomonedas,Bitso,1.7,21.08,simulado
+No,10000,48,Alto,Acciones Individuales,Interactive Brokers,1.45,15.08,simulado
+Si,1000,120,Medio,ETFs,Interactive Brokers,0.98,12.55,simulado
+Si,100,48,Medio,ETFs,Hapi,0.97,12.33,original
+Si,50000,12,Bajo,Fondo de Deuda,Bancolombia eTrading,0.21,6.29,simulado
+No,100,60,Medio,Carteras Colectivas,Trii,0.5,9.94,original
+Si,100,1,Alto,Criptomonedas,Wenia,1.62,34.86,simulado
+No,5000,48,Alto,Acciones Individuales,eToro,1.01,23.41,simulado
+No,50000,6,Alto,Criptomonedas,Kraken,1.36,12.72,simulado
+No,200,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.11,4.16,simulado
+Si,50,36,Alto,Acciones Individuales,eToro,1.53,18.86,original
+Si,50,3,Bajo,CDT,Davivienda,0.14,6.9,simulado
+No,100,12,Medio,Carteras Colectivas,Hapi,0.51,11.22,original
+No,500,12,Medio,Fondos Indexados,Interactive Brokers,0.87,10.97,simulado
+No,200,120,Alto,Acciones Individuales,eToro,2.31,24.19,simulado
+No,200,36,Alto,Acciones Individuales,Interactive Brokers,1.85,24.97,simulado
+Si,500,6,Bajo,Fondo de Deuda,Trii,0.08,7.72,simulado
+No,5000,60,Alto,Acciones Individuales,Hapi,2.42,20.79,simulado
+No,50,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,4.54,simulado
+No,100,24,Alto,ETFs Sectoriales,eToro,2.11,18.89,simulado
+Si,200,120,Medio,ETFs,Hapi,1.0,8.87,simulado
+Si,1000,120,Alto,Acciones Individuales,Interactive Brokers,1.95,19.02,simulado
+No,200,3,Medio,ETFs,Trii,0.74,10.04,simulado
+Si,25000,120,Alto,ETFs Sectoriales,Hapi,1.94,20.3,original
+No,50000,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.05,3.9,simulado
+Si,5000,3,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.09,4.66,simulado
+No,25000,36,Medio,ETFs,Interactive Brokers,0.64,9.36,simulado
+Si,50,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.03,4.45,simulado
+No,50000,3,Alto,Criptomonedas,Kraken,2.27,18.75,original
+No,500,36,Alto,Acciones Individuales,Interactive Brokers,1.97,18.45,simulado
+Si,100,36,Alto,ETFs Sectoriales,eToro,1.95,15.76,simulado
+Si,10000,24,Bajo,CDT,Bancolombia eTrading,0.57,5.5,simulado
+Si,500,36,Alto,Acciones Individuales,eToro,1.54,15.5,original
+Si,5000,36,Alto,Acciones Individuales,Interactive Brokers,1.82,25.01,simulado
+No,200,120,Medio,Carteras Colectivas,Interactive Brokers,0.4,12.33,simulado
+Si,50,120,Medio,ETFs,Trii,0.72,11.9,simulado
+Si,500,1,Alto,Criptomonedas,Wenia,1.72,19.79,simulado
+No,1000,36,Alto,Acciones Individuales,Interactive Brokers,2.39,20.91,simulado
+No,50000,24,Bajo,CDT,Lulo Bank,0.46,5.25,simulado
+Si,5000,36,Medio,ETFs,Trii,0.77,5.77,simulado
+Si,500,6,Bajo,CDT,tyba,0.14,5.44,original
+No,50000,24,Medio,Carteras Colectivas,Davivienda,1.01,12.85,simulado
+No,100,36,Alto,ETFs Sectoriales,Interactive Brokers,2.39,18.39,original
+Si,1000,36,Medio,Fondos Indexados,Interactive Brokers,0.94,8.97,simulado
+Si,1000,3,Bajo,Fondo de Deuda,Lulo Bank,0.57,6.07,simulado
+Si,200,3,Bajo,CDT,tyba,0.21,4.95,original
+No,1000,3,Medio,Carteras Colectivas,Interactive Brokers,0.83,11.3,original
+Si,25000,3,Bajo,Fondo de Deuda,Lulo Bank,0.32,6.62,simulado
+Si,500,60,Alto,Acciones Individuales,eToro,2.22,19.41,simulado
+Si,500,3,Bajo,Bonos de Gobierno,tyba,0.01,4.87,original
+Si,200,6,Bajo,Bonos de Gobierno,Lulo Bank,0.16,6.5,simulado
+Si,200,60,Alto,Acciones Individuales,eToro,2.22,15.78,original
+Si,1000,3,Medio,Fondos Indexados,Interactive Brokers,1.16,10.51,original
+Si,50,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.08,5.65,simulado
+Si,100,48,Medio,Fondos Indexados,Trii,0.77,11.5,simulado
+Si,25000,36,Medio,Fondo de Pensión Voluntaria,Davivienda,1.65,9.1,simulado
+Si,50,24,Bajo,Fondo de Deuda,tyba,0.32,6.76,simulado
+No,500,24,Medio,Fondos Indexados,Interactive Brokers,0.72,12.06,original
+Si,10000,6,Bajo,Bonos de Gobierno,Trii,0.35,3.24,simulado
+No,200,120,Alto,ETFs Sectoriales,Interactive Brokers,2.04,16.71,original
+No,50,120,Alto,Acciones Individuales,Hapi,1.67,15.52,original
+Si,1000,120,Alto,Acciones Individuales,eToro,1.63,13.5,simulado
+Si,25000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.09,5.28,simulado
+No,500,12,Alto,Criptomonedas,Bitso,1.19,24.2,simulado
+Si,1000,36,Alto,Acciones Individuales,Interactive Brokers,1.33,17.2,original
+Si,25000,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.25,4.8,original
+Si,500,6,Bajo,CDT,Lulo Bank,0.28,6.65,simulado
+Si,5000,36,Alto,ETFs Sectoriales,Interactive Brokers,2.04,14.84,simulado
+Si,200,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,4.75,simulado
+No,25000,3,Alto,Criptomonedas,Binance,0.9,23.18,simulado
+No,50000,48,Medio,ETFs,Hapi,1.0,10.62,simulado
+Si,10000,120,Alto,ETFs Sectoriales,eToro,1.68,18.32,simulado
+No,5000,48,Alto,Acciones Individuales,Interactive Brokers,1.69,21.32,original
+Si,500,3,Medio,Carteras Colectivas,Interactive Brokers,0.91,10.84,original
+Si,200,36,Alto,ETFs Sectoriales,eToro,1.96,20.8,simulado
+Si,200,60,Medio,Carteras Colectivas,Interactive Brokers,0.52,9.19,original
+Si,25000,3,Medio,Carteras Colectivas,Hapi,0.78,10.39,simulado
+No,5000,36,Medio,Fondos Indexados,Trii,1.17,10.5,simulado
+No,5000,48,Alto,Acciones Individuales,eToro,1.07,20.2,original
+Si,25000,6,Bajo,Bonos de Gobierno,Trii,0.22,4.34,simulado
+Si,10000,24,Medio,Fondo de Pensión Voluntaria,Porvenir,1.3,8.63,simulado
+Si,50000,1,Bajo,CDT,tyba,0.39,4.49,original
+Si,100,60,Medio,Carteras Colectivas,Trii,0.67,10.56,simulado
+No,100,60,Medio,Fondo de Pensión Voluntaria,tyba,1.09,8.15,simulado
+Si,50000,24,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.0,5.1,simulado
+Si,5000,36,Alto,Acciones Individuales,eToro,2.53,20.31,simulado
+No,500,48,Medio,ETFs,Hapi,0.72,11.81,simulado
+Si,10000,6,Medio,Fondos Indexados,Interactive Brokers,0.87,11.56,simulado
+Si,500,12,Alto,Criptomonedas,Binance,1.79,20.98,simulado
+Si,1000,120,Alto,Acciones Individuales,Interactive Brokers,1.84,16.95,simulado
+Si,100,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.01,4.6,simulado
+Si,500,120,Alto,ETFs Sectoriales,Interactive Brokers,2.29,19.66,simulado
+Si,100,24,Bajo,Fondo de Deuda,Davivienda,0.02,6.57,simulado
+No,200,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.06,4.1,simulado
+Si,1000,3,Bajo,Fondo de Deuda,Lulo Bank,0.14,4.45,original
+Si,1000,12,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.41,5.49,simulado
+No,25000,48,Alto,ETFs Sectoriales,eToro,1.16,19.55,simulado
+No,100,120,Alto,Acciones Individuales,Interactive Brokers,1.21,21.94,simulado
+Si,50,6,Bajo,CDT,Pibank,0.27,7.59,simulado
+Si,50,12,Alto,Criptomonedas,Buda,1.88,14.54,simulado
+Si,50000,12,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.14,4.81,simulado
+No,500,48,Alto,Acciones Individuales,Hapi,1.48,19.6,simulado
+Si,100,120,Alto,Acciones Individuales,Interactive Brokers,1.42,21.74,original
+Si,10000,120,Alto,ETFs Sectoriales,eToro,1.12,18.21,simulado
+No,200,48,Alto,ETFs Sectoriales,eToro,1.04,14.86,original
+Si,500,36,Alto,Acciones Individuales,eToro,2.37,16.63,simulado
+No,50000,1,Medio,Carteras Colectivas,Davivienda,0.68,13.75,simulado
+No,50,3,Bajo,CDT,Nu Colombia,0.26,6.76,simulado
+No,50000,120,Medio,Carteras Colectivas,Hapi,0.98,12.47,original
+Si,200,120,Medio,Fondo de Pensión Voluntaria,Porvenir,1.1,10.14,simulado
+Si,50,48,Alto,Acciones Individuales,eToro,0.86,16.21,simulado
+Si,5000,24,Medio,ETFs,Trii,0.8,10.82,simulado
+No,50,48,Medio,ETFs,Interactive Brokers,0.92,12.31,simulado
+No,100,12,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.09,3.89,simulado
+No,500,36,Medio,Fondos Indexados,Trii,0.44,12.59,simulado
+No,100,60,Medio,Fondo de Pensión Voluntaria,Davivienda,1.51,7.54,simulado
+Si,50000,6,Bajo,Fondo de Deuda,tyba,0.09,7.55,simulado
+No,50,120,Alto,Acciones Individuales,Interactive Brokers,1.33,14.15,simulado
+No,50,24,Medio,ETFs,Interactive Brokers,0.82,12.13,simulado
+Si,10000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,6.46,simulado
+No,50,48,Alto,ETFs Sectoriales,Hapi,1.69,15.32,simulado
+No,5000,120,Medio,Carteras Colectivas,Trii,0.64,9.87,original
+Si,200,24,Medio,Carteras Colectivas,Interactive Brokers,1.05,11.18,original
+Si,50,24,Medio,Carteras Colectivas,Hapi,0.74,12.05,simulado
+Si,5000,36,Alto,ETFs Sectoriales,Hapi,2.25,18.49,simulado
+No,25000,48,Alto,ETFs Sectoriales,Hapi,1.71,15.21,simulado
+Si,50000,1,Bajo,Fondo de Deuda,Bancolombia eTrading,0.6,6.09,simulado
+Si,1000,36,Medio,Carteras Colectivas,Interactive Brokers,0.88,11.62,original
+No,5000,3,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.16,4.46,simulado
+Si,25000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.03,4.06,simulado
+Si,10000,36,Alto,ETFs Sectoriales,eToro,2.18,16.12,original
+Si,50,48,Alto,Acciones Individuales,eToro,2.19,18.13,simulado
+No,50000,60,Alto,ETFs Sectoriales,Interactive Brokers,1.85,18.08,simulado
+No,50000,36,Alto,ETFs Sectoriales,eToro,1.81,18.1,simulado
+No,50,24,Alto,ETFs Sectoriales,Interactive Brokers,1.51,20.78,simulado
+Si,50,48,Alto,Acciones Individuales,eToro,1.46,22.24,simulado
+Si,50000,60,Medio,Fondos Indexados,Hapi,0.76,8.95,original
+No,25000,48,Alto,Acciones Individuales,Interactive Brokers,1.88,16.76,original
+Si,50,12,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.05,5.08,simulado
+No,200,3,Medio,Fondo de Pensión Voluntaria,Porvenir,1.64,6.95,simulado
+Si,200,120,Medio,Fondos Indexados,Hapi,0.73,12.28,simulado
+Si,10000,48,Alto,ETFs Sectoriales,Interactive Brokers,2.31,21.3,original
+No,10000,36,Alto,Acciones Individuales,Interactive Brokers,1.52,19.68,simulado
+No,25000,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,5.54,simulado
+Si,5000,3,Bajo,CDT,Bancolombia eTrading,0.48,6.13,simulado
+No,25000,24,Alto,Acciones Individuales,eToro,2.18,17.78,original
+No,25000,120,Alto,ETFs Sectoriales,Interactive Brokers,1.28,19.1,simulado
+Si,5000,60,Alto,ETFs Sectoriales,eToro,1.45,18.65,simulado
+Si,50,24,Alto,ETFs Sectoriales,Interactive Brokers,1.56,18.01,simulado
+Si,10000,3,Bajo,Bonos de Gobierno,Lulo Bank,0.05,7.85,simulado
+Si,10000,48,Alto,Acciones Individuales,eToro,2.8,18.51,simulado
+No,200,60,Alto,Acciones Individuales,eToro,1.62,19.04,simulado
+No,10000,120,Alto,Acciones Individuales,Interactive Brokers,2.27,14.99,simulado
+No,100,60,Alto,ETFs Sectoriales,eToro,1.62,15.27,simulado
+No,10000,36,Medio,Fondo de Pensión Voluntaria,tyba,1.27,9.07,simulado
+No,50,120,Alto,Acciones Individuales,Hapi,1.61,22.34,simulado
+Si,1000,48,Alto,Acciones Individuales,Interactive Brokers,1.72,15.43,simulado
+Si,10000,36,Medio,Carteras Colectivas,Hapi,1.23,11.03,simulado
+No,50,120,Medio,ETFs,Interactive Brokers,0.96,8.93,original
+Si,1000,3,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.13,4.23,simulado
+No,5000,120,Medio,Fondos Indexados,Trii,0.79,13.41,simulado
+Si,1000,6,Bajo,CDT,Bancolombia eTrading,0.11,4.38,simulado
+Si,100,120,Alto,ETFs Sectoriales,Interactive Brokers,1.77,17.82,simulado
+Si,25000,36,Alto,ETFs Sectoriales,Hapi,1.45,20.33,simulado
+No,50,24,Alto,Acciones Individuales,Hapi,2.05,18.46,simulado
+Si,25000,60,Medio,Carteras Colectivas,tyba,0.94,11.13,simulado
+No,1000,120,Alto,ETFs Sectoriales,Interactive Brokers,1.96,20.76,simulado
+Si,1000,60,Alto,Acciones Individuales,eToro,2.05,20.24,simulado
+Si,5000,48,Alto,Acciones Individuales,Interactive Brokers,1.99,17.73,simulado
+No,10000,48,Alto,Acciones Individuales,Interactive Brokers,2.48,16.26,simulado
+No,500,60,Alto,ETFs Sectoriales,Hapi,1.33,14.74,original
+Si,200,12,Alto,Criptomonedas,Bitso,0.88,20.31,simulado
+Si,5000,120,Medio,ETFs,Hapi,0.81,13.16,original
+No,10000,36,Alto,Acciones Individuales,Interactive Brokers,1.72,19.18,simulado
+Si,200,120,Alto,Acciones Individuales,eToro,1.82,18.69,simulado
+No,200,36,Medio,Carteras Colectivas,Trii,0.57,10.59,original
+No,1000,48,Alto,Acciones Individuales,Interactive Brokers,1.5,15.13,simulado
+Si,50,120,Alto,Acciones Individuales,Hapi,1.39,18.49,simulado
+Si,5000,24,Medio,ETFs,Interactive Brokers,0.8,12.77,simulado
+Si,5000,3,Medio,Carteras Colectivas,Davivienda,0.94,13.49,simulado
+No,1000,120,Alto,ETFs Sectoriales,eToro,1.71,19.13,simulado
+Si,1000,24,Bajo,Fondo de Deuda,Lulo Bank,0.48,5.15,simulado
+No,1000,6,Medio,ETFs,Trii,0.49,10.0,simulado
+Si,5000,60,Alto,Acciones Individuales,Hapi,2.43,18.76,original
+Si,5000,6,Medio,Fondos Indexados,Hapi,0.87,9.65,original
+No,100,36,Alto,Acciones Individuales,eToro,2.01,16.42,simulado
+No,10000,60,Medio,Fondos Indexados,Trii,0.89,10.33,simulado
+Si,5000,120,Alto,ETFs Sectoriales,eToro,1.98,19.63,simulado
+Si,100,12,Medio,Fondos Indexados,Interactive Brokers,0.46,12.94,simulado
+Si,200,24,Medio,ETFs,Trii,0.86,11.35,simulado
+Si,5000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.01,5.26,simulado
+Si,50,48,Alto,Acciones Individuales,Interactive Brokers,1.83,14.86,original
+Si,50000,12,Medio,Carteras Colectivas,Hapi,0.73,13.58,original
+Si,200,120,Medio,Fondos Indexados,Hapi,0.97,11.98,simulado
+No,10000,24,Alto,Acciones Individuales,Interactive Brokers,1.53,18.31,simulado
+Si,50,1,Bajo,Bonos de Gobierno,Lulo Bank,0.08,6.32,simulado
+Si,50000,120,Alto,Acciones Individuales,Hapi,2.03,14.64,simulado
+Si,1000,48,Alto,Acciones Individuales,eToro,1.61,16.61,simulado
+No,50,12,Medio,Fondos Indexados,Hapi,1.27,10.34,simulado
+Si,5000,1,Bajo,CDT,Pibank,0.33,5.56,simulado
+No,200,60,Alto,Acciones Individuales,Interactive Brokers,2.53,15.24,simulado
+No,50,24,Medio,ETFs,Trii,0.92,11.78,simulado
+No,500,3,Alto,Criptomonedas,Bitso,1.55,16.18,simulado
+Si,25000,24,Medio,Fondos Indexados,Hapi,0.89,9.87,simulado
+Si,100,60,Alto,ETFs Sectoriales,Hapi,1.68,20.64,simulado
+Si,10000,24,Alto,ETFs Sectoriales,Hapi,2.46,18.29,original
+Si,200,3,Alto,Criptomonedas,Bitso,2.19,24.28,simulado
+No,10000,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.0,4.32,simulado
+No,25000,48,Alto,ETFs Sectoriales,eToro,1.17,15.07,original
+Si,100,120,Medio,ETFs,Interactive Brokers,0.66,15.1,simulado
+No,50000,12,Alto,Criptomonedas,Bitso,2.09,17.51,simulado
+No,10000,12,Bajo,CDT,Davivienda,0.56,6.71,simulado
+No,25000,1,Medio,Carteras Colectivas,Hapi,0.87,13.87,simulado
+Si,200,3,Bajo,Bonos de Gobierno,Lulo Bank,0.24,5.07,original
+Si,1000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.09,4.59,simulado
+No,100,6,Bajo,CDT,Lulo Bank,0.41,5.8,original
+Si,50,12,Medio,ETFs,Interactive Brokers,0.64,9.36,original
+No,200,12,Medio,Fondo de Pensión Voluntaria,Davivienda,0.9,8.96,simulado
+No,50000,60,Alto,ETFs Sectoriales,eToro,1.73,15.55,simulado
+No,10000,6,Medio,Fondos Indexados,Hapi,1.07,9.14,original
+No,1000,120,Alto,ETFs Sectoriales,Hapi,1.83,19.41,simulado
+Si,10000,48,Medio,Fondos Indexados,Interactive Brokers,0.8,8.06,original
+Si,25000,36,Alto,Acciones Individuales,Hapi,0.74,19.33,simulado
+No,1000,36,Alto,Acciones Individuales,eToro,0.82,21.72,simulado
+No,10000,120,Alto,ETFs Sectoriales,Hapi,1.45,18.15,simulado
+Si,50,36,Medio,Fondos Indexados,Interactive Brokers,0.83,11.91,original
+Si,200,24,Bajo,Bonos de Gobierno,Trii,0.31,5.99,simulado
+Si,25000,120,Alto,Acciones Individuales,Interactive Brokers,1.73,13.52,simulado
+No,10000,120,Alto,Acciones Individuales,eToro,1.87,17.44,original
+Si,10000,36,Medio,ETFs,Interactive Brokers,0.98,10.74,simulado
+No,5000,60,Alto,ETFs Sectoriales,eToro,1.44,17.22,original
+Si,500,36,Medio,ETFs,Hapi,0.89,11.26,original
+Si,5000,24,Bajo,Fondo de Deuda,Lulo Bank,0.28,6.16,simulado
+Si,200,120,Alto,ETFs Sectoriales,eToro,1.13,17.67,simulado
+No,100,36,Alto,ETFs Sectoriales,Hapi,2.33,14.2,original
+Si,50000,1,Medio,ETFs,Interactive Brokers,0.82,11.3,simulado
+No,500,6,Alto,Criptomonedas,Buda,2.09,26.76,simulado
+Si,5000,12,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.1,5.03,simulado
+No,100,60,Alto,Acciones Individuales,eToro,2.46,14.97,original
+Si,5000,3,Bajo,CDT,Davivienda,0.44,6.47,simulado
+Si,50,60,Alto,ETFs Sectoriales,Interactive Brokers,2.29,20.82,original
+No,5000,48,Medio,ETFs,Trii,0.84,12.35,original
+Si,25000,1,Alto,Criptomonedas,Binance,2.07,23.25,simulado
+Si,200,60,Alto,ETFs Sectoriales,eToro,1.37,21.33,simulado
+Si,500,60,Alto,ETFs Sectoriales,Hapi,1.88,15.37,simulado
+Si,1000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,5.42,simulado
+Si,50,120,Medio,ETFs,Hapi,1.01,9.31,simulado
+No,10000,3,Alto,Criptomonedas,Kraken,1.35,25.87,simulado
+Si,200,1,Bajo,Fondo de Deuda,Lulo Bank,0.46,6.78,simulado
+Si,10000,6,Medio,Fondo de Pensión Voluntaria,Davivienda,1.22,8.3,simulado
+No,50000,60,Alto,ETFs Sectoriales,Interactive Brokers,2.39,15.24,original
+Si,25000,48,Alto,ETFs Sectoriales,eToro,2.24,15.26,simulado
+Si,5000,60,Alto,Acciones Individuales,eToro,2.51,19.35,simulado
+Si,500,6,Bajo,Bonos de Gobierno,Lulo Bank,0.2,6.86,simulado
+Si,1000,60,Medio,ETFs,Trii,1.06,9.02,original
+No,5000,48,Medio,ETFs,Trii,0.97,8.33,simulado
+Si,200,24,Medio,ETFs,Trii,0.85,11.38,simulado
+Si,25000,60,Medio,Carteras Colectivas,Hapi,1.07,11.84,simulado
+No,50000,1,Alto,Criptomonedas,Binance,1.88,15.86,original
+Si,50000,1,Alto,Criptomonedas,Buda,0.93,25.59,simulado
+Si,5000,60,Alto,ETFs Sectoriales,eToro,1.46,15.31,simulado
+No,25000,6,Alto,Criptomonedas,Binance,1.01,22.89,simulado
+Si,500,3,Bajo,Fondo de Deuda,Davivienda,0.18,4.67,simulado
+No,25000,48,Medio,Fondo de Pensión Voluntaria,Davivienda,1.64,10.64,simulado
+No,50,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,3.7,simulado
+No,10000,24,Bajo,Fondo de Deuda,Bancolombia eTrading,0.21,4.29,simulado
+Si,25000,12,Bajo,CDT,Lulo Bank,0.12,7.24,simulado
+No,5000,120,Alto,ETFs Sectoriales,eToro,1.12,15.19,simulado
+Si,50000,24,Bajo,Fondo de Deuda,tyba,0.17,4.73,simulado
+Si,100,1,Medio,Fondo de Pensión Voluntaria,Protección,1.2,5.07,simulado
+Si,10000,120,Alto,Acciones Individuales,eToro,1.63,20.18,simulado
+No,500,120,Medio,Fondo de Pensión Voluntaria,Davivienda,1.38,10.29,simulado
+No,200,60,Alto,Acciones Individuales,eToro,1.95,14.57,original
+No,100,12,Medio,ETFs,Interactive Brokers,0.96,12.95,simulado
+Si,5000,3,Bajo,CDT,Bancolombia eTrading,0.18,4.94,simulado
+No,25000,36,Medio,Fondo de Pensión Voluntaria,Protección,1.69,8.84,simulado
+Si,500,3,Bajo,CDT,tyba,0.1,2.88,simulado
+Si,100,120,Alto,ETFs Sectoriales,Hapi,1.25,19.81,simulado
+No,50000,6,Bajo,CDT,Davivienda,0.21,6.42,simulado
+No,500,24,Medio,ETFs,Trii,1.1,13.72,original
+No,50,120,Medio,ETFs,Interactive Brokers,1.11,10.06,simulado
+Si,50,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.02,5.04,simulado
+No,100,24,Medio,Fondos Indexados,Interactive Brokers,1.16,11.04,simulado
+Si,5000,120,Alto,ETFs Sectoriales,Interactive Brokers,1.11,20.8,original
+No,50,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,3.62,simulado
+Si,10000,60,Alto,Acciones Individuales,Interactive Brokers,1.85,22.74,simulado
+Si,50000,3,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.47,2.83,simulado
+No,10000,48,Alto,Acciones Individuales,Interactive Brokers,2.19,18.53,original
+Si,50,3,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.06,4.06,simulado
+No,1000,6,Bajo,Fondo de Deuda,Lulo Bank,0.5,4.31,simulado
+Si,50,3,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.06,4.05,simulado
+Si,50,6,Medio,ETFs,Trii,0.72,10.97,simulado
+No,25000,48,Alto,Acciones Individuales,Interactive Brokers,1.95,19.25,simulado
+No,25000,6,Medio,Carteras Colectivas,tyba,0.88,12.63,simulado
+Si,25000,36,Alto,ETFs Sectoriales,eToro,1.58,14.49,simulado
+Si,5000,12,Alto,Criptomonedas,Binance,1.2,17.63,original
+No,50,3,Alto,Criptomonedas,Buda,2.09,26.47,simulado
+No,10000,120,Alto,Acciones Individuales,Interactive Brokers,1.88,16.24,simulado
+No,25000,48,Alto,ETFs Sectoriales,eToro,1.9,20.8,original
+No,50000,3,Bajo,CDT,Nu Colombia,0.03,7.02,simulado
+No,10000,12,Medio,Fondos Indexados,Interactive Brokers,0.86,8.57,simulado
+Si,500,24,Bajo,Fondo de Deuda,Lulo Bank,0.37,5.3,simulado
+No,500,36,Medio,Fondos Indexados,Hapi,1.17,11.57,simulado
+Si,500,120,Medio,Carteras Colectivas,Davivienda,0.84,11.17,simulado
+Si,100,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.11,5.09,simulado
+Si,50,60,Alto,Acciones Individuales,Interactive Brokers,1.0,19.02,simulado
+Si,200,24,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.1,5.99,simulado
+Si,50,24,Medio,Fondos Indexados,Trii,1.07,13.26,simulado
+No,10000,120,Alto,ETFs Sectoriales,eToro,1.39,20.9,simulado
+Si,500,120,Alto,Acciones Individuales,Interactive Brokers,1.5,19.71,simulado
+No,1000,6,Medio,ETFs,Interactive Brokers,0.64,9.83,simulado
+No,5000,120,Alto,Acciones Individuales,Hapi,2.37,21.94,original
+Si,50,36,Alto,ETFs Sectoriales,eToro,1.35,14.64,original
+Si,1000,3,Bajo,Bonos de Gobierno,Lulo Bank,0.34,6.29,simulado
+Si,50,3,Bajo,CDT,tyba,0.34,5.35,original
+Si,50,12,Alto,Criptomonedas,Binance,1.76,29.43,simulado
+No,1000,60,Medio,Carteras Colectivas,Davivienda,1.21,12.76,simulado
+Si,50,36,Alto,ETFs Sectoriales,eToro,2.63,19.94,simulado
+Si,5000,60,Medio,ETFs,Interactive Brokers,0.91,8.1,simulado
+No,50,48,Medio,ETFs,Interactive Brokers,0.63,10.39,simulado
+No,200,12,Alto,Criptomonedas,Kraken,2.08,15.17,original
+Si,100,120,Alto,ETFs Sectoriales,eToro,1.21,17.6,simulado
+No,50,48,Alto,Acciones Individuales,eToro,2.03,19.13,simulado
+Si,50000,120,Alto,Acciones Individuales,eToro,2.23,17.7,simulado
+No,5000,1,Medio,ETFs,Interactive Brokers,0.76,12.08,simulado
+Si,500,6,Medio,Fondos Indexados,Trii,0.58,9.4,original
+Si,200,60,Alto,ETFs Sectoriales,Hapi,1.63,17.11,simulado
+No,5000,6,Bajo,Fondo de Deuda,tyba,0.09,7.65,simulado
+Si,50000,6,Medio,ETFs,Interactive Brokers,1.11,13.68,original
+Si,5000,1,Bajo,Fondo de Deuda,Davivienda,0.05,8.2,simulado
+Si,1000,12,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.01,4.25,simulado
+Si,200,3,Bajo,Fondo de Deuda,Lulo Bank,0.45,7.01,simulado
+No,500,120,Alto,Acciones Individuales,Interactive Brokers,2.06,16.89,simulado
+No,50,12,Alto,Criptomonedas,Bitso,1.75,15.0,simulado
+Si,50,120,Alto,ETFs Sectoriales,eToro,1.84,14.36,simulado
+No,50,12,Bajo,CDT,Lulo Bank,0.25,6.11,simulado
+Si,50,24,Bajo,Bonos de Gobierno,tyba,0.28,7.08,original
+Si,200,36,Alto,Acciones Individuales,Hapi,1.61,19.78,original
+No,200,60,Alto,ETFs Sectoriales,Interactive Brokers,2.04,18.1,simulado
+No,10000,36,Alto,Acciones Individuales,Interactive Brokers,1.35,18.74,simulado
+No,50,24,Bajo,Bonos de Gobierno,Lulo Bank,0.2,6.33,simulado
+No,25000,3,Alto,Criptomonedas,Binance,1.66,22.71,simulado
+Si,5000,12,Bajo,Bonos de Gobierno,Lulo Bank,0.44,7.74,original
+No,25000,120,Medio,ETFs,Trii,0.97,12.77,simulado
+Si,10000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.08,3.54,simulado
+Si,100,1,Bajo,Fondo de Deuda,Lulo Bank,0.06,5.01,original
+No,50000,12,Alto,Criptomonedas,Kraken,1.68,17.03,original
+Si,50,3,Medio,Fondos Indexados,Hapi,0.66,12.16,simulado
+Si,100,24,Bajo,CDT,tyba,0.14,6.87,simulado
+Si,50,1,Bajo,Fondo de Deuda,Davivienda,0.38,8.78,simulado
+Si,1000,12,Bajo,Bonos de Gobierno,tyba,0.15,4.26,original
+No,500,60,Alto,ETFs Sectoriales,Hapi,1.76,19.5,simulado
+No,5000,3,Medio,ETFs,Hapi,0.65,12.79,original
+Si,50000,12,Medio,Carteras Colectivas,tyba,0.78,11.89,simulado
+Si,1000,24,Medio,ETFs,Trii,0.82,12.82,simulado
+Si,100,12,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.04,5.28,simulado
+Si,25000,6,Bajo,Fondo de Deuda,Davivienda,0.12,6.89,simulado
+Si,1000,60,Alto,Acciones Individuales,Hapi,1.82,17.63,simulado
+Si,50,48,Alto,Acciones Individuales,eToro,1.6,20.79,simulado
+Si,10000,12,Medio,Fondos Indexados,Trii,0.71,7.43,simulado
+Si,100,12,Medio,Carteras Colectivas,Hapi,0.84,12.89,simulado
+No,500,3,Bajo,Fondo de Deuda,Lulo Bank,0.42,7.64,simulado
+Si,200,6,Bajo,CDT,Bancolombia eTrading,0.2,6.54,original
+Si,5000,6,Medio,Carteras Colectivas,Interactive Brokers,0.89,12.63,simulado
+Si,500,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.26,6.35,simulado
+Si,50,24,Bajo,Fondo de Deuda,Lulo Bank,0.02,7.64,simulado
+No,100,1,Bajo,CDT,tyba,0.14,7.08,simulado
+Si,25000,120,Medio,ETFs,Interactive Brokers,1.01,9.89,simulado
+Si,1000,3,Medio,ETFs,Hapi,0.87,10.45,simulado
+Si,500,24,Medio,Fondos Indexados,Hapi,0.71,10.45,original
+No,50000,48,Alto,Acciones Individuales,Interactive Brokers,1.59,21.67,original
+Si,1000,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.05,4.87,simulado
+No,500,60,Alto,ETFs Sectoriales,Hapi,1.39,16.26,simulado
+Si,10000,3,Bajo,Bonos de Gobierno,tyba,0.0,8.78,simulado
+Si,500,120,Alto,ETFs Sectoriales,eToro,1.86,16.15,simulado
+Si,25000,48,Medio,ETFs,Trii,1.02,8.03,simulado
+Si,10000,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.25,5.96,simulado
+No,50,48,Alto,ETFs Sectoriales,eToro,2.23,19.31,original
+Si,25000,48,Alto,ETFs Sectoriales,eToro,2.15,17.23,simulado
+No,100,6,Bajo,Bonos de Gobierno,tyba,0.34,6.06,simulado
+Si,200,6,Bajo,Bonos de Gobierno,tyba,0.04,7.97,original
+Si,10000,6,Medio,Fondos Indexados,Interactive Brokers,1.01,8.5,simulado
+Si,10000,12,Alto,Criptomonedas,Buda,1.53,22.07,simulado
+No,200,6,Bajo,Bonos de Gobierno,Lulo Bank,0.12,7.82,original
+Si,100,60,Alto,ETFs Sectoriales,eToro,2.15,20.85,original
+No,1000,120,Medio,Fondos Indexados,Trii,0.31,10.24,simulado
+Si,25000,60,Alto,Acciones Individuales,Interactive Brokers,1.26,15.8,simulado
+No,200,24,Medio,ETFs,Trii,0.73,9.91,simulado
+No,5000,12,Bajo,CDT,tyba,0.15,5.84,original
+Si,500,36,Alto,ETFs Sectoriales,eToro,1.34,20.33,original
+No,25000,120,Alto,Acciones Individuales,Hapi,2.94,15.72,simulado
+Si,500,48,Alto,ETFs Sectoriales,Hapi,1.3,18.76,simulado
+No,500,24,Medio,Carteras Colectivas,Hapi,0.65,11.34,simulado
+Si,10000,24,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.04,5.41,simulado
+Si,200,120,Medio,Fondo de Pensión Voluntaria,Protección,0.8,10.34,simulado
+No,5000,24,Bajo,Fondo de Deuda,tyba,0.35,6.83,simulado
+Si,10000,12,Medio,ETFs,Interactive Brokers,0.79,6.37,simulado
+Si,5000,3,Alto,Criptomonedas,Kraken,1.39,19.84,simulado
+Si,50,48,Alto,Acciones Individuales,Interactive Brokers,2.77,16.68,simulado
+No,50000,24,Bajo,Bonos de Gobierno,Lulo Bank,0.23,3.55,simulado
+Si,500,24,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,4.16,simulado
+Si,1000,60,Alto,Acciones Individuales,Interactive Brokers,1.44,20.27,simulado
+Si,25000,12,Alto,Criptomonedas,Buda,1.86,28.09,original
+No,1000,120,Medio,ETFs,Trii,1.0,11.12,simulado
+Si,500,1,Alto,Criptomonedas,Wenia,2.05,18.62,simulado
+Si,500,24,Bajo,CDT,Pibank,0.19,5.07,simulado
+Si,1000,6,Bajo,Fondo de Deuda,Lulo Bank,0.32,5.81,simulado
+Si,5000,12,Bajo,Fondo de Deuda,Lulo Bank,0.33,7.44,simulado
+No,200,6,Medio,Fondos Indexados,Hapi,1.11,11.72,original
+Si,1000,120,Alto,Acciones Individuales,eToro,1.93,18.76,original
+Si,50000,12,Alto,Criptomonedas,Buda,1.16,15.25,simulado
+Si,10000,36,Alto,Acciones Individuales,Hapi,1.88,20.71,simulado
+No,50,24,Medio,ETFs,Interactive Brokers,0.87,10.84,simulado
+Si,100,48,Medio,Fondos Indexados,Interactive Brokers,1.15,12.43,simulado
+Si,25000,36,Alto,Acciones Individuales,Hapi,1.48,18.68,simulado
+No,5000,60,Medio,ETFs,Trii,0.81,11.11,original
+Si,500,120,Alto,ETFs Sectoriales,Interactive Brokers,1.6,21.01,simulado
+No,500,12,Medio,Fondos Indexados,Trii,0.91,8.8,simulado
+Si,50000,3,Medio,Carteras Colectivas,Hapi,0.73,12.16,original
+No,500,12,Bajo,Bonos de Gobierno,Lulo Bank,0.1,6.57,simulado
+Si,50,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.06,3.69,simulado
+No,500,3,Alto,Criptomonedas,Buda,1.62,31.67,simulado
+No,5000,3,Bajo,Bonos de Gobierno,tyba,0.23,10.22,simulado
+Si,10000,6,Bajo,Fondo de Deuda,Lulo Bank,0.43,5.86,simulado
+Si,50,1,Medio,Carteras Colectivas,Interactive Brokers,0.88,11.3,simulado
+No,50,60,Alto,ETFs Sectoriales,Interactive Brokers,1.29,19.39,simulado
+No,200,24,Medio,ETFs,Trii,0.74,13.98,simulado
+Si,25000,60,Alto,Acciones Individuales,Interactive Brokers,2.25,17.85,simulado
+Si,1000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,3.85,simulado
+Si,100,12,Alto,Criptomonedas,Bitso,1.97,24.75,simulado
+Si,50000,120,Medio,Fondo de Pensión Voluntaria,Porvenir,1.25,11.66,simulado
+No,25000,1,Bajo,Fondo de Deuda,Lulo Bank,0.31,5.78,simulado
+Si,5000,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.0,4.98,simulado
+Si,50,24,Alto,Acciones Individuales,eToro,1.41,19.24,simulado
+No,25000,6,Bajo,Bonos de Gobierno,Lulo Bank,0.27,4.77,simulado
+Si,25000,36,Medio,Fondos Indexados,Trii,0.84,12.55,original
+No,100,48,Medio,Carteras Colectivas,tyba,0.75,11.09,simulado
+No,5000,24,Alto,ETFs Sectoriales,eToro,1.82,17.7,simulado
+No,25000,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.08,4.86,simulado
+Si,25000,120,Alto,ETFs Sectoriales,Hapi,1.31,17.33,original
+Si,25000,6,Alto,Criptomonedas,Buda,1.64,20.27,simulado
+Si,1000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.08,4.09,simulado
+No,25000,36,Alto,Acciones Individuales,Hapi,2.28,21.6,original
+Si,1000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,5.13,simulado
+Si,50000,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.01,4.98,simulado
+Si,200,3,Bajo,Bonos de Gobierno,tyba,0.4,6.52,simulado
+Si,50,36,Medio,ETFs,Trii,0.98,11.66,simulado
+Si,200,60,Alto,Acciones Individuales,Hapi,1.08,17.74,simulado
+Si,5000,3,Bajo,CDT,Lulo Bank,0.18,5.81,simulado
+No,1000,1,Medio,ETFs,Interactive Brokers,0.7,13.67,simulado
+No,1000,36,Alto,ETFs Sectoriales,Interactive Brokers,1.23,15.62,simulado
+Si,1000,36,Medio,Carteras Colectivas,Hapi,0.59,10.62,simulado
+Si,1000,1,Bajo,CDT,Nu Colombia,0.38,6.16,simulado
+Si,200,60,Alto,Acciones Individuales,Interactive Brokers,1.14,18.42,original
+Si,50000,36,Alto,ETFs Sectoriales,Hapi,1.61,17.6,simulado
+No,50000,120,Medio,Carteras Colectivas,Interactive Brokers,1.08,10.99,original
+No,100,6,Medio,Carteras Colectivas,tyba,0.75,11.23,simulado
+No,5000,12,Medio,Carteras Colectivas,Interactive Brokers,0.62,9.85,original
+Si,200,36,Alto,Acciones Individuales,Hapi,2.3,14.89,simulado
+No,100,60,Alto,Acciones Individuales,Interactive Brokers,1.81,17.26,original
+Si,100,48,Alto,Acciones Individuales,Hapi,2.2,18.42,simulado
+No,50,48,Alto,Acciones Individuales,eToro,1.88,19.38,original
+Si,25000,60,Alto,Acciones Individuales,Hapi,1.48,20.63,simulado
+Si,1000,36,Alto,Acciones Individuales,Interactive Brokers,2.06,17.81,simulado
+No,100,36,Medio,Fondos Indexados,Hapi,0.77,10.53,simulado
+Si,10000,60,Alto,ETFs Sectoriales,eToro,1.81,18.61,simulado
+Si,5000,3,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.0,5.37,simulado
+No,100,6,Bajo,Bonos de Gobierno,tyba,0.21,6.63,original
+Si,1000,6,Bajo,CDT,Nu Colombia,0.0,6.58,simulado
+Si,100,24,Medio,Fondos Indexados,Hapi,0.86,10.23,simulado
+Si,100,36,Alto,Acciones Individuales,Interactive Brokers,1.18,22.23,simulado
+No,200,120,Alto,Acciones Individuales,Interactive Brokers,1.83,18.79,simulado
+No,5000,48,Alto,ETFs Sectoriales,Hapi,1.94,16.75,simulado
+Si,5000,3,Bajo,Bonos de Gobierno,Lulo Bank,0.34,4.71,simulado
+Si,200,120,Medio,Carteras Colectivas,Hapi,1.0,11.03,original
+Si,500,48,Medio,ETFs,Trii,0.8,8.31,simulado
+Si,500,120,Alto,ETFs Sectoriales,eToro,1.56,15.05,simulado
+Si,50,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.01,3.63,simulado
+Si,500,120,Medio,Fondo de Pensión Voluntaria,Porvenir,1.37,9.5,simulado
+No,50,48,Medio,Fondos Indexados,Interactive Brokers,0.69,11.85,original
+No,25000,36,Alto,ETFs Sectoriales,eToro,2.37,16.89,simulado
+No,10000,3,Medio,Fondos Indexados,Interactive Brokers,0.65,8.38,original
+No,50,36,Alto,ETFs Sectoriales,Hapi,0.88,15.6,simulado
+Si,50000,1,Alto,Criptomonedas,Kraken,0.99,27.2,simulado
+Si,50000,12,Bajo,Bonos de Gobierno,tyba,0.45,4.95,original
+Si,5000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,3.87,simulado
+Si,50,24,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,4.3,simulado
+No,100,24,Alto,ETFs Sectoriales,Hapi,1.74,16.99,simulado
+No,25000,3,Medio,Fondos Indexados,Trii,0.78,8.99,original
+Si,5000,24,Medio,Fondo de Pensión Voluntaria,Porvenir,1.69,7.59,simulado
+No,50000,12,Medio,ETFs,Trii,0.97,6.12,simulado
+Si,100,120,Alto,Acciones Individuales,eToro,2.07,21.83,simulado
+No,50000,6,Medio,ETFs,Trii,1.22,10.79,simulado
+Si,200,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.08,4.62,simulado
+Si,50,120,Alto,ETFs Sectoriales,eToro,1.47,16.46,simulado
+No,1000,60,Alto,Acciones Individuales,Interactive Brokers,1.46,20.12,simulado
+Si,5000,120,Medio,Fondo de Pensión Voluntaria,Protección,1.51,8.39,simulado
+No,10000,3,Alto,Criptomonedas,Kraken,1.82,28.56,original
+Si,200,24,Alto,ETFs Sectoriales,Interactive Brokers,1.25,15.73,simulado
+Si,25000,24,Bajo,CDT,Lulo Bank,0.42,4.39,original
+No,5000,1,Alto,Criptomonedas,Buda,1.31,26.4,original
+Si,25000,3,Medio,ETFs,Interactive Brokers,0.72,11.42,simulado
+Si,500,12,Bajo,Fondo de Deuda,Lulo Bank,0.16,6.53,simulado
+Si,5000,24,Alto,Acciones Individuales,Hapi,1.6,16.02,simulado
+Si,500,48,Alto,ETFs Sectoriales,eToro,2.26,16.1,simulado
+Si,100,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.02,5.46,simulado
+Si,50,6,Medio,Fondos Indexados,Interactive Brokers,0.77,11.53,simulado
+Si,25000,12,Bajo,Bonos de Gobierno,Lulo Bank,0.12,8.1,simulado
+No,100,36,Alto,Acciones Individuales,Interactive Brokers,2.3,16.53,simulado
+Si,100,1,Bajo,CDT,tyba,0.15,5.96,simulado
+Si,200,120,Medio,ETFs,Trii,0.82,12.04,simulado
+No,1000,24,Medio,Fondos Indexados,Hapi,1.13,10.57,simulado
+Si,10000,36,Alto,ETFs Sectoriales,Hapi,1.48,21.47,simulado
+Si,1000,120,Medio,Fondo de Pensión Voluntaria,Porvenir,1.3,8.94,simulado
+Si,100,1,Bajo,CDT,Bancolombia eTrading,0.06,7.19,simulado
+No,200,48,Medio,ETFs,Trii,1.06,13.16,original
+Si,5000,36,Medio,ETFs,Trii,0.91,14.15,simulado
+Si,5000,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.47,5.45,simulado
+Si,25000,12,Medio,ETFs,Trii,0.92,11.22,simulado
+No,10000,120,Alto,ETFs Sectoriales,eToro,2.34,16.72,simulado
+No,500,48,Alto,ETFs Sectoriales,eToro,1.74,20.95,original
+Si,500,48,Medio,Fondo de Pensión Voluntaria,Porvenir,1.44,8.59,simulado
+Si,10000,60,Alto,ETFs Sectoriales,eToro,1.91,18.99,simulado
+Si,500,48,Alto,ETFs Sectoriales,eToro,1.11,20.88,original
+Si,200,36,Medio,ETFs,Interactive Brokers,0.85,11.59,simulado
+No,1000,24,Medio,Fondos Indexados,Trii,1.09,10.39,simulado
+Si,500,120,Alto,ETFs Sectoriales,Hapi,1.51,19.55,simulado
+Si,50000,12,Alto,Criptomonedas,Binance,1.24,27.54,simulado
+Si,10000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.19,4.68,simulado
+Si,50000,120,Medio,Fondo de Pensión Voluntaria,Porvenir,0.86,11.72,simulado
+Si,1000,120,Alto,ETFs Sectoriales,Hapi,2.05,20.45,original
+Si,5000,48,Medio,Fondo de Pensión Voluntaria,Davivienda,1.79,10.77,simulado
+Si,1000,120,Alto,Acciones Individuales,Hapi,2.16,20.74,original
+Si,5000,48,Alto,Acciones Individuales,eToro,1.88,13.63,simulado
+Si,50,60,Medio,ETFs,Hapi,0.53,11.01,original
+Si,50000,12,Bajo,Fondo de Deuda,tyba,0.22,6.15,simulado
+Si,50,120,Medio,Fondo de Pensión Voluntaria,Protección,1.45,8.83,simulado
+No,50000,36,Alto,ETFs Sectoriales,Interactive Brokers,2.54,15.28,simulado
+No,10000,1,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.05,5.51,simulado
+Si,10000,6,Medio,ETFs,Trii,0.86,11.27,simulado
+Si,50000,1,Alto,Criptomonedas,Bitso,1.94,25.38,simulado
+Si,100,1,Bajo,Fondo de Deuda,Bancolombia eTrading,0.21,4.74,simulado
+No,10000,12,Alto,Criptomonedas,Buda,1.41,23.94,simulado
+Si,100,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.11,5.62,simulado
+Si,50,3,Bajo,CDT,tyba,0.21,6.1,original
+No,10000,1,Medio,Carteras Colectivas,Hapi,0.39,10.84,simulado
+Si,10000,48,Alto,Acciones Individuales,Hapi,1.89,13.31,simulado
+No,100,120,Alto,ETFs Sectoriales,eToro,1.32,14.49,simulado
+Si,50000,120,Alto,Acciones Individuales,eToro,1.59,18.98,simulado
+Si,25000,3,Bajo,Bonos de Gobierno,Lulo Bank,0.31,8.44,original
+No,50000,120,Alto,Acciones Individuales,Interactive Brokers,1.49,17.85,simulado
+No,25000,12,Alto,Criptomonedas,Wenia,1.93,23.56,simulado
+Si,5000,36,Alto,ETFs Sectoriales,Interactive Brokers,1.55,18.43,simulado
+Si,500,120,Alto,Acciones Individuales,Interactive Brokers,1.53,20.77,simulado
+Si,500,120,Alto,Acciones Individuales,Hapi,1.83,21.79,original
+Si,1000,3,Bajo,CDT,tyba,0.11,7.22,simulado
+No,50,120,Alto,Acciones Individuales,Interactive Brokers,2.2,18.05,simulado
+No,100,120,Medio,Carteras Colectivas,Interactive Brokers,1.18,11.02,simulado
+Si,5000,36,Alto,ETFs Sectoriales,eToro,2.05,20.69,simulado
+No,200,60,Medio,Fondos Indexados,Interactive Brokers,0.82,10.74,simulado
+No,500,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.08,4.32,simulado
+Si,1000,36,Alto,Acciones Individuales,eToro,3.02,21.24,simulado
+No,50,24,Alto,Acciones Individuales,Interactive Brokers,2.46,19.28,simulado
+Si,200,6,Medio,Carteras Colectivas,Hapi,0.59,11.93,simulado
+No,10000,120,Alto,Acciones Individuales,eToro,2.3,21.74,simulado
+No,500,60,Alto,Acciones Individuales,Hapi,2.08,22.6,simulado
+No,1000,12,Medio,ETFs,Interactive Brokers,0.83,15.33,simulado
+No,25000,1,Medio,Fondos Indexados,Trii,0.95,10.4,original
+No,5000,60,Medio,ETFs,Interactive Brokers,0.89,13.03,simulado
+No,50000,24,Medio,Fondos Indexados,Interactive Brokers,0.65,9.32,original
+Si,500,36,Medio,Fondos Indexados,Hapi,0.69,10.06,simulado
+Si,200,1,Bajo,Bonos de Gobierno,Lulo Bank,0.05,4.98,simulado
+Si,100,3,Bajo,CDT,Lulo Bank,0.0,7.47,original
+Si,1000,6,Bajo,CDT,Lulo Bank,0.36,7.03,original
+Si,100,120,Alto,Acciones Individuales,Interactive Brokers,1.83,19.8,simulado
+Si,100,48,Alto,ETFs Sectoriales,Hapi,2.13,16.95,simulado
+Si,1000,48,Medio,ETFs,Interactive Brokers,0.68,8.72,original
+Si,5000,48,Alto,Acciones Individuales,Interactive Brokers,1.85,17.08,simulado
+Si,50,1,Bajo,Fondo de Deuda,tyba,0.43,5.12,original
+Si,5000,120,Alto,Acciones Individuales,eToro,2.03,17.22,simulado
+Si,25000,3,Medio,Carteras Colectivas,Interactive Brokers,0.8,12.23,simulado
+No,500,36,Alto,ETFs Sectoriales,Interactive Brokers,2.07,18.01,simulado
+No,5000,120,Alto,ETFs Sectoriales,Hapi,1.54,22.89,simulado
+No,200,60,Alto,Acciones Individuales,eToro,1.9,12.33,simulado
+Si,50,3,Bajo,CDT,tyba,0.21,7.36,original
+Si,200,48,Medio,ETFs,Hapi,1.01,14.36,simulado
+No,200,3,Alto,Criptomonedas,Binance,2.16,26.26,original
+No,50000,1,Medio,ETFs,Hapi,0.99,11.3,simulado
+No,500,36,Alto,Acciones Individuales,eToro,2.1,17.82,simulado
+Si,10000,12,Bajo,Fondo de Deuda,Lulo Bank,0.27,7.11,simulado
+No,5000,24,Medio,ETFs,Interactive Brokers,0.99,10.19,simulado
+Si,100,12,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.44,4.16,original
+No,200,120,Alto,Acciones Individuales,Hapi,1.38,14.63,simulado
+No,50000,36,Alto,ETFs Sectoriales,Hapi,1.9,18.69,simulado
+No,1000,60,Alto,Acciones Individuales,eToro,1.81,20.62,simulado
+No,500,3,Alto,Criptomonedas,Buda,1.39,22.12,original
+No,50000,24,Medio,Carteras Colectivas,tyba,0.38,13.0,simulado
+Si,5000,48,Alto,Acciones Individuales,eToro,1.04,19.12,original
+No,5000,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.08,5.77,simulado
+No,50,120,Medio,ETFs,Trii,0.91,13.99,original
+Si,10000,120,Alto,ETFs Sectoriales,Interactive Brokers,2.29,15.52,simulado
+Si,50,1,Bajo,CDT,Nu Colombia,0.21,5.21,simulado
+Si,5000,6,Bajo,CDT,Bancolombia eTrading,0.11,4.6,original
+No,5000,48,Alto,ETFs Sectoriales,Hapi,2.1,14.2,original
+No,200,24,Bajo,Fondo de Deuda,Bancolombia eTrading,0.08,8.32,original
+Si,500,120,Medio,Fondos Indexados,Hapi,0.81,10.3,simulado
+Si,50,24,Bajo,Fondo de Deuda,Bancolombia eTrading,0.0,7.5,simulado
+Si,50,6,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.09,4.28,simulado
+No,50000,12,Medio,ETFs,Hapi,0.63,13.95,simulado
+Si,200,3,Bajo,CDT,tyba,0.08,6.87,simulado
+Si,1000,1,Bajo,Bonos de Gobierno,Lulo Bank,0.13,5.82,simulado
+Si,100,12,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.18,7.4,simulado
+Si,1000,48,Medio,Fondos Indexados,Interactive Brokers,0.74,9.05,simulado
+Si,25000,24,Medio,ETFs,Trii,0.63,12.46,simulado
+Si,5000,12,Bajo,Fondo de Deuda,Bancolombia eTrading,0.33,4.99,simulado
+Si,5000,60,Medio,Fondo de Pensión Voluntaria,Porvenir,1.05,10.69,simulado
+Si,100,60,Alto,Acciones Individuales,eToro,1.12,16.02,original
+Si,5000,48,Medio,Fondo de Pensión Voluntaria,Porvenir,1.04,8.73,simulado
+No,10000,3,Medio,Fondos Indexados,Interactive Brokers,1.04,9.47,simulado
+Si,5000,120,Alto,ETFs Sectoriales,eToro,1.1,19.65,original
+Si,500,24,Medio,Fondos Indexados,Interactive Brokers,1.07,9.8,original
+Si,50,6,Bajo,Bonos de Gobierno,tyba,0.0,7.62,simulado
+No,10000,120,Medio,Fondo de Pensión Voluntaria,Protección,1.56,10.79,simulado
+No,10000,60,Alto,Acciones Individuales,Interactive Brokers,2.0,20.85,simulado
+No,500,120,Alto,Acciones Individuales,Interactive Brokers,1.04,14.59,simulado
+Si,100,60,Alto,Acciones Individuales,Interactive Brokers,2.2,16.8,simulado
+Si,5000,60,Alto,Acciones Individuales,eToro,2.09,16.59,simulado
+No,50,3,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.0,7.3,simulado
+Si,1000,3,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.1,4.26,simulado
+Si,10000,1,Alto,Criptomonedas,Kraken,1.76,17.83,simulado
+Si,25000,120,Alto,ETFs Sectoriales,eToro,1.44,18.75,original
+Si,5000,1,Bajo,Fondo de Deuda,tyba,0.26,5.94,simulado
+No,500,60,Alto,Acciones Individuales,Hapi,1.78,20.08,simulado
+Si,200,12,Bajo,CDT,Bancolombia eTrading,0.23,6.75,original
+No,50000,120,Alto,ETFs Sectoriales,eToro,2.13,14.32,original
+No,50000,120,Medio,Fondos Indexados,Trii,1.17,9.59,original
+Si,50,24,Bajo,Bonos de Gobierno,Lulo Bank,0.33,5.23,simulado
+Si,200,120,Alto,Acciones Individuales,Interactive Brokers,1.97,21.52,simulado
+Si,100,3,Bajo,CDT,tyba,0.42,6.72,original
+No,200,1,Bajo,CDT,tyba,0.2,5.81,simulado
+Si,1000,1,Bajo,CDT,tyba,0.11,7.62,simulado
+No,500,1,Alto,Criptomonedas,Kraken,1.4,27.16,original
+No,50,1,Alto,Criptomonedas,Buda,1.89,26.02,simulado
+No,50,60,Alto,Acciones Individuales,Interactive Brokers,1.39,20.86,simulado
+Si,5000,36,Alto,Acciones Individuales,Interactive Brokers,1.23,18.87,original
+Si,10000,48,Alto,Acciones Individuales,Interactive Brokers,1.36,18.12,simulado
+Si,25000,48,Medio,ETFs,Interactive Brokers,0.66,10.93,simulado
+Si,25000,12,Medio,Fondos Indexados,Hapi,0.62,12.18,simulado
+No,50000,12,Alto,Criptomonedas,Buda,1.28,24.41,simulado
+Si,100,3,Bajo,CDT,Lulo Bank,0.36,7.42,original
+No,25000,36,Medio,ETFs,Hapi,1.12,9.46,original
+Si,1000,120,Alto,Acciones Individuales,Interactive Brokers,2.72,20.79,simulado
+No,25000,24,Alto,Acciones Individuales,Interactive Brokers,1.99,19.56,simulado
+Si,200,60,Alto,Acciones Individuales,Interactive Brokers,1.22,14.43,original
+Si,5000,36,Alto,Acciones Individuales,Hapi,1.95,14.79,original
+Si,50,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.02,5.82,simulado
+Si,100,120,Medio,ETFs,Interactive Brokers,0.66,9.32,original
+Si,5000,24,Medio,Carteras Colectivas,Davivienda,0.82,11.55,simulado
+No,500,1,Alto,Criptomonedas,Binance,1.32,20.17,simulado
+Si,1000,1,Medio,ETFs,Hapi,0.53,12.66,simulado
+No,50,3,Alto,Criptomonedas,Buda,1.27,25.04,simulado
+Si,5000,6,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.09,5.26,simulado
+Si,100,3,Bajo,Bonos de Gobierno,tyba,0.03,5.71,original
+Si,10000,3,Bajo,Fondo de Deuda,tyba,0.13,6.81,simulado
+No,5000,36,Medio,Carteras Colectivas,tyba,0.9,8.62,simulado
+Si,200,12,Medio,Fondos Indexados,Interactive Brokers,0.91,10.75,simulado
+Si,1000,60,Alto,Acciones Individuales,Hapi,1.45,18.57,simulado
+Si,100,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.09,3.4,simulado
+Si,50,60,Alto,Acciones Individuales,Interactive Brokers,2.0,21.04,simulado
+Si,50,60,Alto,ETFs Sectoriales,eToro,2.41,19.31,original
+Si,10000,24,Alto,ETFs Sectoriales,Interactive Brokers,1.42,18.65,simulado
+Si,200,6,Bajo,CDT,Trii,0.28,6.12,simulado
+Si,50000,12,Medio,Carteras Colectivas,Davivienda,0.88,9.25,simulado
+Si,50,1,Medio,Fondos Indexados,Interactive Brokers,0.8,13.17,simulado
+Si,100,24,Bajo,Bonos de Gobierno,tyba,0.38,4.5,simulado
+No,10000,36,Medio,Fondo de Pensión Voluntaria,Davivienda,1.28,8.18,simulado
+Si,100,60,Alto,ETFs Sectoriales,eToro,1.89,18.16,simulado
+Si,5000,24,Medio,ETFs,Interactive Brokers,0.84,10.45,original
+Si,10000,36,Alto,ETFs Sectoriales,eToro,2.59,19.39,simulado
+Si,500,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.05,5.36,simulado
+Si,50000,48,Alto,ETFs Sectoriales,Interactive Brokers,2.4,16.12,original
+No,25000,6,Bajo,Fondo de Deuda,tyba,0.31,6.74,original
+Si,50,120,Alto,Acciones Individuales,eToro,1.64,17.65,simulado
+Si,200,36,Alto,ETFs Sectoriales,Hapi,1.85,17.36,simulado
+Si,100,120,Alto,ETFs Sectoriales,Hapi,2.02,18.03,simulado
+Si,25000,24,Alto,Acciones Individuales,eToro,1.92,21.22,original
+Si,200,3,Bajo,CDT,tyba,0.46,5.98,simulado
+No,50,3,Medio,Fondos Indexados,Hapi,0.62,12.06,simulado
+No,500,48,Medio,Carteras Colectivas,Interactive Brokers,0.65,12.26,simulado
+No,25000,120,Alto,Acciones Individuales,eToro,2.55,12.43,simulado
+Si,1000,24,Bajo,Bonos de Gobierno,Lulo Bank,0.0,4.95,simulado
+Si,50000,24,Bajo,CDT,Bancolombia eTrading,0.2,4.26,original
+No,25000,60,Alto,ETFs Sectoriales,Hapi,2.2,18.77,simulado
+No,500,1,Medio,ETFs,Trii,1.01,16.05,simulado
+No,200,48,Alto,Acciones Individuales,eToro,1.91,18.9,simulado
+No,5000,1,Alto,Criptomonedas,Buda,1.79,15.85,simulado
+Si,10000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.03,5.29,simulado
+No,5000,36,Alto,Acciones Individuales,Interactive Brokers,1.78,17.12,simulado
+Si,200,48,Alto,Acciones Individuales,Interactive Brokers,2.6,15.14,simulado
+Si,50000,48,Alto,ETFs Sectoriales,Hapi,1.89,20.48,simulado
+Si,50,120,Alto,ETFs Sectoriales,Hapi,1.96,15.98,original
+Si,50000,12,Alto,Criptomonedas,Buda,1.57,27.95,simulado
+No,50,3,Alto,Criptomonedas,Bitso,2.36,20.84,simulado
+Si,50,6,Bajo,Fondo de Deuda,Bancolombia eTrading,0.55,6.54,simulado
+No,50000,48,Alto,Acciones Individuales,eToro,1.69,14.58,original
+No,50000,48,Medio,ETFs,Interactive Brokers,0.82,9.93,original
+No,5000,6,Medio,Fondos Indexados,Interactive Brokers,1.01,15.41,simulado
+Si,25000,6,Medio,ETFs,Interactive Brokers,0.64,13.13,simulado
+Si,25000,12,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.08,6.19,simulado
+Si,5000,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.09,4.73,simulado
+No,25000,48,Alto,Acciones Individuales,Hapi,2.28,15.76,simulado
+No,500,24,Alto,Acciones Individuales,Interactive Brokers,0.74,19.1,simulado
+No,50,36,Alto,ETFs Sectoriales,Hapi,2.19,17.93,original
+No,200,48,Medio,ETFs,Interactive Brokers,0.99,12.6,original
+Si,200,3,Medio,ETFs,Trii,0.9,12.34,simulado
+Si,5000,120,Alto,Acciones Individuales,eToro,1.91,16.83,simulado
+No,25000,1,Alto,Criptomonedas,Buda,1.37,22.42,original
+No,100,12,Bajo,CDT,Lulo Bank,0.5,4.87,simulado
+No,50,6,Alto,Criptomonedas,Binance,2.12,21.72,simulado
+No,50000,3,Alto,Criptomonedas,Binance,1.14,18.18,simulado
+Si,200,12,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.0,4.55,simulado
+Si,500,60,Alto,ETFs Sectoriales,Interactive Brokers,1.47,13.28,simulado
+No,10000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,5.12,simulado
+No,1000,1,Medio,Fondos Indexados,Hapi,0.9,9.9,simulado
+Si,10000,12,Bajo,Bonos de Gobierno,tyba,0.14,6.78,simulado
+Si,50000,6,Bajo,Fondo de Deuda,Davivienda,0.06,8.7,simulado
+Si,50,1,Bajo,Fondo de Deuda,Lulo Bank,0.0,6.03,original
+No,10000,3,Medio,Carteras Colectivas,Davivienda,1.14,15.67,simulado
+Si,5000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.06,5.72,simulado
+Si,50,36,Alto,ETFs Sectoriales,Hapi,2.0,18.23,simulado
+Si,10000,1,Medio,Carteras Colectivas,Hapi,0.76,15.5,simulado
+No,1000,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.05,5.37,simulado
+Si,200,12,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.43,4.82,original
+No,500,120,Alto,ETFs Sectoriales,Interactive Brokers,1.62,20.45,simulado
+No,50000,120,Alto,ETFs Sectoriales,Hapi,2.11,14.91,simulado
+No,10000,24,Medio,ETFs,Trii,0.88,12.38,original
+No,500,48,Alto,Acciones Individuales,Interactive Brokers,2.29,12.95,simulado
+No,10000,36,Alto,ETFs Sectoriales,Hapi,2.48,17.03,original
+Si,500,24,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.03,5.31,simulado
+No,1000,1,Bajo,Fondo de Deuda,Bancolombia eTrading,0.15,5.36,simulado
+No,200,3,Medio,Fondos Indexados,Hapi,0.9,12.21,simulado
+Si,1000,60,Medio,Carteras Colectivas,Trii,0.74,10.75,simulado
+Si,50,48,Alto,Acciones Individuales,Hapi,1.69,15.14,original
+Si,10000,36,Alto,Acciones Individuales,Interactive Brokers,1.84,18.37,simulado
+No,500,24,Bajo,Bonos de Gobierno,Lulo Bank,0.49,4.44,original
+Si,200,3,Bajo,Fondo de Deuda,Trii,0.2,5.86,simulado
+No,50000,12,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.07,5.0,simulado
+No,1000,12,Medio,Carteras Colectivas,Interactive Brokers,0.69,13.94,simulado
+Si,50,24,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.08,4.22,simulado
+Si,200,48,Medio,ETFs,Interactive Brokers,0.84,9.28,original
+No,10000,3,Alto,Criptomonedas,Buda,2.04,23.76,original
+No,50000,12,Medio,ETFs,Trii,1.09,11.56,simulado
+Si,500,120,Medio,ETFs,Interactive Brokers,0.79,9.1,simulado
+No,1000,48,Medio,Fondo de Pensión Voluntaria,Porvenir,0.94,8.02,simulado
+No,50,48,Alto,Acciones Individuales,Interactive Brokers,1.33,13.34,simulado
+Si,50000,24,Medio,Carteras Colectivas,Interactive Brokers,1.02,11.02,simulado
+Si,500,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.0,5.09,simulado
+No,200,6,Medio,Fondos Indexados,Hapi,0.91,8.5,simulado
+Si,500,120,Alto,ETFs Sectoriales,Interactive Brokers,1.76,15.75,original
+Si,50000,24,Bajo,CDT,Lulo Bank,0.27,6.91,simulado
+Si,1000,12,Alto,Criptomonedas,Buda,1.58,20.85,simulado
+Si,50,3,Bajo,Bonos de Gobierno,tyba,0.41,6.78,original
+Si,1000,1,Medio,Fondos Indexados,Trii,1.1,13.88,simulado
+No,5000,60,Alto,ETFs Sectoriales,eToro,2.4,18.18,original
+Si,500,48,Medio,Carteras Colectivas,Hapi,1.01,9.75,simulado
+Si,100,12,Medio,ETFs,Hapi,1.08,7.87,simulado
+Si,50000,3,Bajo,Fondo de Deuda,tyba,0.36,4.34,original
+Si,25000,3,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.15,5.69,original
+Si,200,120,Alto,ETFs Sectoriales,Hapi,2.53,14.78,simulado
+Si,50000,24,Alto,Acciones Individuales,Hapi,1.61,15.78,simulado
+No,1000,48,Alto,Acciones Individuales,Interactive Brokers,2.27,17.31,simulado
+Si,200,60,Medio,Fondos Indexados,Trii,0.8,13.05,simulado
+Si,10000,3,Bajo,Fondo de Deuda,Lulo Bank,0.08,3.42,simulado
+Si,100,60,Alto,ETFs Sectoriales,eToro,1.53,18.5,simulado
+Si,500,24,Medio,Carteras Colectivas,Hapi,0.92,11.07,original
+Si,5000,48,Alto,Acciones Individuales,Interactive Brokers,2.39,14.01,original
+Si,50,3,Bajo,Bonos de Gobierno,tyba,0.09,7.14,original
+Si,100,120,Alto,Acciones Individuales,eToro,2.09,21.68,simulado
+Si,50,12,Alto,Criptomonedas,Wenia,1.44,16.64,simulado
+Si,10000,6,Bajo,Bonos de Gobierno,Lulo Bank,0.26,5.4,simulado
+Si,25000,60,Alto,ETFs Sectoriales,Hapi,1.64,22.6,simulado
+Si,50000,120,Alto,ETFs Sectoriales,eToro,1.94,20.05,original
+Si,10000,3,Bajo,Bonos de Gobierno,tyba,0.42,5.24,simulado
+Si,50000,6,Medio,Fondos Indexados,Hapi,0.91,11.5,simulado
+Si,100,12,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.09,4.31,simulado
+No,10000,12,Medio,Fondos Indexados,Trii,1.17,12.37,simulado
+Si,50000,3,Medio,Carteras Colectivas,Trii,1.29,13.62,simulado
+No,50,12,Medio,Fondos Indexados,Hapi,1.14,13.98,original
+Si,100,1,Medio,ETFs,Trii,0.74,11.53,original
+Si,500,12,Medio,ETFs,Interactive Brokers,0.9,11.82,simulado
+No,50,6,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.34,4.27,simulado
+No,500,60,Alto,Acciones Individuales,Interactive Brokers,1.65,15.11,simulado
+Si,50000,1,Bajo,Bonos de Gobierno,Trii,0.06,6.29,simulado
+Si,200,36,Alto,ETFs Sectoriales,Hapi,1.82,15.8,simulado
+No,25000,1,Bajo,Bonos de Gobierno,Trii,0.2,4.28,simulado
+No,100,24,Bajo,Bonos de Gobierno,Lulo Bank,0.12,3.14,simulado
+Si,50,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.03,3.23,simulado
+Si,50000,48,Alto,Acciones Individuales,Interactive Brokers,2.01,18.01,simulado
+Si,5000,1,Medio,Carteras Colectivas,Davivienda,0.8,10.76,simulado
+Si,100,120,Medio,Fondo de Pensión Voluntaria,Porvenir,1.11,8.47,simulado
+No,50,36,Alto,ETFs Sectoriales,Hapi,1.52,19.21,simulado
+Si,200,60,Medio,ETFs,Hapi,0.86,11.19,simulado
+Si,5000,6,Bajo,Bonos de Gobierno,tyba,0.35,5.96,simulado
+Si,500,1,Bajo,CDT,Bancolombia eTrading,0.47,6.29,simulado
+Si,1000,24,Medio,ETFs,Interactive Brokers,1.09,13.1,simulado
+No,1000,24,Alto,Acciones Individuales,Hapi,2.12,17.27,simulado
+Si,50,3,Bajo,CDT,Nu Colombia,0.36,5.33,simulado
+No,25000,1,Medio,Fondos Indexados,Hapi,0.99,11.86,simulado
+Si,25000,48,Alto,ETFs Sectoriales,Interactive Brokers,1.69,18.09,simulado
+Si,10000,6,Alto,Criptomonedas,Buda,2.0,21.67,simulado
+Si,25000,3,Bajo,CDT,Davivienda,0.07,8.64,simulado
+Si,100,120,Alto,Acciones Individuales,eToro,2.03,18.87,simulado
+Si,50,120,Alto,Acciones Individuales,Interactive Brokers,1.36,15.35,simulado
+No,200,60,Alto,Acciones Individuales,eToro,2.31,16.47,simulado
+No,25000,12,Alto,Criptomonedas,Wenia,2.22,19.75,simulado
+Si,200,120,Alto,ETFs Sectoriales,Hapi,1.12,15.36,original
+Si,5000,60,Medio,ETFs,Hapi,0.57,13.32,original
+Si,500,1,Bajo,Fondo de Deuda,Davivienda,0.0,8.32,simulado
+No,50,60,Alto,ETFs Sectoriales,Interactive Brokers,1.39,19.93,simulado
+No,5000,48,Alto,Acciones Individuales,eToro,2.14,21.29,simulado
+No,5000,3,Medio,Carteras Colectivas,Davivienda,0.76,10.63,simulado
+No,1000,1,Medio,ETFs,Trii,1.04,8.77,original
+No,50,36,Alto,ETFs Sectoriales,eToro,2.03,14.53,simulado
+No,50000,120,Alto,Acciones Individuales,Hapi,1.59,14.0,simulado
+Si,50,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,5.24,simulado
+No,50000,36,Alto,Acciones Individuales,eToro,1.23,16.72,original
+Si,25000,120,Alto,Acciones Individuales,Interactive Brokers,1.42,17.39,original
+Si,100,60,Medio,ETFs,Trii,0.75,13.44,simulado
+Si,200,60,Alto,ETFs Sectoriales,Interactive Brokers,2.19,17.25,simulado
+No,100,36,Medio,ETFs,Hapi,0.87,18.01,simulado
+No,5000,60,Medio,Fondo de Pensión Voluntaria,Protección,1.28,9.89,simulado
+No,50,120,Alto,Acciones Individuales,Interactive Brokers,1.17,21.51,original
+Si,200,1,Medio,Fondos Indexados,Trii,1.01,12.79,simulado
+Si,10000,12,Bajo,CDT,Bancolombia eTrading,0.13,5.15,original
+No,1000,3,Medio,Carteras Colectivas,Hapi,0.1,10.97,simulado
+Si,500,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.05,5.23,simulado
+Si,500,3,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.0,5.01,simulado
+Si,200,12,Bajo,Fondo de Deuda,Bancolombia eTrading,0.3,5.94,simulado
+Si,5000,1,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.1,4.67,simulado
+Si,10000,3,Bajo,CDT,Nu Colombia,0.41,8.54,simulado
+Si,5000,12,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.12,6.62,simulado
+Si,500,1,Bajo,Bonos de Gobierno,tyba,0.54,6.83,simulado
+Si,10000,36,Medio,ETFs,Trii,1.09,8.55,original
+Si,500,48,Alto,ETFs Sectoriales,eToro,1.86,18.69,simulado
+No,1000,12,Medio,Fondos Indexados,Hapi,1.14,9.55,simulado
+Si,500,24,Medio,ETFs,Trii,0.92,12.22,simulado
+No,25000,3,Medio,ETFs,Interactive Brokers,0.97,14.28,simulado
+Si,5000,3,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.02,5.33,simulado
+Si,100,12,Bajo,CDT,tyba,0.37,5.95,original
+Si,500,36,Alto,ETFs Sectoriales,Hapi,2.07,18.71,simulado
+Si,10000,24,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.05,4.69,simulado
+No,1000,3,Medio,ETFs,Hapi,0.94,12.79,simulado
+No,10000,1,Medio,Carteras Colectivas,Hapi,0.67,8.62,original
+No,200,24,Medio,Carteras Colectivas,Trii,0.8,12.06,simulado
+No,5000,120,Medio,Carteras Colectivas,Trii,1.11,10.25,simulado
+Si,5000,36,Medio,ETFs,Hapi,0.66,10.22,simulado
+No,100,120,Medio,ETFs,Interactive Brokers,0.6,10.19,simulado
+No,25000,24,Medio,ETFs,Trii,0.94,13.42,original
+Si,50000,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.07,4.11,simulado
+Si,50,120,Alto,Acciones Individuales,Interactive Brokers,1.62,17.7,simulado
+Si,1000,60,Alto,ETFs Sectoriales,Hapi,1.49,15.69,original
+No,25000,6,Medio,Carteras Colectivas,Hapi,0.56,11.37,simulado
+No,1000,12,Medio,ETFs,Interactive Brokers,1.2,9.95,simulado
+Si,10000,24,Bajo,Bonos de Gobierno,Lulo Bank,0.15,5.05,simulado
+Si,50,1,Alto,Criptomonedas,Wenia,1.91,19.35,simulado
+Si,1000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.03,4.29,simulado
+Si,200,1,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.38,6.88,simulado
+Si,500,1,Bajo,Fondo de Deuda,Lulo Bank,0.12,6.14,original
+Si,10000,48,Alto,ETFs Sectoriales,Hapi,2.19,19.74,simulado
+No,100,6,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.01,5.05,simulado
+No,50,1,Medio,ETFs,Trii,0.69,9.34,original
+No,500,12,Medio,ETFs,Trii,1.04,14.37,simulado
+Si,1000,120,Alto,Acciones Individuales,Interactive Brokers,1.17,19.98,original
+No,50000,12,Bajo,Fondo de Deuda,Bancolombia eTrading,0.06,7.01,original
+Si,200,6,Bajo,Bonos de Gobierno,tyba,0.28,5.77,simulado
+No,1000,120,Alto,Acciones Individuales,Hapi,1.43,14.62,original
+No,50,1,Medio,Carteras Colectivas,Hapi,1.21,8.81,simulado
+No,10000,3,Bajo,Fondo de Deuda,Lulo Bank,0.22,5.84,simulado
+No,500,6,Bajo,CDT,Lulo Bank,0.24,8.1,simulado
+Si,50,24,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.06,4.51,simulado
+No,200,48,Alto,ETFs Sectoriales,Hapi,1.99,19.35,simulado
+Si,1000,12,Bajo,Cuenta de Ahorro Remunerada,Davivienda,0.1,6.81,simulado
+Si,50000,60,Alto,ETFs Sectoriales,eToro,1.33,18.38,simulado
+No,5000,3,Alto,Criptomonedas,Kraken,2.4,21.22,original
+Si,50000,6,Medio,Carteras Colectivas,Hapi,1.23,10.7,simulado
+Si,25000,60,Medio,Fondo de Pensión Voluntaria,Protección,1.8,9.96,simulado
+No,200,24,Medio,ETFs,Interactive Brokers,0.58,11.76,original
+No,10000,120,Alto,Acciones Individuales,Interactive Brokers,2.32,20.49,original
+Si,200,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.07,5.78,simulado
+Si,5000,24,Alto,ETFs Sectoriales,eToro,1.61,19.35,simulado
+No,50,1,Alto,Criptomonedas,Buda,2.11,27.05,simulado
+Si,10000,48,Alto,ETFs Sectoriales,eToro,1.73,18.31,original
+No,500,120,Alto,ETFs Sectoriales,Interactive Brokers,1.9,14.7,simulado
+No,500,60,Medio,Fondos Indexados,Hapi,0.65,12.55,simulado
+Si,200,6,Medio,ETFs,Trii,0.69,11.79,simulado
+No,200,3,Alto,Criptomonedas,Kraken,1.8,24.02,simulado
+Si,5000,12,Medio,Fondos Indexados,Trii,0.56,13.36,simulado
+No,10000,3,Bajo,Fondo de Deuda,Bancolombia eTrading,0.36,4.62,simulado
+Si,10000,12,Alto,ETFs Sectoriales,Hapi,1.75,13.77,simulado
+No,1000,48,Medio,Carteras Colectivas,Interactive Brokers,0.93,10.92,simulado
+Si,100,1,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.0,4.47,simulado
+No,25000,24,Medio,ETFs,Interactive Brokers,1.29,8.95,simulado
+No,50,12,Medio,ETFs,Hapi,0.89,12.25,simulado
+No,500,48,Alto,Acciones Individuales,eToro,1.36,21.12,simulado
+No,5000,120,Alto,Acciones Individuales,eToro,1.67,16.51,simulado
+No,100,60,Alto,ETFs Sectoriales,Hapi,2.5,19.87,simulado
+No,200,120,Alto,Acciones Individuales,Hapi,1.82,17.99,simulado
+No,50000,1,Alto,Criptomonedas,Kraken,2.02,20.04,original
+Si,200,3,Bajo,CDT,Bancolombia eTrading,0.48,7.62,original
+Si,1000,36,Alto,ETFs Sectoriales,eToro,2.39,18.64,simulado
+Si,50,3,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.47,6.57,original
+No,100,1,Alto,Criptomonedas,Binance,1.39,27.46,original
+Si,50,24,Bajo,Fondo de Deuda,tyba,0.45,7.35,original
+No,50,60,Alto,ETFs Sectoriales,eToro,1.73,15.22,simulado
+No,500,24,Alto,Acciones Individuales,Interactive Brokers,1.18,21.95,original
+Si,50,3,Medio,Fondos Indexados,Trii,0.66,12.16,original
+Si,10000,60,Alto,Acciones Individuales,eToro,1.38,22.22,simulado
+No,200,12,Medio,ETFs,Interactive Brokers,1.01,13.88,original
+No,200,120,Alto,Acciones Individuales,Interactive Brokers,1.3,16.72,simulado
+Si,50000,60,Medio,ETFs,Interactive Brokers,0.95,13.12,simulado
+Si,50000,36,Medio,ETFs,Interactive Brokers,0.69,7.86,simulado
+No,100,3,Medio,ETFs,Trii,0.95,13.11,original
+Si,25000,60,Alto,ETFs Sectoriales,eToro,1.5,19.21,simulado
+No,100,24,Bajo,CDT,Lulo Bank,0.19,6.59,original
+Si,500,3,Bajo,CDT,Lulo Bank,0.42,6.99,simulado
+Si,1000,120,Alto,Acciones Individuales,Interactive Brokers,1.12,17.57,simulado
+No,100,6,Medio,Fondos Indexados,Hapi,1.16,10.53,simulado
+Si,100,120,Medio,Carteras Colectivas,Trii,0.99,9.4,simulado
+No,50,1,Alto,Criptomonedas,Binance,1.86,21.91,simulado
+Si,50,60,Alto,Acciones Individuales,Interactive Brokers,2.29,21.77,original
+Si,50,60,Medio,Fondo de Pensión Voluntaria,Protección,0.96,9.67,simulado
+Si,100,6,Bajo,CDT,Pibank,0.33,5.78,simulado
+Si,25000,1,Alto,Criptomonedas,Binance,2.09,18.93,simulado
+No,50,60,Medio,ETFs,Trii,0.57,13.29,simulado
+Si,10000,60,Medio,Carteras Colectivas,Hapi,1.08,13.46,original
+Si,25000,24,Bajo,CDT,tyba,0.2,4.19,simulado
+Si,25000,36,Alto,Acciones Individuales,Interactive Brokers,1.05,21.61,original
+Si,10000,60,Alto,Acciones Individuales,Interactive Brokers,1.58,19.99,simulado
+Si,5000,60,Alto,Acciones Individuales,eToro,1.63,17.64,original
+Si,10000,24,Alto,ETFs Sectoriales,Hapi,1.66,15.26,original
+Si,10000,1,Bajo,Bonos de Gobierno,tyba,0.2,3.76,simulado
+No,25000,48,Medio,Fondo de Pensión Voluntaria,Protección,0.91,8.92,simulado
+Si,200,6,Medio,ETFs,Interactive Brokers,0.82,12.08,simulado
+Si,1000,3,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.04,4.23,simulado
+Si,10000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.05,5.22,simulado
+Si,1000,12,Alto,Criptomonedas,Buda,1.45,25.8,original
+Si,50000,3,Medio,Carteras Colectivas,tyba,1.16,9.79,simulado
+Si,50,60,Medio,ETFs,Interactive Brokers,1.09,12.93,original
+Si,50000,24,Bajo,Fondo de Deuda,Bancolombia eTrading,0.08,5.71,original
+Si,50000,3,Bajo,CDT,Lulo Bank,0.23,5.37,original
+Si,5000,1,Bajo,Bonos de Gobierno,Lulo Bank,0.06,6.07,simulado
+Si,1000,24,Alto,ETFs Sectoriales,eToro,1.87,17.52,simulado
+Si,1000,24,Bajo,CDT,tyba,0.48,8.17,original
+No,50000,3,Bajo,CDT,Bancolombia eTrading,0.0,5.29,original
+Si,500,24,Bajo,Bonos de Gobierno,Lulo Bank,0.21,4.45,original
+No,100,60,Alto,Acciones Individuales,eToro,1.5,17.75,simulado
+No,50000,6,Bajo,CDT,Trii,0.31,7.32,simulado
+No,50,3,Medio,Fondos Indexados,Hapi,0.97,11.1,simulado
+Si,1000,6,Medio,ETFs,Hapi,0.56,8.28,original
+Si,25000,6,Alto,Criptomonedas,Buda,1.97,19.11,simulado
+Si,200,60,Alto,Acciones Individuales,Interactive Brokers,1.42,19.3,simulado
+No,50000,60,Medio,Carteras Colectivas,Trii,1.07,11.3,original
+Si,100,1,Medio,ETFs,Hapi,0.95,8.36,simulado
+Si,1000,60,Alto,Acciones Individuales,Hapi,1.74,20.32,simulado
+Si,50000,24,Alto,Acciones Individuales,Interactive Brokers,1.92,23.4,simulado
+Si,200,48,Medio,Fondo de Pensión Voluntaria,Porvenir,1.18,9.29,simulado
+Si,50000,48,Medio,Carteras Colectivas,Davivienda,1.11,10.88,simulado
+Si,200,1,Medio,Fondos Indexados,Interactive Brokers,0.96,13.03,original
+Si,50000,24,Bajo,Fondo de Deuda,Davivienda,0.16,6.8,simulado
+Si,50,60,Alto,Acciones Individuales,eToro,2.15,16.67,simulado
+Si,200,1,Bajo,Fondo de Deuda,tyba,0.13,5.11,original
+Si,10000,36,Medio,Carteras Colectivas,Interactive Brokers,0.6,11.19,original
+Si,50,12,Alto,Criptomonedas,Kraken,1.76,13.9,simulado
+No,50000,24,Alto,Acciones Individuales,Interactive Brokers,2.35,19.34,simulado
+Si,500,3,Medio,Fondo de Pensión Voluntaria,Porvenir,1.35,7.34,simulado
+No,100,48,Alto,Acciones Individuales,eToro,1.07,17.07,simulado
+Si,5000,6,Bajo,CDT,Nu Colombia,0.01,7.21,simulado
+Si,1000,24,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.05,4.9,simulado
+Si,25000,60,Medio,Fondos Indexados,Hapi,0.92,6.92,simulado
+Si,200,6,Bajo,CDT,tyba,0.14,7.59,original
+Si,10000,48,Alto,Acciones Individuales,eToro,1.28,19.84,simulado
+No,200,60,Alto,Acciones Individuales,eToro,1.52,22.0,original
+No,10000,60,Medio,Fondo de Pensión Voluntaria,tyba,1.59,7.72,simulado
+No,50,3,Medio,Fondos Indexados,Trii,0.65,13.66,original
+Si,5000,3,Bajo,Bonos de Gobierno,Lulo Bank,0.29,9.72,simulado
+Si,50,12,Alto,Criptomonedas,Buda,1.41,25.54,original
+No,25000,3,Alto,Criptomonedas,Binance,2.16,16.53,original
+Si,10000,48,Alto,Acciones Individuales,eToro,2.56,18.2,simulado
+Si,25000,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.11,4.71,simulado
+No,10000,6,Bajo,Bonos de Gobierno,Lulo Bank,0.3,6.32,simulado
+Si,25000,48,Medio,Carteras Colectivas,Trii,0.67,10.92,simulado
+Si,5000,36,Alto,ETFs Sectoriales,Interactive Brokers,1.46,17.48,simulado
+No,5000,12,Alto,Criptomonedas,Binance,1.37,29.7,original
+Si,100,48,Medio,Fondos Indexados,Hapi,0.71,8.14,simulado
+No,25000,120,Medio,Fondos Indexados,Interactive Brokers,1.17,13.97,original
+No,25000,24,Alto,Acciones Individuales,eToro,1.82,17.4,original
+No,1000,24,Medio,Carteras Colectivas,Trii,1.04,11.98,simulado
+No,10000,6,Medio,ETFs,Trii,0.67,9.54,simulado
+Si,1000,6,Bajo,Fondo de Deuda,Lulo Bank,0.03,5.72,original
+No,500,36,Medio,ETFs,Interactive Brokers,0.56,11.09,original
+No,500,120,Alto,Acciones Individuales,eToro,2.12,19.63,simulado
+No,5000,48,Medio,Fondo de Pensión Voluntaria,Porvenir,1.06,12.42,simulado
+Si,100,120,Alto,Acciones Individuales,Interactive Brokers,1.43,15.82,original
+Si,10000,1,Bajo,Fondo de Deuda,Bancolombia eTrading,0.24,4.67,original
+Si,500,1,Medio,Fondos Indexados,Hapi,1.16,11.11,simulado
+Si,5000,1,Bajo,Fondo de Deuda,Davivienda,0.27,4.96,simulado
+Si,500,120,Alto,Acciones Individuales,eToro,1.17,18.06,simulado
+Si,25000,60,Alto,ETFs Sectoriales,eToro,2.37,18.82,simulado
+Si,10000,60,Medio,Fondo de Pensión Voluntaria,Protección,1.58,6.78,simulado
+Si,50,120,Alto,Acciones Individuales,Interactive Brokers,1.67,18.15,simulado
+Si,200,12,Bajo,CDT,tyba,0.48,5.01,simulado
+Si,1000,12,Alto,Criptomonedas,Binance,2.4,19.63,simulado
+Si,50,36,Alto,ETFs Sectoriales,eToro,1.54,13.4,simulado
+No,10000,36,Medio,Fondos Indexados,Hapi,0.66,8.19,original
+Si,50,60,Alto,ETFs Sectoriales,eToro,1.52,16.35,simulado
+No,100,60,Alto,ETFs Sectoriales,Interactive Brokers,1.67,20.07,simulado
+Si,1000,3,Medio,ETFs,Hapi,0.94,12.05,simulado
+No,1000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.04,4.62,simulado
+No,10000,1,Alto,Criptomonedas,Buda,1.51,30.8,simulado
+No,200,1,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,3.16,simulado
+Si,50,60,Medio,Fondo de Pensión Voluntaria,Protección,1.27,6.76,simulado
+No,10000,6,Bajo,Fondo de Deuda,Bancolombia eTrading,0.51,5.13,simulado
+No,1000,6,Medio,Carteras Colectivas,Hapi,1.08,13.64,original
+Si,1000,6,Bajo,Cuenta de Ahorro Remunerada,Pibank,0.01,4.75,simulado
+Si,5000,60,Medio,Carteras Colectivas,Hapi,1.16,11.0,original
+No,200,12,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.07,5.32,simulado
+No,200,1,Alto,Criptomonedas,Buda,1.92,23.87,simulado
+No,50,120,Medio,Fondo de Pensión Voluntaria,tyba,1.41,8.94,simulado
+No,25000,1,Bajo,Fondo de Deuda,tyba,0.2,5.53,original
+Si,10000,6,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.04,5.13,simulado
+Si,5000,6,Bajo,CDT,Nu Colombia,0.1,5.16,simulado
+Si,200,12,Bajo,CDT,Davivienda,0.35,6.43,simulado
+Si,10000,3,Bajo,CDT,Nu Colombia,0.44,7.64,simulado
+No,10000,3,Bajo,Fondo de Deuda,Davivienda,0.32,6.64,simulado
+No,500,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.03,4.47,simulado
+Si,5000,60,Alto,ETFs Sectoriales,Hapi,1.77,14.6,simulado
+No,25000,1,Bajo,Fondo de Deuda,Bancolombia eTrading,0.39,5.56,original
+Si,50,12,Bajo,Fondo de Deuda,Davivienda,0.24,6.45,simulado
+No,25000,120,Alto,Acciones Individuales,Interactive Brokers,1.84,14.88,simulado
+No,100,1,Medio,ETFs,Trii,0.94,12.57,simulado
+Si,100,36,Alto,ETFs Sectoriales,Hapi,1.74,18.25,simulado
+Si,50,3,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.13,3.87,simulado
+No,50000,36,Medio,ETFs,Interactive Brokers,1.08,10.84,simulado
+Si,1000,1,Medio,Carteras Colectivas,Trii,0.7,9.79,original
+No,25000,6,Medio,ETFs,Trii,0.95,8.79,simulado
+No,50000,36,Alto,Acciones Individuales,eToro,2.25,20.02,original
+No,50,60,Alto,ETFs Sectoriales,eToro,2.34,19.72,simulado
+No,200,36,Medio,Fondos Indexados,Hapi,0.95,10.67,simulado
+Si,500,12,Medio,ETFs,Hapi,0.62,8.97,simulado
+Si,50,60,Medio,Fondos Indexados,Hapi,0.84,10.92,simulado
+No,100,24,Alto,ETFs Sectoriales,Interactive Brokers,2.32,20.2,simulado
+No,500,6,Medio,Fondos Indexados,Interactive Brokers,1.19,11.58,simulado
+Si,10000,48,Medio,Fondos Indexados,Trii,0.98,10.59,simulado
+Si,200,48,Medio,Fondos Indexados,Interactive Brokers,1.02,8.93,original
+Si,1000,60,Alto,Acciones Individuales,Interactive Brokers,1.95,15.77,simulado
+No,25000,3,Medio,ETFs,Trii,1.23,7.51,simulado
+No,1000,48,Medio,ETFs,Interactive Brokers,0.93,8.57,simulado
+Si,25000,6,Bajo,Fondo de Deuda,Lulo Bank,0.24,8.06,original
+Si,50,36,Alto,ETFs Sectoriales,eToro,2.14,18.29,original
+Si,1000,3,Bajo,Bonos de Gobierno,Lulo Bank,0.13,7.83,original
+Si,10000,6,Bajo,Cuenta de Ahorro Remunerada,Nu Colombia,0.1,5.39,simulado
+Si,100,24,Bajo,CDT,Pibank,0.27,7.1,simulado
+Si,1000,24,Medio,Carteras Colectivas,tyba,0.65,10.21,simulado
+No,10000,1,Alto,Criptomonedas,Bitso,1.73,25.55,simulado
+No,25000,36,Medio,ETFs,Interactive Brokers,0.68,12.25,original
+Si,200,24,Medio,Carteras Colectivas,Davivienda,0.55,9.37,simulado
+No,500,24,Medio,ETFs,Trii,0.8,16.33,simulado
+Si,500,1,Bajo,Fondo de Deuda,Davivienda,0.42,5.4,simulado
+No,50,36,Alto,Acciones Individuales,Interactive Brokers,2.2,15.63,simulado
+Si,25000,6,Bajo,Fondo de Deuda,Davivienda,0.32,6.47,simulado
+Si,200,12,Medio,ETFs,Trii,0.82,11.77,simulado
+Si,50,36,Medio,ETFs,Interactive Brokers,1.08,9.47,simulado
+Si,100,3,Bajo,Bonos de Gobierno,Bancolombia eTrading,0.32,7.08,simulado
+Si,10000,6,Bajo,Fondo de Deuda,Lulo Bank,0.31,4.12,original
+Si,25000,3,Alto,Criptomonedas,Buda,2.12,23.5,simulado
+Si,25000,120,Alto,Acciones Individuales,Hapi,2.15,16.35,simulado
+Si,10000,1,Alto,Criptomonedas,Binance,1.83,15.74,simulado
+Si,500,48,Medio,Fondos Indexados,Hapi,0.13,10.83,simulado
+Si,10000,36,Medio,Fondos Indexados,Trii,1.0,11.05,original
+Si,25000,6,Bajo,Fondo de Deuda,tyba,0.13,5.49,simulado
+No,500,48,Alto,ETFs Sectoriales,Hapi,1.9,15.13,simulado
+Si,200,12,Medio,ETFs,Hapi,0.75,12.73,simulado
+Si,50,3,Bajo,Fondo de Deuda,tyba,0.27,5.63,simulado
+No,10000,6,Alto,Criptomonedas,Binance,1.55,20.34,simulado
+Si,200,12,Bajo,Fondo de Deuda,Davivienda,0.07,4.68,simulado
+Si,10000,48,Alto,ETFs Sectoriales,Hapi,1.54,21.11,simulado
+No,5000,120,Medio,ETFs,Hapi,1.14,9.09,original
+No,500,3,Alto,Criptomonedas,Buda,1.68,25.54,original
+Si,50,6,Bajo,CDT,Trii,0.19,6.6,simulado
+Si,10000,48,Alto,Acciones Individuales,eToro,1.65,15.6,simulado
+No,1000,1,Medio,Fondos Indexados,Trii,0.68,6.65,simulado
+Si,1000,48,Alto,ETFs Sectoriales,Hapi,2.0,16.49,simulado
+Si,10000,12,Medio,Fondos Indexados,Interactive Brokers,1.24,10.5,simulado
+No,50,6,Medio,Fondos Indexados,Hapi,0.84,10.29,simulado
+No,50000,3,Alto,Criptomonedas,Wenia,1.49,23.95,simulado
+No,50,12,Bajo,Fondo de Deuda,Bancolombia eTrading,0.1,7.13,original
+No,50,48,Alto,ETFs Sectoriales,Hapi,1.56,18.71,simulado
+No,1000,24,Alto,Acciones Individuales,Interactive Brokers,1.66,17.93,simulado
+Si,25000,24,Bajo,Cuenta de Ahorro Remunerada,Lulo Bank,0.02,4.82,simulado
+No,200,6,Medio,ETFs,Interactive Brokers,0.86,8.7,simulado
+Si,25000,24,Alto,Acciones Individuales,Interactive Brokers,1.8,21.85,original
