@@ -1,146 +1,110 @@
 import streamlit as st
+import motor
+from estilos import CSS
 import pandas as pd
-from estilos import obtener_estilos # Asegúrate de mantener tu archivo estilos.py
+import numpy as np
 
-st.set_page_config(page_title="Asesor de Inversiones", layout="wide", page_icon="🏦")
+st.set_page_config(
+    page_title="Asesor de Inversiones IA",
+    page_icon="📈",
+    layout="centered",
+    initial_sidebar_state="collapsed",
+)
+st.markdown(CSS, unsafe_allow_html=True)
 
-def calcular_rendimiento_neto(monto, tasa_ea, dias, porcentaje_comision_impuesto):
-    """Calcula el rendimiento restando el % de retención o comisión"""
-    rendimiento_bruto = monto * (((1 + tasa_ea)**(dias/360)) - 1)
-    descuento = rendimiento_bruto * porcentaje_comision_impuesto
-    rendimiento_neto = rendimiento_bruto - descuento
-    return rendimiento_bruto, descuento, rendimiento_neto
+def html(texto: str) -> None:
+    st.markdown(texto, unsafe_allow_html=True)
 
 def main():
-    st.markdown(obtener_estilos(), unsafe_allow_html=True)
-    st.title("🏦 Tu Asesor de Inversiones Personal")
+    html('<div class="hero"><h1>🤖 Asesor Inteligente de Inversiones</h1><p>Configura tu perfil para obtener opciones de mercado basadas en IA.</p></div>')
     
-    # -----------------------------------------
-    # PASO 1: CÁLCULO DE PERFIL DE RIESGO
-    # -----------------------------------------
-    st.subheader("1. Descubre tu Perfil de Inversionista")
-    col1, col2 = st.columns(2)
+    st.subheader("1. Configura tu Inversión")
     
-    with col1:
-        q1 = st.selectbox("¿Cuál es tu objetivo principal al invertir?", 
-                          ["Preservar mi capital (No quiero perder nada)", 
-                           "Crecimiento moderado a mediano plazo", 
-                           "Maximizar ganancias a largo plazo asumiendo riesgos"])
+    # Selectbox con index=None (Empiezan en blanco)
+    primera = st.selectbox("¿Es tu primera vez invirtiendo?", ["Sí, es mi primera vez", "No, ya he invertido antes"], index=None)
+    objetivo = st.selectbox("¿Para qué quieres invertir?", motor.OBJETIVOS, index=None)
+    moneda_txt = st.selectbox("¿En qué moneda prefieres invertir?", ["Pesos Colombianos (COP)", "Dólares (USD)"], index=None)
+    plazo_txt = st.selectbox("¿A qué plazo?", options=motor.PLAZOS, format_func=lambda x: f"{x} meses" if x > 1 else "1 mes", index=None)
+
+    # Number input con value=None (Empiezan vacíos)
+    moneda = "COP" if moneda_txt == "Pesos Colombianos (COP)" else "USD" if moneda_txt == "Dólares (USD)" else None
+    
+    monto, aporte = None, None
+    if moneda == "COP":
+        monto = st.number_input("Monto inicial a invertir (COP)", min_value=0, step=50000, value=None)
+        aporte = st.number_input("Aporte mensual estimado (COP)", min_value=0, step=10000, value=None)
+    elif moneda == "USD":
+        monto = st.number_input("Monto inicial a invertir (USD)", min_value=0, step=50, value=None)
+        aporte = st.number_input("Aporte mensual estimado (USD)", min_value=0, step=10, value=None)
         
-        q2 = st.selectbox("¿En cuánto tiempo planeas usar este dinero?", 
-                          ["Menos de 1 año", "De 1 a 3 años", "Más de 3 años"])
-    
-    with col2:
-        q3 = st.selectbox("Si tu inversión cae un 10% en un mes, ¿qué harías?", 
-                          ["Vender todo inmediatamente para no perder más", 
-                           "Esperar a que se recupere sin comprar más", 
-                           "Comprar más porque está barato"])
-        
-        q4 = st.selectbox("¿Qué porcentaje de tus ahorros totales representa esta inversión?", 
-                          ["Más del 50%", "Entre el 20% y 50%", "Menos del 20%"])
-
-    # Lógica simple para determinar el perfil
-    puntuacion = 0
-    if q1 == "Crecimiento moderado a mediano plazo": puntuacion += 1
-    elif q1 == "Maximizar ganancias a largo plazo asumiendo riesgos": puntuacion += 2
-    if q3 == "Esperar a que se recupere sin comprar más": puntuacion += 1
-    elif q3 == "Comprar más porque está barato": puntuacion += 2
-    if q4 == "Menos del 20%": puntuacion += 1
-
-    perfil = "Conservador 🛡️"
-    if puntuacion >= 2 and puntuacion <= 3: perfil = "Moderado ⚖️"
-    elif puntuacion > 3: perfil = "Arriesgado 🚀"
-
-    st.info(f"**Tu perfil de riesgo estimado es: {perfil}**")
     st.markdown("---")
-
-    # -----------------------------------------
-    # PASO 2: CONFIGURACIÓN DEL MONTO
-    # -----------------------------------------
-    st.subheader("2. Simulación de Plataformas")
+    st.subheader("2. Test de Riesgo (Vacío por defecto)")
     
-    col_moneda, col_monto = st.columns(2)
-    with col_moneda:
-        moneda = st.radio("¿En qué moneda deseas invertir?", ["COP (Pesos Colombianos)", "USD (Dólares)"])
-    
-    with col_monto:
-        if "COP" in moneda:
-            monto_input = st.number_input("Monto a invertir (Mín. sugerido $30.000)", min_value=0, value=1000000, step=50000, format="%d")
-            st.metric(label="Capital (COP)", value=f"${monto_input:,.0f}".replace(",", "."))
-            valido = monto_input >= 30000
-        else:
-            monto_input = st.number_input("Monto a invertir (Mín. sugerido $10)", min_value=0, value=100, step=10, format="%d")
-            st.metric(label="Capital (USD)", value=f"${monto_input:,.0f}".replace(",", "."))
-            valido = monto_input >= 10
-
-    if not valido:
-        st.markdown('<div class="alerta-minimo">⚠️ El monto ingresado está por debajo del mínimo sugerido para cubrir tarifas.</div>', unsafe_allow_html=True)
-        return
-
+    resp_actualizadas = []
+    # Cargamos dinámicamente desde tu motor.py, index=None para que sea obligatorio seleccionar
+    for i, (pregunta, opciones) in enumerate(motor.PREGUNTAS):
+        textos = [o for o, _ in opciones]
+        r = st.selectbox(pregunta, textos, index=None, key=f"p_{i}")
+        resp_actualizadas.append(r)
+        
     st.markdown("---")
-
-    # -----------------------------------------
-    # PASO 3: GRÁFICOS Y COMISIONES POR PLATAFORMA
-    # -----------------------------------------
-    if st.button("Ver Opciones del Mercado"):
-        st.subheader("Resultados de Inversión a 1 Año (Estimado)")
-        
-        if "COP" in moneda:
-            # Datos de plataformas en Colombia
-            st.markdown("Cálculo basado en CDT/Cuentas de Ahorro. Se asume un **4% de Retención en la Fuente** sobre las ganancias.")
-            plataformas = {
-                "Lulo Bank (CDT/Bolsillos)": 0.13,  # 13% EA
-                "Nu Bank (Cajitas)": 0.124,         # 12.4% EA
-                "Banco AV Villas (CDT Digital)": 0.12, # 12% EA
-                "Davivienda (CDT)": 0.1176          # 11.76% EA
-            }
-            impuesto = 0.04 # 4% de retención en la fuente sobre rendimientos
-        else:
-            # Datos de brokers internacionales para USD
-            st.markdown("Cálculo basado en Brokers Internacionales invirtiendo en fondos conservadores (aprox. 5% EA). Se asumen **comisiones de gestión o conversión**.")
-            plataformas = {
-                "Interactive Brokers": {"tasa": 0.05, "comision": 0.01}, # 1% de costos de conversión/gestión
-                "Trading 212": {"tasa": 0.05, "comision": 0.005},        # 0.5% conversión
-                "Hapi": {"tasa": 0.05, "comision": 0.015}                # 1.5% costos de fondeo/retiro
-            }
-
-        # Generar las tarjetas y gráficos por plataforma
-        tabs = st.tabs(list(plataformas.keys()))
-        
-        for i, (nombre_plat, datos) in enumerate(plataformas.items()):
-            with tabs[i]:
-                if "COP" in moneda:
-                    tasa = datos
-                    comision_pct = impuesto
-                    label_descuento = "Retención en la Fuente (4%)"
-                else:
-                    tasa = datos["tasa"]
-                    comision_pct = datos["comision"]
-                    label_descuento = f"Comisiones/Costos ({(comision_pct*100):.1f}%)"
-
-                # Cálculo financiero
-                bruto, descuento, neto = calcular_rendimiento_neto(monto_input, tasa, 360, comision_pct)
+    
+    # Validar que no haya nulos antes de calcular
+    campos_llenos = all([primera, objetivo, moneda_txt, plazo_txt, monto is not None]) and all(resp_actualizadas)
+    
+    if st.button("Analizar Portafolio"):
+        if not campos_llenos:
+            st.error("⚠️ Por favor, responde todas las preguntas del formulario primero.")
+            return
+            
+        with st.spinner("Analizando miles de registros..."):
+            # Cálculos de riesgo según el motor
+            puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
+            perfil = motor.perfil_desde_puntos(puntos)
+            
+            # Llamamos a TU modelo original
+            out = motor.recomendar(
+                monto, aporte if aporte else 0,
+                plazo_txt, moneda,
+                puntos, objetivo,
+                primera == "Sí, es mi primera vez",
+                True, "Ambas", motor.TRM_DEFECTO
+            )
+            
+            # --- RESULTADOS ESTÉTICOS ---
+            st.markdown(f"### Tu Perfil: **{perfil}** (Puntaje: {puntos})")
+            
+            for r in out["recomendaciones"]:
+                act = r['activo']
+                pos = "pos" if r['ganancia'] > 0 else ""
+                html(f"""
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">{act['nombre']}</h3>
+                    <span class="badge { 'b-cop' if act['moneda'] == 'COP' else 'b-usd' }">{act['moneda']}</span>
+                  </div>
+                  <div class="metric-grid">
+                    <div class="metric"><div class="lbl">Tasa Esperada</div><div class="val">{motor.fmt_pct(r['rendimiento_anual_pct'])}</div></div>
+                    <div class="metric"><div class="lbl">Comisión (Estimada)</div><div class="val">{motor.fmt_pct(r['comision_pct'], 2)}</div></div>
+                    <div class="metric"><div class="lbl">Valor Final Estimado</div><div class="val {pos}">{motor.fmt(r['valor_final'], act['moneda'])}</div></div>
+                  </div>
+                  <div class="small">Aportando {motor.fmt(r['total_aportado'], act['moneda'])}, tu ganancia limpia estimada es de <b>{motor.fmt(r['ganancia'], act['moneda'])}</b>.</div>
+                </div>
+                """)
                 
-                c1, c2 = st.columns([1, 1.5])
-                with c1:
-                    st.markdown(f"### {nombre_plat}")
-                    st.write(f"**Tasa Efectiva Anual (E.A):** {tasa*100:.2f}%")
-                    st.write(f"**Tu capital inicial:** ${monto_input:,.0f}".replace(",", "."))
-                    st.write(f"**Ganancia bruta:** ${bruto:,.0f}".replace(",", "."))
-                    st.write(f"**{label_descuento}:** -${descuento:,.0f}".replace(",", "."))
-                    st.markdown(f"#### **Dinero Libre de Ganancia:** <span style='color:#00d3a2'>${neto:,.0f}</span>".replace(",", "."), unsafe_allow_html=True)
-                    st.markdown(f"#### **Total a Retirar:** ${monto_input + neto:,.0f}".replace(",", "."), unsafe_allow_html=True)
+            # Gráfico Nativo Estético
+            st.markdown("#### Proyección de Crecimiento")
+            if out["recomendaciones"]:
+                mejor_opcion = out["recomendaciones"][0]
+                meses = pd.date_range(start="2026-01-01", periods=plazo_txt, freq="ME")
                 
-                with c2:
-                    # Gráfico de pastel para ver visualmente qué te queda vs qué pagas
-                    df_grafico = pd.DataFrame({
-                        "Concepto": ["Ganancia Libre para Ti", "Impuestos / Comisiones"],
-                        "Valor": [neto, descuento]
-                    })
-                    
-                    st.markdown("**Distribución de tus Rendimientos**")
-                    # Usamos un gráfico de barras apiladas de streamlit para representar la división del rendimiento
-                    st.bar_chart(df_grafico.set_index("Concepto"), use_container_width=True, color=["#00d3a2"])
+                # Reconstruimos la curva basada en los aportes para el gráfico
+                capital = [monto]
+                for i in range(1, plazo_txt):
+                    capital.append(capital[-1] * (1 + (mejor_opcion['rendimiento_anual_pct']/12)) + (aporte if aporte else 0))
+                
+                df_graf = pd.DataFrame({"Mes": meses, "Capital Proyectado": capital}).set_index("Mes")
+                st.area_chart(df_graf, color="#3b82f6")
 
 if __name__ == "__main__":
     main()
