@@ -353,6 +353,12 @@ def main():
             monto_usd = motor.a_usd(float(monto), moneda, trm_vivo)
             aporte_val = float(aporte) if aporte is not None else 0.0
             
+            activos_solo_cop = [
+                "CDT", "Cuenta de Ahorro Remunerada", "Fondo de Deuda",
+                "Carteras Colectivas", "Bonos de Gobierno", "Fondo de Pensión Voluntaria"
+            ]
+            mostro_alguno = False
+            
             for i, r in enumerate(out["resultados"]):
                 act_tipo = r['tipo']
                 
@@ -364,6 +370,8 @@ def main():
                     if act_tipo not in p.get('tipos', []):
                         continue
                     if moneda == "USD":
+                        if act_tipo in activos_solo_cop and p.get("origen") == "Colombia":
+                            continue
                         if "USD" in p.get("moneda", "") or p.get("origen") == "Internacional":
                             plataformas_completas.append(p)
                     else:
@@ -373,6 +381,7 @@ def main():
                 if not plataformas_completas:
                     continue
 
+                mostro_alguno = True
                 html(f"""
                 <div class="card" style="margin-bottom: 5px; margin-top: 20px;">
                   <div class="card-header" style="margin-bottom: 5px;">
@@ -454,6 +463,9 @@ def main():
                                 "Solo lo que aportas": "Bolsillo"
                             }, inplace=True)
                             st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"], height=230)
+            
+            if not mostro_alguno:
+                st.warning("No se encontraron entidades disponibles en la moneda seleccionada para el perfil de riesgo actual.")
                 
 if __name__ == "__main__":
     main()
