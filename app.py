@@ -20,58 +20,73 @@ def main():
     
     st.subheader("1. Configura tu Inversión")
     
-    # Selectbox con index=None (Empiezan en blanco)
-    primera = st.selectbox("¿Es tu primera vez invirtiendo?", ["Sí, es mi primera vez", "No, ya he invertido antes"], index=None)
-    objetivo = st.selectbox("¿Para qué quieres invertir?", motor.OBJETIVOS, index=None)
-    moneda_txt = st.selectbox("¿En qué moneda prefieres invertir?", ["Pesos Colombianos (COP)", "Dólares (USD)"], index=None)
-    plazo_txt = st.selectbox("¿A qué plazo?", options=motor.PLAZOS, format_func=lambda x: f"{x} meses" if x > 1 else "1 mes", index=None)
+    # Selectbox con placeholder "Elige una opción"
+    primera = st.selectbox("¿Es tu primera vez invirtiendo?", ["Sí, es mi primera vez", "No, ya he invertido antes"], index=None, placeholder="Elige una opción")
+    objetivo = st.selectbox("¿Para qué quieres invertir?", motor.OBJETIVOS, index=None, placeholder="Elige una opción")
+    moneda_txt = st.selectbox("¿En qué moneda prefieres invertir?", ["Pesos Colombianos (COP)", "Dólares (USD)"], index=None, placeholder="Elige una opción")
+    plazo_txt = st.selectbox("¿A qué plazo?", options=motor.PLAZOS, format_func=lambda x: f"{x} meses" if x > 1 else "1 mes", index=None, placeholder="Elige una opción")
 
-    # Number input con value=None (Empiezan vacíos)
     moneda = "COP" if moneda_txt == "Pesos Colombianos (COP)" else "USD" if moneda_txt == "Dólares (USD)" else None
     
     monto, aporte = None, None
     if moneda == "COP":
-        monto = st.number_input("Monto inicial a invertir (COP)", min_value=0, step=50000, value=None)
-        aporte = st.number_input("Aporte mensual estimado (COP)", min_value=0, step=10000, value=None)
+        monto = st.number_input("Monto inicial a invertir (COP)", min_value=0, step=50000, value=None, placeholder="Ej: 100000")
+        if monto is not None:
+            st.caption(f"💰 Monto registrado: **${monto:,.0f} COP**".replace(",", "."))
+            
+        aporte = st.number_input("Aporte mensual estimado (COP)", min_value=0, step=10000, value=None, placeholder="Ej: 50000")
+        if aporte is not None:
+            st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} COP**".replace(",", "."))
+            
     elif moneda == "USD":
-        monto = st.number_input("Monto inicial a invertir (USD)", min_value=0, step=50, value=None)
-        aporte = st.number_input("Aporte mensual estimado (USD)", min_value=0, step=10, value=None)
+        monto = st.number_input("Monto inicial a invertir (USD)", min_value=0, step=50, value=None, placeholder="Ej: 100")
+        if monto is not None:
+            st.caption(f"💰 Monto registrado: **${monto:,.0f} USD**".replace(",", "."))
+            
+        aporte = st.number_input("Aporte mensual estimado (USD)", min_value=0, step=10, value=None, placeholder="Ej: 50")
+        if aporte is not None:
+            st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} USD**".replace(",", "."))
         
     st.markdown("---")
-    st.subheader("2. Test de Riesgo (Vacío por defecto)")
+    st.subheader("2. Test de Riesgo")
     
     resp_actualizadas = []
-    # Cargamos dinámicamente desde tu motor.py, index=None para que sea obligatorio seleccionar
     for i, (pregunta, opciones) in enumerate(motor.PREGUNTAS):
         textos = [o for o, _ in opciones]
-        r = st.selectbox(pregunta, textos, index=None, key=f"p_{i}")
+        r = st.selectbox(pregunta, textos, index=None, key=f"p_{i}", placeholder="Elige una opción")
         resp_actualizadas.append(r)
         
     st.markdown("---")
     
-    # Validar que no haya nulos antes de calcular
-    campos_llenos = all([primera, objetivo, moneda_txt, plazo_txt, monto is not None]) and all(resp_actualizadas)
+    # Validación ESTRICTA para evitar que el programa se rompa
+    campos_llenos = (
+        primera is not None and 
+        objetivo is not None and 
+        moneda is not None and 
+        plazo_txt is not None and 
+        monto is not None and 
+        all(r is not None for r in resp_actualizadas)
+    )
     
-    if st.button("Analizar Portafolio"):
-        if not campos_llenos:
-            st.error("⚠️ Por favor, responde todas las preguntas del formulario primero.")
-            return
-            
+    # Lógica Visual: Le indicamos al usuario qué debe hacer antes de poder presionar el botón
+    if not campos_llenos:
+        st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial para habilitar el análisis.")
+        
+    # El botón estará literalmente DESACTIVADO (gris) hasta que 'campos_llenos' sea True
+    if st.button("Analizar Portafolio", disabled=not campos_llenos):
         with st.spinner("Analizando miles de registros..."):
-            # Cálculos de riesgo según el motor
             puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
             perfil = motor.perfil_desde_puntos(puntos)
             
-            # Llamamos a TU modelo original
+            # El motor ya recibe la data validada 100% segura
             out = motor.recomendar(
-                monto, aporte if aporte else 0,
+                monto, aporte if aporte is not None else 0,
                 plazo_txt, moneda,
                 puntos, objetivo,
                 primera == "Sí, es mi primera vez",
                 True, "Ambas", motor.TRM_DEFECTO
             )
             
-            # --- RESULTADOS ESTÉTICOS ---
             st.markdown(f"### Tu Perfil: **{perfil}** (Puntaje: {puntos})")
             
             for r in out["recomendaciones"]:
@@ -92,13 +107,11 @@ def main():
                 </div>
                 """)
                 
-            # Gráfico Nativo Estético
             st.markdown("#### Proyección de Crecimiento")
             if out["recomendaciones"]:
                 mejor_opcion = out["recomendaciones"][0]
                 meses = pd.date_range(start="2026-01-01", periods=plazo_txt, freq="ME")
                 
-                # Reconstruimos la curva basada en los aportes para el gráfico
                 capital = [monto]
                 for i in range(1, plazo_txt):
                     capital.append(capital[-1] * (1 + (mejor_opcion['rendimiento_anual_pct']/12)) + (aporte if aporte else 0))
