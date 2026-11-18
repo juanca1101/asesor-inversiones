@@ -326,6 +326,7 @@ def main():
             puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
             perfil = motor.perfil_desde_puntos(puntos)
             
+            pref_moneda_motor = "Dólares" if moneda == "USD" else "Pesos"
             out = motor.recomendar(
                 primera_vez=(primera == "Sí, es mi primera vez"),
                 monto=float(monto),
@@ -333,7 +334,7 @@ def main():
                 trm=trm_vivo, 
                 plazo=plazo_txt,
                 perfil=perfil,
-                pref_moneda="Me da igual",
+                pref_moneda=pref_moneda_motor,
                 pref_entidad=motor.ENTIDAD_IGUAL,
                 aporte_mensual=float(aporte) if aporte is not None else 0.0,
                 n=10 
@@ -358,7 +359,16 @@ def main():
                 tasa_base_ea = r['rendimiento_anual_pct']
                 com_base_pct = r['comision_pct']
                 
-                plataformas_completas = [p for p in motor.PLATAFORMAS if act_tipo in p.get('tipos', [])]
+                plataformas_completas = []
+                for p in motor.PLATAFORMAS:
+                    if act_tipo not in p.get('tipos', []):
+                        continue
+                    if moneda == "USD":
+                        if "USD" in p.get("moneda", "") or p.get("origen") == "Internacional":
+                            plataformas_completas.append(p)
+                    else:
+                        if "COP" in p.get("moneda", ""):
+                            plataformas_completas.append(p)
                 
                 if not plataformas_completas:
                     continue
