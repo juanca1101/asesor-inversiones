@@ -10,18 +10,51 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="collapsed",
 )
-# Cargamos tus estilos que ya estaban perfectos
 st.markdown(CSS, unsafe_allow_html=True)
 
 def html(texto: str) -> None:
     st.markdown(texto, unsafe_allow_html=True)
+
+# Diccionario inteligente para dar nombres reales de fondos, acciones y CDTs
+EJEMPLOS_ESPECIFICOS = {
+    ("Trii", "Acciones Individuales"): "Acciones locales: Ecopetrol, Bancolombia, ISA, Grupo Argos, Nu Holdings.",
+    ("Trii", "ETFs"): "iShares COLCAP (Mercado local), ETF S&P 500 (Mercado Global).",
+    ("Trii", "Carteras Colectivas"): "Fondo Acciones & Valores Vista (Ideal para liquidez inmediata).",
+    ("Trii", "Fondo de Deuda"): "Fondo Renta Fija Acciones & Valores.",
+    ("Trii", "CDT"): "CDT Digital Acciones & Valores (Gestionado en app).",
+    ("tyba", "Carteras Colectivas"): "Fondo tyba Pocket (Bajo riesgo), Fondo tyba Acciones Globales (Alto riesgo).",
+    ("tyba", "Fondo de Deuda"): "Fondo Renta Fija tyba.",
+    ("tyba", "CDT"): "CDT Digital Mibanco (Contratado directamente en la app tyba).",
+    ("tyba", "Fondo de Pensión Voluntaria"): "Portafolios de pensión voluntaria Credicorp Capital.",
+    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): "Cajitas Nu (Rendimiento diario).",
+    ("Nu Colombia", "CDT"): "CDT Digital Nu (Plazos flexibles desde 60 días).",
+    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): "Bolsillos Lulo (Rendimiento por metas).",
+    ("Lulo Bank", "CDT"): "CDT Lulo Bank (Tasa fija garantizada).",
+    ("Interactive Brokers", "ETFs"): "VOO (S&P 500), QQQ (Nasdaq 100), VT (Vanguard Total World).",
+    ("Interactive Brokers", "Acciones Individuales"): "Apple (AAPL), Microsoft (MSFT), Amazon (AMZN), Nvidia (NVDA).",
+    ("Hapi", "ETFs"): "SPY (S&P 500), QQQ (Nasdaq 100), DIA (Dow Jones).",
+    ("Hapi", "Acciones Individuales"): "Fracciones de acciones de EE.UU. desde $5 USD (Tesla, Apple, Google, Meta).",
+    ("Bancolombia eTrading", "Acciones Individuales"): "Acciones del COLCAP y Mercado Global Colombiano (MGC).",
+    ("Bancolombia eTrading", "ETFs"): "iShares COLCAP, ETFs globales a través de MGC.",
+    ("Bancolombia eTrading", "Carteras Colectivas"): "Fiducuenta, Plan Semilla.",
+    ("Pibank", "Cuenta de Ahorro Remunerada"): "Cuenta Pibank (Liquidación de intereses mensual, sin comisiones).",
+    ("Pibank", "CDT"): "CDT Pibank (Tradicionalmente con las mejores tasas del mercado).",
+    ("Davivienda", "CDT"): "CDT Móvil Davivienda.",
+    ("Davivienda", "Carteras Colectivas"): "Fondo Superior, Fondo Interés.",
+    ("Davivienda", "Fondo de Pensión Voluntaria"): "Dafuturo (Múltiples portafolios).",
+    ("Porvenir", "Fondo de Pensión Voluntaria"): "Portafolio Conservador, Moderado o Crecimiento.",
+    ("Protección", "Fondo de Pensión Voluntaria"): "Portafolio Liquidez, Portafolio Acciones Globales.",
+    ("Wenia", "Criptomonedas"): "COPW (Criptopeso), Bitcoin (BTC), Ethereum (ETH).",
+    ("Bitso", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDC (Dólar digital estable).",
+    ("Binance", "Criptomonedas"): "Bitcoin, Ethereum, USDT, y cientos de altcoins (Alto riesgo).",
+    ("Kraken", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDC."
+}
 
 def main():
     html('<div class="hero"><h1>🤖 Asesor Inteligente de Inversiones</h1><p>Configura tu perfil para obtener opciones de mercado basadas en IA.</p></div>')
     
     st.subheader("1. Configura tu Inversión")
     
-    # Selectbox con placeholder "Elige una opción"
     primera = st.selectbox("¿Es tu primera vez invirtiendo?", ["Sí, es mi primera vez", "No, ya he invertido antes"], index=None, placeholder="Elige una opción")
     objetivo = st.selectbox("¿Para qué quieres invertir?", motor.OBJETIVOS, index=None, placeholder="Elige una opción")
     moneda_txt = st.selectbox("¿En qué moneda prefieres invertir?", ["Pesos Colombianos (COP)", "Dólares (USD)"], index=None, placeholder="Elige una opción")
@@ -72,11 +105,11 @@ def main():
         st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial para habilitar el análisis.")
         
     if st.button("Analizar Portafolio", disabled=not campos_llenos):
-        with st.spinner("Analizando opciones en las plataformas..."):
+        with st.spinner("Desbloqueando todo el catálogo de entidades..."):
             puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
             perfil = motor.perfil_desde_puntos(puntos)
             
-            # Conexión exacta a tu motor de inteligencia
+            # Llamamos al motor original
             out = motor.recomendar(
                 primera_vez=(primera == "Sí, es mi primera vez"),
                 monto=float(monto),
@@ -90,24 +123,29 @@ def main():
             )
             
             st.markdown(f"### Tu Perfil IA: **{perfil}** (Puntaje: {puntos})")
-            st.markdown("A continuación, te detallamos las carteras exactas, cuánto ganarás y qué aplicaciones usar:")
+            st.markdown("A continuación, te detallamos **todas las carteras exactas disponibles en Colombia**, cuánto ganarás y qué activos específicos buscar en cada aplicación:")
             
-            # Recorremos cada tipo de activo recomendado
+            monto_usd = motor.a_usd(float(monto), moneda, motor.TRM_DEFECTO)
+            
             for i, r in enumerate(out["resultados"]):
                 act_tipo = r['tipo']
                 
-                # Cálculos exactos según el modelo
+                # Rescatamos TODAS las plataformas que soportan este activo y monto (Saltando el límite del motor)
+                plataformas_completas = []
+                for p in motor.PLATAFORMAS:
+                    if act_tipo in p.get('tipos', []):
+                        if monto_usd >= p['min_usd']:
+                            plataformas_completas.append(p)
+                
                 tasa_esp = r['rendimiento_anual_pct']
                 com_esp = r['comision_pct']
                 val_fin = r['valor_final']
                 aportado = r['total_aportado']
                 ganancia_neta = r['ganancia']
                 
-                # Desglose de ganancia bruta vs retenciones/comisiones
                 descuento = aportado * (com_esp / 100)
                 ganancia_bruta = ganancia_neta + descuento
 
-                # Mostramos la tarjeta principal (Categoría)
                 html(f"""
                 <div class="card" style="margin-bottom: 5px;">
                   <div class="card-header" style="margin-bottom: 5px;">
@@ -118,22 +156,23 @@ def main():
                 </div>
                 """)
                 
-                plataformas = r.get('plataformas', [])
-                if not plataformas:
-                    st.info("No encontramos una aplicación vigilada para esta opción con tus filtros.")
+                if not plataformas_completas:
+                    st.warning(f"No encontramos una aplicación que acepte el monto actual para {act_tipo}.")
                     continue
                 
-                # Creamos las pestañas por cada aplicación disponible
-                tabs = st.tabs([p['nombre'] for p in plataformas])
+                # Creamos las pestañas dinámicamente con TODAS las plataformas válidas
+                tabs = st.tabs([p['nombre'] for p in plataformas_completas])
                 
-                # Llenamos cada pestaña con la info específica y su gráfico
-                for idx, p in enumerate(plataformas):
+                for idx, p in enumerate(plataformas_completas):
                     with tabs[idx]:
                         col_izq, col_der = st.columns([1, 1.2])
                         with col_izq:
                             st.write(f"**📱 App/Banco:** {p['nombre']}")
-                            st.write(f"**🎯 ¿En qué inviertes aquí?:** {p['ofrece']}")
                             st.write(f"**💸 Costos/Comisiones reales:** {p['costos']}")
+                            
+                            # INYECCIÓN DEL NOMBRE ESPECÍFICO DEL ACTIVO
+                            sugerencia = EJEMPLOS_ESPECIFICOS.get((p['nombre'], act_tipo), f"Opciones de {act_tipo} directo en el buscador de la app.")
+                            st.info(f"**📌 ¿Qué debes buscar exactamente?:**\n\n{sugerencia}")
                             
                             st.markdown("---")
                             st.markdown("**💰 Tus números exactos:**")
@@ -143,13 +182,12 @@ def main():
                             st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(val_fin, moneda)}**</span>", unsafe_allow_html=True)
 
                         with col_der:
-                            # Generamos el gráfico individual para esta pestaña
+                            # Gráfico de proyección de esa entidad
                             df_serie = r['serie'].copy()
                             df_serie.rename(columns={
                                 "Con tu inversión": f"Proyección en {p['nombre']}",
                                 "Solo lo que aportas": "Dinero de tu bolsillo"
                             }, inplace=True)
-                            
                             st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"])
                 
                 st.markdown("<br><hr><br>", unsafe_allow_html=True)
