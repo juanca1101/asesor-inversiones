@@ -287,4 +287,163 @@ def main():
     moneda = "COP" if moneda_txt == "Pesos Colombianos (COP)" else "USD" if moneda_txt == "Dólares (USD)" else None
     
     if moneda == "USD":
-        st.info(f"
+        st.info(f"🌐 **TRM en Vivo:** El mercado calcula hoy el Dólar a **${trm_vivo:,.2f} COP**")
+    
+    monto, aporte = None, None
+    if moneda == "COP":
+        monto = st.number_input("Monto inicial a invertir (COP)", min_value=0, step=50000, value=None, placeholder="Ej: 100000")
+        if monto is not None:
+            st.caption(f"💰 Monto registrado: **${monto:,.0f} COP**".replace(",", "."))
+        aporte = st.number_input("Aporte mensual (COP, opcional)", min_value=0, step=10000, value=None, placeholder="Ej: 50000")
+        if aporte is not None:
+            st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} COP**".replace(",", "."))
+            
+    elif moneda == "USD":
+        monto = st.number_input("Monto inicial a invertir (USD)", min_value=0, step=50, value=None, placeholder="Ej: 100")
+        if monto is not None:
+            st.caption(f"💰 Monto registrado: **${monto:,.0f} USD**".replace(",", "."))
+        aporte = st.number_input("Aporte mensual (USD, opcional)", min_value=0, step=10, value=None, placeholder="Ej: 50")
+        if aporte is not None:
+            st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} USD**".replace(",", "."))
+        
+    st.markdown("---")
+    st.subheader("2. Test de Riesgo")
+    
+    resp_actualizadas = []
+    for i, (pregunta, opciones) in enumerate(motor.PREGUNTAS):
+        textos = [o for o, _ in opciones]
+        r = st.selectbox(pregunta, textos, index=None, key=f"p_{i}", placeholder="Elige una opción")
+        resp_actualizadas.append(r)
+        
+    st.markdown("---")
+    campos_llenos = all([primera, objetivo, moneda, plazo_txt, monto is not None]) and all(resp_actualizadas)
+    
+    if not campos_llenos:
+        st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial para generar el análisis tributario y financiero.")
+        
+    if st.button("Analizar Portafolio", disabled=not campos_llenos):
+        with st.spinner("Calculando impuestos, comisiones y rentabilidades personalizadas por entidad..."):
+            puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
+            perfil = motor.perfil_desde_puntos(puntos)
+            
+            out = motor.recomendar(
+                primera_vez=(primera == "Sí, es mi primera vez"),
+                monto=float(monto),
+                moneda=moneda,
+                trm=trm_vivo, 
+                plazo=plazo_txt,
+                perfil=perfil,
+                pref_moneda="Me da igual",
+                pref_entidad=motor.ENTIDAD_IGUAL,
+                aporte_mensual=float(aporte) if aporte is not None else 0.0,
+                n=10 
+            )
+            
+            plazo_legible = formatear_plazo(plazo_txt)
+            st.markdown(f"### Tu Perfil IA: **{perfil}** (Puntaje: {puntos})")
+            
+            monto_str = motor.fmt(float(monto), moneda)
+            texto_info = f"⏱️ **Parámetros de simulación:** Capital inicial de **{monto_str}** | Plazo elegido: **{plazo_legible}**"
+            if aporte:
+                aporte_str = motor.fmt(float(aporte), moneda)
+                texto_info += f" | Aporte mensual: **{aporte_str}**"
+            st.info(texto_info)
+            
+            monto_usd = motor.a_usd(float(monto), moneda, trm_vivo)
+            aporte_val = float(aporte) if aporte is not None else 0.0
+            
+            for i, r in enumerate(out["resultados"]):
+                act_tipo = r['tipo']
+                
+                tasa_base_ea = r['rendimiento_anual_pct']
+                com_base_pct = r['comision_pct']
+                
+                plataformas_completas = [p for p in motor.PLATAFORMAS if act_tipo in p.get('tipos', [])]
+                
+                if not plataformas_completas:
+                    continue
+
+                html(f"""
+                <div class="card" style="margin-bottom: 5px; margin-top: 20px;">
+                  <div class="card-header" style="margin-bottom: 5px;">
+                    <h3 class="card-title">Opción {i+1}: {act_tipo}</h3>
+                    <span class="badge { 'b-cop' if r['moneda_activo'] == 'COP' else 'b-usd' }">{r['moneda_activo']}</span>
+                  </div>
+                  <p style="margin-top:0; color: #475569;">{r['descripcion']}</p>
+                </div>
+                """)
+                
+                tabs = st.tabs([p['nombre'] for p in plataformas_completas])
+                
+                for idx, p in enumerate(plataformas_completas):
+                    with tabs[idx]:
+                        nombre_ent = p['nombre']
+                        info_ent = PERFIL_ENTIDADES.get(nombre_ent, {
+                            "tipo": "Entidad Financiera / Plataforma",
+                            "que_es": p.get('regulacion', 'Plataforma de inversión.'),
+                            "como_funciona": p.get('nota', 'Permite invertir en este instrumento desde su portal.'),
+                            "delta_tasa": 0.0,
+                            "delta_com": 0.0,
+                        })
+                        
+                        tasa_ent_ea = max(0.5, tasa_base_ea + info_ent["delta_tasa"])
+                        com_ent_pct = max(0.0, com_base_pct + info_ent["delta_com"])
+                        tasa_ent_mv = ((1 + tasa_ent_ea / 100) ** (1 / 12) - 1) * 100
+                        tasa_ent_diaria = ((1 + tasa_ent_ea / 100) ** (1 / 365) - 1) * 100
+                        
+                        df_serie = motor.proyeccion(float(monto), aporte_val, tasa_ent_ea, com_ent_pct, plazo_txt)
+                        total_aportado = float(monto) + aporte_val * plazo_txt
+                        valor_final = float(df_serie["Con tu inversión"].iloc[-1])
+                        ganancia_neta = valor_final - total_aportado
+                        descuento_total = total_aportado * (com_ent_pct / 100)
+                        ganancia_bruta = ganancia_neta + descuento_total
+
+                        if monto_usd < p['min_usd']:
+                            st.warning(f"⚠️ **Atención:** El mínimo sugerido aquí es {p['minimo_txt']}. Tu monto actual no alcanza, pero revisa cómo funciona para el futuro.")
+                        
+                        vigilada_txt = "✅ Vigilada Superfinanciera" if p.get("vigilada_sfc") else "🌐 Regulación Internacional / Sin vigilancia SFC"
+                        html(f"""
+                        <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #0ea5e9; border-radius: 10px; padding: 14px 16px; margin-bottom: 14px;">
+                          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;">
+                            <span style="font-weight: 800; color: #0f172a; font-size: 1.05rem;">🏛️ {nombre_ent} — {info_ent['tipo']}</span>
+                            <span style="background: #e0f2fe; color: #0369a1; padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700;">{vigilada_txt}</span>
+                          </div>
+                          <p style="margin: 4px 0; font-size: 0.9rem; color: #334155;"><b>¿Qué es?:</b> {info_ent['que_es']}</p>
+                          <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: #334155;"><b>¿Cómo funciona?:</b> {info_ent['como_funciona']}</p>
+                        </div>
+                        """)
+                        
+                        col_izq, col_der = st.columns([1.3, 1])
+                        with col_izq:
+                            st.write(f"**💸 Costos/Comisiones (Tarifario):** {p['costos']}")
+                            
+                            catalogo = CATALOGO_FINANCIERO_DETALLADO.get((nombre_ent, act_tipo), [])
+                            if catalogo:
+                                st.markdown("---")
+                                st.markdown(f"**⚖️ Opciones e Impuestos ({act_tipo} en {nombre_ent}):**")
+                                for item in catalogo:
+                                    st.markdown(f"- {item}")
+                            else:
+                                st.info(f"📌 {act_tipo} disponible en {nombre_ent}. Costos e impuestos según política general de la app.")
+                            
+                        with col_der:
+                            with st.container(border=True):
+                                st.markdown(f"##### 💰 Proyección en {nombre_ent}")
+                                st.write(f"⏱️ **Plazo elegido:** {plazo_legible}")
+                                st.write(f"📈 **Tasa Efectiva Anual:** {tasa_ent_ea:.2f}% E.A.")
+                                st.write(f"🗓️ **Tasa Mes Vencido:** {tasa_ent_mv:.2f}% M.V. *(~{tasa_ent_diaria:.4f}% diario)*")
+                                st.write(f"🏷️ **Comisión/Costo Est.:** {com_ent_pct:.2f}%")
+                                st.markdown("---")
+                                st.write(f"Capital Aportado: **{motor.fmt(total_aportado, moneda)}**")
+                                st.write(f"Ganancia Bruta: **+ {motor.fmt(ganancia_bruta, moneda)}**")
+                                st.write(f"Desc./Impuestos Est.: **- {motor.fmt(descuento_total, moneda)}**")
+                                st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(valor_final, moneda)}**</span>", unsafe_allow_html=True)
+                            
+                            df_serie.rename(columns={
+                                "Con tu inversión": f"Crecimiento en {nombre_ent}",
+                                "Solo lo que aportas": "Bolsillo"
+                            }, inplace=True)
+                            st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"], height=230)
+                
+if __name__ == "__main__":
+    main()
