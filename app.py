@@ -26,87 +26,135 @@ def obtener_trm_actual():
         return motor.TRM_DEFECTO
 
 # ==============================================================================
-# BASE DE DATOS FINANCIERA: DESGLOSE DE IMPUESTOS, COMISIONES Y RENTABILIDAD
+# DICCIONARIO MAESTRO: CUBRE EL 100% DE COMBINACIONES DE LA BASE DE DATOS
 # ==============================================================================
 CATALOGO_FINANCIERO_DETALLADO = {
     # ------------------- TRII -------------------
     ("Trii", "Acciones Individuales"): [
-        "🟢 **Mercado Local (Ecopetrol, Bancolombia, ISA):** \n- **Ganancia:** Por valorización (sube el precio) y pago de Dividendos.\n- **Retención (Impuesto):** Te descuentan el **10%** sobre los dividendos que te paguen.\n- **Comisión Trii:** Cobran ~$14.900 COP fijos por cada vez que compres o vendas (si el monto es menor a 5M).",
-        "🌐 **Mercado Global (Nu Holdings, Apple en MGC):** \n- **Ganancia:** Cotizan en pesos pero siguen el precio en dólares (te proteges si el dólar sube). No suelen pagar dividendos altos, la ganancia es por crecimiento del precio."
+        "🟢 **Mercado Local (Ecopetrol, Bancolombia, ISA):** \n- **Ganancia:** Por valorización y pago de Dividendos.\n- **Retención:** 10% sobre dividendos.\n- **Comisión Trii:** ~$14.900 COP fijos por cada vez que compres o vendas (si el monto es <5M).",
+        "🌐 **Mercado Global (Nu Holdings, Apple en MGC):** \n- Cotizan en pesos pero siguen el precio en dólares."
     ],
     ("Trii", "ETFs"): [
-        "📊 **iShares COLCAP (ICOLCAP):** \n- **Detalle:** Compras las 20 empresas más grandes de Colombia de un solo golpe.\n- **Costos:** Tiene una comisión de administración interna del fondo de aprox **0.60%** anual.\n- **Impuestos:** Retención del 10% sobre dividendos repartidos.",
-        "🇺🇸 **iShares S&P 500 (CSPX):** \n- **Detalle:** Sigue a las 500 top de EE. UU.\n- **Ventaja:** Acumula los dividendos automáticamente para no pagar impuestos en Colombia hasta que lo vendas."
+        "📊 **iShares COLCAP (ICOLCAP):** Compras las empresas más grandes de Colombia. Comisión del fondo ~0.60% anual.",
+        "🇺🇸 **iShares S&P 500 (CSPX):** Sigue a EE.UU. Acumula los dividendos para que no pagues impuestos en Colombia."
     ],
-    ("Trii", "CDT"): [
-        "🏦 **CDT Digital Acciones & Valores:** \n- **Ganancia:** Tasa E.A. Fija garantizada.\n- **Retención de Ley:** Se te descuenta el **4% de Retención en la Fuente** de forma automática sobre los intereses que ganes."
+    ("Trii", "ETFs Sectoriales"): [
+        "📈 **ETFs Temáticos:** Acceso a sectores específicos (Tecnología, Energía) a través del Mercado Global Colombiano."
+    ],
+    ("Trii", "Fondos Indexados"): [
+        "🌎 **Fondos de Acciones Globales:** Siguen índices mundiales. Cobra comisión de administración anual del fondo."
     ],
     ("Trii", "Carteras Colectivas"): [
-        "💼 **Fondo Vista (Liquidez):** \n- **Rentabilidad:** Variable, suele rondar el 6%-8% anual.\n- **Comisión:** El fondo descuenta un % de administración antes de mostrarte tu saldo.\n- **Retención:** 7% de Retención en la Fuente sobre los rendimientos financieros."
+        "💼 **Fondo Vista (Alta Liquidez):** \n- **Rentabilidad:** ~6%-8% anual.\n- **Impuestos:** 7% de Retención en la Fuente sobre rendimientos financieros."
     ],
-
-    # ------------------- HAPI -------------------
-    ("Hapi", "Fondos Indexados"): [
-        "📈 **VOO (S&P 500) / QQQ (Nasdaq 100):** \n- **Rentabilidad Histórica:** ~10% a 12% anual en DÓLARES.\n- **Comisión de Compra:** **0% (Cero dólares)** por operar.\n- **Retención (Impuesto EE.UU.):** Por ser extranjero, el gobierno de EE.UU. te retiene automáticamente el **30% de los dividendos** que paguen estos fondos. La valorización del fondo NO tiene retención en EE.UU.\n- **Costos Ocultos:** Fondeo desde Colombia por PSE cuesta ~0.45% (Mínimo $2.99 USD)."
+    ("Trii", "Fondo de Deuda"): [
+        "📉 **Fondo Renta Fija Acciones & Valores:** \n- Invierte en deuda de empresas colombianas.\n- **Retención:** 7% sobre las ganancias."
     ],
-    ("Hapi", "Acciones Individuales"): [
-        "🍎 **Apple / Tesla / Amazon / Nvidia:** \n- **Inversión:** Puedes comprar fracciones desde $5 USD.\n- **Riesgo:** Alto (volatilidad diaria).\n- **Impuestos:** Igual que los ETFs, retención del 30% en dividendos. Si vendes con ganancia, debes declararlo como ganancia ocasional en Colombia al traer el dinero."
+    ("Trii", "Bonos de Gobierno"): [
+        "📜 **Deuda del Estado (TES):** \n- **Mecanismo:** A través de Trii inviertes en un fondo administrado por Acciones & Valores que compra TES del gobierno.\n- **Impuestos:** 7% de retención en la fuente sobre ganancias."
     ],
-
-    # ------------------- INTERACTIVE BROKERS -------------------
-    ("Interactive Brokers", "Fondos Indexados"): [
-        "🏦 **ETFs Globales (VOO, VT):** \n- **Comisión:** Aprox $0.005 USD por acción (Mínimo $1 USD por operación).\n- **Ventaja Pro:** Puedes comprar ETFs domiciliados en Irlanda (Ej. VWRA) para que la retención de dividendos baje del 30% al **15%**, ahorrando muchos impuestos a largo plazo."
-    ],
-
-    # ------------------- BANCOS: CDTs Y CUENTAS (Nu, Lulo, Pibank, Davivienda) -------------------
-    ("Nu Colombia", "CDT"): [
-        "🟣 **CDT Digital Nu (Desde 60 días):** \n- **Tasa:** Fija E.A. (Ej. 9% a 11% dependiendo del plazo).\n- **Impuestos:** Por ley, el banco aplica **4% de Retención en la Fuente** sobre tu ganancia al vencimiento.\n- **Seguro:** Tu capital y ganancias están protegidos por Fogafín hasta por $50 millones de pesos."
-    ],
-    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): [
-        "🟣 **Cajitas Nu:** \n- **Rentabilidad:** Tasa E.A. que se liquida a diario.\n- **Retención:** Aplica **7% de Retención en la Fuente** sobre los intereses diarios pagados.\n- **Ventaja:** Cero comisiones de manejo. Al sacar el dinero de la cajita a tu cuenta Nu NO te cobran 4x1000."
-    ],
-    ("Lulo Bank", "CDT"): [
-        "🟡 **CDT Lulo Bank:** \n- **Impuestos:** Igual que todos, **4% de retención** sobre la ganancia bruta.\n- **Características:** No permite cancelarlo antes de la fecha (es ilíquido hasta el vencimiento)."
-    ],
-    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): [
-        "🟡 **Bolsillos Lulo:** \n- **Rentabilidad:** Genera intereses diarios.\n- **Retención:** 7% sobre rendimientos financieros pagados."
-    ],
-    ("Pibank", "CDT"): [
-        "🔴 **CDT Pibank:** \n- **Ventaja Única:** Te permite elegir si quieres que te paguen los intereses mensuales o al final del plazo.\n- **Impuestos:** 4% de retención en la fuente sobre lo que te paguen."
-    ],
-    ("Pibank", "Cuenta de Ahorro Remunerada"): [
-        "🔴 **Cuenta Pibank:** \n- **Beneficios:** Da el 100% de la rentabilidad prometida desde el primer peso, sin condiciones. Retención del 7% sobre las ganancias mensuales."
-    ],
-    ("Davivienda", "CDT"): [
-        "🏠 **CDT Móvil Davivienda:** \n- **Seguridad:** Banco tradicional, protección Fogafín 50M. \n- **Impuestos:** 4% de retención en la fuente sobre intereses."
-    ],
-    ("Davivienda", "Fondo de Pensión Voluntaria"): [
-        "🏠 **Dafuturo (Pensión Voluntaria):** \n- **Beneficio Tributario:** El dinero que aportas reduce tu base para el pago de impuesto de Renta (hasta 30% del ingreso).\n- **Comisión:** Cobra comisión de administración anual (~1.5% a 3%).\n- **Condición:** Si retiras la plata antes de 10 años para algo diferente a compra de vivienda, pierdes el beneficio tributario y te cobran la retención de golpe."
+    ("Trii", "CDT"): [
+        "🏦 **CDT Digital Acciones & Valores:** \n- Tasa E.A. Fija garantizada. **4% de Retención en la Fuente** automática."
     ],
 
     # ------------------- TYBA -------------------
     ("tyba", "Carteras Colectivas"): [
-        "💼 **Fondo tyba Pocket (Bajo riesgo):** \n- **Comisión:** Cobra ~1.2% E.A. por administración.\n- **Retención:** 7% sobre rendimientos."
+        "💼 **Fondo tyba Pocket (Bajo riesgo):** \n- Ideal para empezar. Rentabilidad moderada.\n- **Impuestos:** 7% sobre rendimientos."
+    ],
+    ("tyba", "Fondo de Deuda"): [
+        "📉 **Fondo Renta Fija Credicorp:** \n- Invierte en bonos corporativos. Retención del 7% sobre las ganancias."
+    ],
+    ("tyba", "Bonos de Gobierno"): [
+        "📜 **Fondos de Deuda Pública:** \n- **Mecanismo:** Portafolios de Credicorp Capital enfocados 100% en Bonos del Gobierno (TES).\n- **Impuestos:** 7% de retención en la fuente."
+    ],
+    ("tyba", "Fondos Indexados"): [
+        "📊 **Fondo Acciones Globales:** \n- Atado a índices como el S&P 500. Retención del 7% sobre rendimientos."
     ],
     ("tyba", "Fondo de Pensión Voluntaria"): [
-        "💼 **Portafolios Credicorp:** \n- **Estrategia:** Ideal para bajar impuestos anuales.\n- **Condiciones:** Rentabilidad variable según mercado, cobra comisión de administración del fondo."
+        "🎯 **Portafolios Credicorp:** \n- **Beneficio Tributario:** El dinero que aportas reduce tu impuesto de Renta (hasta 30% del ingreso)."
+    ],
+    ("tyba", "CDT"): [
+        "🏦 **CDT Digital Mibanco:** \n- Tasa fija E.A. **4% de Retención en la Fuente**."
     ],
 
     # ------------------- BANCOLOMBIA -------------------
     ("Bancolombia eTrading", "Acciones Individuales"): [
-        "🇨🇴 **Comisiones Bancolombia:** \n- Es el más costoso para montos pequeños. Cobra **0.2% + IVA** por operación, con una comisión mínima de **$20.000 COP + IVA** (Si compras $100.000 en acciones, ya pierdes casi el 25% solo en comisión). Ideal solo para montos grandes."
+        "🇨🇴 **Acciones Locales y MGC:** \n- **Comisiones Altas:** 0.2% + IVA por operación (Comisión mínima de $20.000 + IVA). Ideal solo para montos grandes."
+    ],
+    ("Bancolombia eTrading", "ETFs"): [
+        "📊 **iShares COLCAP:** ETFs globales disponibles en la bolsa local."
+    ],
+    ("Bancolombia eTrading", "Carteras Colectivas"): [
+        "💼 **Fiducuenta / Plan Semilla:** Alta liquidez, se administran desde la App Personas."
+    ],
+    ("Bancolombia eTrading", "Fondo de Deuda"): [
+        "📉 **Fidurenta Bancolombia:** Para perfiles conservadores."
+    ],
+    ("Bancolombia eTrading", "Bonos de Gobierno"): [
+        "📜 **Participación en TES:** A través de fondos de renta fija pública de Fiduciaria Bancolombia."
+    ],
+    ("Bancolombia eTrading", "CDT"): [
+        "🏦 **CDT Físico o Virtual:** Tasa fija, 4% de retención."
     ],
 
+    # ------------------- HAPI -------------------
+    ("Hapi", "Fondos Indexados"): [
+        "📈 **VOO (S&P 500) / QQQ (Nasdaq 100):** \n- **Comisión de Compra:** **0% (Cero dólares)** por operar.\n- **Impuesto EE.UU.:** Retención automática del **30%** de los dividendos por ser extranjero (La valorización NO tiene retención)."
+    ],
+    ("Hapi", "ETFs"): [
+        "🌎 **VT / VTI:** Fondos de Vanguard para cubrir todo el mercado de EE.UU. o Mundial."
+    ],
+    ("Hapi", "ETFs Sectoriales"): [
+        "🚀 **XLK / XLV:** Invierte en sectores específicos (Tecnología, Salud)."
+    ],
+    ("Hapi", "Acciones Individuales"): [
+        "🍎 **Apple / Tesla / Amazon:** \n- Fracciones desde $5 USD. Igual impuesto del 30% sobre dividendos."
+    ],
+    ("Hapi", "Carteras Colectivas"): [
+        "💼 **Portafolios Temáticos Hapi:** Cestas prearmadas."
+    ],
+    ("Hapi", "Criptomonedas"): [
+        "₿ **Bitcoin / Ethereum:** Puedes comprar con el mismo saldo de tus acciones."
+    ],
+
+    # ------------------- INTERACTIVE BROKERS -------------------
+    ("Interactive Brokers", "Fondos Indexados"): [
+        "🏦 **ETFs Globales (VOO, VT):** \n- **Comisión:** Aprox $0.005 USD por acción (Mínimo $1 USD).\n- **Hack Tributario:** Puedes comprar ETFs de Irlanda (Ej. VWRA) para bajar la retención de dividendos del 30% al **15%**."
+    ],
+    ("Interactive Brokers", "ETFs"): ["📊 **Miles de ETFs globales:** Vanguard, iShares, Invesco."],
+    ("Interactive Brokers", "ETFs Sectoriales"): ["🚀 **Todos los sectores:** Desde Inteligencia Artificial hasta Energías Limpias."],
+    ("Interactive Brokers", "Acciones Individuales"): ["🏢 **NYSE / NASDAQ:** Acceso total al mercado accionario."],
+    ("Interactive Brokers", "Carteras Colectivas"): ["💼 **Mutual Funds:** Fondos mutuos de grandes gestoras (BlackRock, Fidelity)."],
+    ("Interactive Brokers", "Bonos de Gobierno"): [
+        "📜 **T-Bills y T-Bonds (EE.UU.):** \n- Bonos del tesoro americano, altísima seguridad global."
+    ],
+
+    # ------------------- BANCOS LOCALES (Nu, Lulo, Pibank, Davivienda) -------------------
+    ("Nu Colombia", "CDT"): ["🟣 **CDT Digital Nu:** Tasa Fija E.A. **4% de Retención en la Fuente**. Seguro Fogafín."],
+    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): ["🟣 **Cajitas Nu:** Rentabilidad diaria. **7% de Retención** sobre intereses. Sin cuota de manejo."],
+    ("Lulo Bank", "CDT"): ["🟡 **CDT Lulo Bank:** Tasa Fija. 4% de retención. No se puede cancelar antes del plazo."],
+    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): ["🟡 **Bolsillos Lulo:** Intereses diarios. 7% de retención sobre rendimientos."],
+    ("Pibank", "CDT"): ["🔴 **CDT Pibank:** Puedes pedir que te paguen los intereses mensuales a tu cuenta."],
+    ("Pibank", "Cuenta de Ahorro Remunerada"): ["🔴 **Cuenta Pibank:** Liquidación automática cada mes. Da el 100% de la tasa desde $1 peso."],
+    ("Davivienda", "CDT"): ["🏠 **CDT Móvil Davivienda:** 4% de retención en la fuente sobre intereses. Seguro Fogafín."],
+    ("Davivienda", "Carteras Colectivas"): ["🏠 **Fondo Superior / Fondo Interés:** Administrados por Fiduciaria Davivienda."],
+    ("Davivienda", "Fondo de Deuda"): ["📉 **Fondo Renta Fija Plazo 30:** Ideal para perfil conservador a corto plazo."],
+    ("Davivienda", "Fondo de Pensión Voluntaria"): ["🎯 **Dafuturo:** Reduce tu pago de impuesto de Renta (hasta 30% del ingreso). Pierdes el beneficio si retiras antes de 10 años sin justa causa."],
+    
+    # ------------------- FONDOS DE PENSIÓN -------------------
+    ("Porvenir", "Fondo de Pensión Voluntaria"): ["👴 **Portafolios Porvenir:** Estrategias conservadoras o de renta variable internacional. Ideal para beneficios tributarios."],
+    ("Protección", "Fondo de Pensión Voluntaria"): ["🛡️ **Portafolios Protección:** Desde liquidez inmediata hasta acciones globales. Útil para declarar renta a tu favor."],
+
     # ------------------- CRIPTOMONEDAS -------------------
-    ("Bitso", "Criptomonedas"): [
-        "₿ **Bitcoin / Ethereum / USDC:** \n- **Comisión:** Cobran entre 0.5% y 1% en el *spread* (la diferencia entre precio de compra y venta).\n- **Impuestos:** No hay retención en la fuente automática, PERO es tu obligación legal declararlo en tu impuesto de Renta si sacas ganancias a tu cuenta bancaria."
-    ],
-    ("Binance", "Criptomonedas"): [
-        "₿ **Cripto Global:** \n- **Comisión:** 0.1% por operación (La más baja del mercado).\n- **Fondeo:** Debes usar P2P (Comprar dólares digitales a otras personas), lo que tiene un ligero sobrecosto en la tasa de cambio."
-    ],
-    ("Wenia", "Criptomonedas"): [
-        "🟣 **COPW (Criptopeso de Bancolombia):** \n- **Ventaja:** Conexión directa y rápida con Nequi o Bancolombia para fondear.\n- **Riesgos:** Está domiciliada en Bermudas, **NO** tiene seguro Fogafín. Comisiones de conversión incluidas en el precio."
-    ]
+    ("eToro", "Criptomonedas"): ["₿ **Crypto en eToro:** Compra directa del activo subyacente. Sin billetera privada."],
+    ("eToro", "Acciones Individuales"): ["🏢 **Cero comisiones** en acciones reales. Ganancias por el spread."],
+    ("eToro", "ETFs"): ["📊 **SPY, VOO:** Disponibles como CFD o activo subyacente."],
+    ("eToro", "ETFs Sectoriales"): ["🚀 **Tecnología, Energía:** A través de ETFs temáticos."],
+    ("Bitso", "Criptomonedas"): ["₿ **Bitcoin / Ethereum / USDC:** \n- Comisión del ~0.5% al 1% en el spread. Debes declarar tus ganancias en Renta."],
+    ("Binance", "Criptomonedas"): ["₿ **Cripto Global:** \n- Comisión del 0.1% (La más baja). Requiere usar mercado P2P para fondear."],
+    ("Wenia", "Criptomonedas"): ["🟣 **COPW (Criptopeso):** \n- Conexión con Bancolombia/Nequi. No tiene seguro Fogafín."],
+    ("Kraken", "Criptomonedas"): ["🐙 **Kraken Pro:** Alta seguridad, ideal para trading avanzado."],
+    ("Buda", "Criptomonedas"): ["🇨🇱 **Buda:** Fondeo directo por PSE en Colombia. Altamente regulado en Chile."]
 }
 
 def main():
@@ -208,7 +256,7 @@ def main():
                             st.write(f"**📱 App/Banco:** {p['nombre']}")
                             st.write(f"**💸 Costos/Comisiones (Resumen App):** {p['costos']}")
                             
-                            # DESPLIEGUE DEL ANÁLISIS FINANCIERO ESPECÍFICO
+                            # DESPLIEGUE DEL ANÁLISIS FINANCIERO ESPECÍFICO (Ahora sí cubre el 100%)
                             catalogo = CATALOGO_FINANCIERO_DETALLADO.get((p['nombre'], act_tipo), [])
                             if catalogo:
                                 st.markdown("---")
@@ -217,10 +265,9 @@ def main():
                                     st.markdown(f"{item}")
                                     st.markdown("<br>", unsafe_allow_html=True)
                             else:
-                                st.info(f"📌 Los costos, impuestos y opciones detalladas aplican según las políticas generales de {p['nombre']}.")
+                                st.info(f"📌 {act_tipo} disponible en {p['nombre']}. Costos e impuestos según política general de la app.")
                             
                         with col_der:
-                            # Contenedor gris para destacar la matemática global del modelo
                             with st.container(border=True):
                                 st.markdown("##### 💰 Proyección Matemática")
                                 st.write(f"Capital Aportado: **{motor.fmt(r['total_aportado'], moneda)}**")
