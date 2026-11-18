@@ -3,6 +3,7 @@ import motor
 from estilos import CSS
 import pandas as pd
 import numpy as np
+import requests
 
 st.set_page_config(
     page_title="Asesor de Inversiones IA",
@@ -15,7 +16,22 @@ st.markdown(CSS, unsafe_allow_html=True)
 def html(texto: str) -> None:
     st.markdown(texto, unsafe_allow_html=True)
 
-# Diccionario inteligente para dar nombres reales de fondos, acciones y CDTs
+# ---------------------------------------------------------
+# NUEVO: CONEXIÓN EN VIVO A LA TASA DEL DÓLAR (INTERNET)
+# ---------------------------------------------------------
+@st.cache_data(ttl=3600) # Se actualiza cada hora para que la app sea rápida
+def obtener_trm_actual():
+    try:
+        # API gratuita que devuelve la tasa del Dólar global
+        url = "https://api.exchangerate-api.com/v4/latest/USD"
+        respuesta = requests.get(url, timeout=5)
+        datos = respuesta.json()
+        return float(datos['rates']['COP'])
+    except Exception:
+        # Si no hay internet, usa el por defecto del motor
+        return motor.TRM_DEFECTO
+
+# Diccionario inteligente para dar nombres reales
 EJEMPLOS_ESPECIFICOS = {
     ("Trii", "Acciones Individuales"): "Acciones locales: Ecopetrol, Bancolombia, ISA, Grupo Argos, Nu Holdings.",
     ("Trii", "ETFs"): "iShares COLCAP (Mercado local), ETF S&P 500 (Mercado Global).",
@@ -51,6 +67,8 @@ EJEMPLOS_ESPECIFICOS = {
 }
 
 def main():
+    trm_vivo = obtener_trm_actual()
+    
     html('<div class="hero"><h1>🤖 Asesor Inteligente de Inversiones</h1><p>Configura tu perfil para obtener opciones de mercado basadas en IA.</p></div>')
     
     st.subheader("1. Configura tu Inversión")
@@ -61,6 +79,12 @@ def main():
     plazo_txt = st.selectbox("¿A qué plazo?", options=motor.PLAZOS, format_func=lambda x: f"{x} meses" if x > 1 else "1 mes", index=None, placeholder="Elige una opción")
 
     moneda = "COP" if moneda_txt == "Pesos Colombianos (COP)" else "USD" if moneda_txt == "Dólares (USD)" else None
+    
+    # ---------------------------------------------------------
+    # Diseño visual de la tasa en Vivo para USD
+    # ---------------------------------------------------------
+    if moneda == "USD":
+        st.info(f"🌐 **TRM en Vivo:** El mercado calcula hoy el Dólar a **${trm_vivo:,.2f} COP**")
     
     monto, aporte = None, None
     if moneda == "COP":
@@ -105,32 +129,32 @@ def main():
         st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial para habilitar el análisis.")
         
     if st.button("Analizar Portafolio", disabled=not campos_llenos):
-        with st.spinner("Desbloqueando todo el catálogo de entidades..."):
+        with st.spinner("Desbloqueando todo el catálogo de entidades (Procesando 100% de la base)..."):
             puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
             perfil = motor.perfil_desde_puntos(puntos)
             
-            # Llamamos al motor original
+            # EL TRUCO ESTÁ AQUÍ: "n=10" OBLIGA AL MOTOR A TRAER MÁS OPCIONES
             out = motor.recomendar(
                 primera_vez=(primera == "Sí, es mi primera vez"),
                 monto=float(monto),
                 moneda=moneda,
-                trm=motor.TRM_DEFECTO,
+                trm=trm_vivo,  # <-- Inyectamos el Dólar en Vivo 
                 plazo=plazo_txt,
                 perfil=perfil,
                 pref_moneda="Me da igual",
                 pref_entidad=motor.ENTIDAD_IGUAL,
-                aporte_mensual=float(aporte) if aporte is not None else 0.0
+                aporte_mensual=float(aporte) if aporte is not None else 0.0,
+                n=10 
             )
             
             st.markdown(f"### Tu Perfil IA: **{perfil}** (Puntaje: {puntos})")
-            st.markdown("A continuación, te detallamos **todas las carteras exactas disponibles en Colombia**, cuánto ganarás y qué activos específicos buscar en cada aplicación:")
+            st.markdown("A continuación, te detallamos **todas las carteras y entidades disponibles**, cuánto ganarás y qué activos específicos buscar en cada aplicación:")
             
-            monto_usd = motor.a_usd(float(monto), moneda, motor.TRM_DEFECTO)
+            monto_usd = motor.a_usd(float(monto), moneda, trm_vivo)
             
             for i, r in enumerate(out["resultados"]):
                 act_tipo = r['tipo']
                 
-                # Rescatamos TODAS las plataformas que soportan este activo y monto (Saltando el límite del motor)
                 plataformas_completas = []
                 for p in motor.PLATAFORMAS:
                     if act_tipo in p.get('tipos', []):
@@ -160,7 +184,6 @@ def main():
                     st.warning(f"No encontramos una aplicación que acepte el monto actual para {act_tipo}.")
                     continue
                 
-                # Creamos las pestañas dinámicamente con TODAS las plataformas válidas
                 tabs = st.tabs([p['nombre'] for p in plataformas_completas])
                 
                 for idx, p in enumerate(plataformas_completas):
@@ -170,7 +193,6 @@ def main():
                             st.write(f"**📱 App/Banco:** {p['nombre']}")
                             st.write(f"**💸 Costos/Comisiones reales:** {p['costos']}")
                             
-                            # INYECCIÓN DEL NOMBRE ESPECÍFICO DEL ACTIVO
                             sugerencia = EJEMPLOS_ESPECIFICOS.get((p['nombre'], act_tipo), f"Opciones de {act_tipo} directo en el buscador de la app.")
                             st.info(f"**📌 ¿Qué debes buscar exactamente?:**\n\n{sugerencia}")
                             
@@ -182,7 +204,6 @@ def main():
                             st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(val_fin, moneda)}**</span>", unsafe_allow_html=True)
 
                         with col_der:
-                            # Gráfico de proyección de esa entidad
                             df_serie = r['serie'].copy()
                             df_serie.rename(columns={
                                 "Con tu inversión": f"Proyección en {p['nombre']}",
