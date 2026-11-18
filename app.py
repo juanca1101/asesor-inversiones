@@ -26,7 +26,7 @@ def obtener_trm_actual():
         return motor.TRM_DEFECTO
 
 # ==============================================================================
-# PERFIL DE CADA ENTIDAD (TIPO, QUÉ ES, CÓMO FUNCIONA Y AJUSTE DE TASA/COMISIÓN)
+# PERFIL DE CADA ENTIDAD (TIPO, QUÉ ES, CÓMO FUNCIONA Y AJUSTE RELATIVO)
 # ==============================================================================
 PERFIL_ENTIDADES = {
     "Trii": {
@@ -60,7 +60,7 @@ PERFIL_ENTIDADES = {
     "Pibank": {
         "tipo": "Neobanco de Ahorro e Inversión (Banco Pichincha)",
         "que_es": "Marca digital especializada en ahorro y CDTs de alta rentabilidad, vigilada por la Superfinanciera y con seguro Fogafín.",
-        "como_funciona": "No tiene tarjetas ni sucursales; transfieres desde otro banco y tu dinero empieza a generar una de las tasas más altas del mercado desde el primer peso.",
+        "como_funciona": "No tiene tarjetas ni sucursales; transfieres desde otro banco y tu dinero empieza a generar rendimientos desde el primer peso.",
         "delta_tasa": 1.15,
         "delta_com": -0.08,
     },
@@ -235,7 +235,7 @@ CATALOGO_FINANCIERO_DETALLADO = {
         "₿ **Bitcoin / Ethereum:** Compra directa con saldo en dólares (no cubiertas por SIPC)."
     ],
     ("Interactive Brokers", "Fondos Indexados"): [
-        "🏦 **ETFs Globales y Irlandeses (VWRA, CSPX):** Comisiones desde US$1. Los ETFs domiciliados en Irlanda reducen la retención de dividendos del 30% al **15%**."
+        "🏦 **ETFs Globales e Irlandeses (VWRA, CSPX):** Comisiones desde US$1. Los ETFs domiciliados en Irlanda reducen la retención de dividendos del 30% al **15%**."
     ],
     ("Interactive Brokers", "ETFs"): ["📊 **VOO, QQQ, VT:** Acceso directo a los ETFs más líquidos del mundo."],
     ("Interactive Brokers", "ETFs Sectoriales"): ["🚀 **Cobertura global:** ETFs sectoriales en bolsas de EE. UU. y Europa."],
@@ -247,7 +247,7 @@ CATALOGO_FINANCIERO_DETALLADO = {
     ("Lulo Bank", "CDT"): ["🟡 **CDT Lulo Bank:** Plazos de 90 a 540 días con tasa fija. Retención en la fuente del **4%**."],
     ("Lulo Bank", "Cuenta de Ahorro Remunerada"): ["🟡 **Bolsillos Lulo:** Rendimientos diarios con disponibilidad inmediata. Retención del **7%**."],
     ("Pibank", "CDT"): ["🔴 **CDT Pibank:** Permite elegir pago de intereses mensual o al vencimiento. Retención del **4%**."],
-    ("Pibank", "Cuenta de Ahorro Remunerada"): ["🔴 **Cuenta Pibank:** Liquidación mensual automática con tasa competitiva desde el primer peso. Retención del **7%**."],
+    ("Pibank", "Cuenta de Ahorro Remunerada"): ["🔴 **Cuenta Pibank:** Liquidación mensual automática desde el primer peso. Retención del **7%**."],
     ("Davivienda", "CDT"): ["🏠 **CDT Móvil Davivienda:** Apertura 100% digital. Retención del **4%** sobre intereses. Seguro Fogafín."],
     ("Davivienda", "Carteras Colectivas"): ["🏠 **Fondo Superior / Fondo Interés:** Fondos de liquidez administrados por Fiduciaria Davivienda."],
     ("Davivienda", "Fondo de Deuda"): ["📉 **Fondo Renta Fija Plazo 30:** Enfocado en estabilidad a corto plazo."],
@@ -265,6 +265,14 @@ CATALOGO_FINANCIERO_DETALLADO = {
     ("Buda", "Criptomonedas"): ["🇨🇱 **BTC, ETH, USDC:** Fondeo directo en pesos por PSE."]
 }
 
+def formatear_plazo(meses: int) -> str:
+    if meses == 1:
+        return "1 mes"
+    if meses < 12:
+        return f"{meses} meses"
+    anios = meses // 12
+    return f"{meses} meses ({anios} año)" if anios == 1 else f"{meses} meses ({anios} años)"
+
 def main():
     trm_vivo = obtener_trm_actual()
     
@@ -274,160 +282,9 @@ def main():
     primera = st.selectbox("¿Es tu primera vez invirtiendo?", ["Sí, es mi primera vez", "No, ya he invertido antes"], index=None, placeholder="Elige una opción")
     objetivo = st.selectbox("¿Para qué quieres invertir?", motor.OBJETIVOS, index=None, placeholder="Elige una opción")
     moneda_txt = st.selectbox("¿En qué moneda prefieres invertir?", ["Pesos Colombianos (COP)", "Dólares (USD)"], index=None, placeholder="Elige una opción")
-    plazo_txt = st.selectbox("¿A qué plazo?", options=motor.PLAZOS, format_func=lambda x: f"{x} meses" if x > 1 else "1 mes", index=None, placeholder="Elige una opción")
+    plazo_txt = st.selectbox("¿A qué plazo?", options=motor.PLAZOS, format_func=formatear_plazo, index=None, placeholder="Elige una opción")
 
     moneda = "COP" if moneda_txt == "Pesos Colombianos (COP)" else "USD" if moneda_txt == "Dólares (USD)" else None
     
     if moneda == "USD":
-        st.info(f"🌐 **TRM en Vivo:** El mercado calcula hoy el Dólar a **${trm_vivo:,.2f} COP**")
-    
-    monto, aporte = None, None
-    if moneda == "COP":
-        monto = st.number_input("Monto inicial a invertir (COP)", min_value=0, step=50000, value=None, placeholder="Ej: 100000")
-        if monto is not None:
-            st.caption(f"💰 Monto registrado: **${monto:,.0f} COP**".replace(",", "."))
-        aporte = st.number_input("Aporte mensual (COP, opcional)", min_value=0, step=10000, value=None, placeholder="Ej: 50000")
-        if aporte is not None:
-            st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} COP**".replace(",", "."))
-            
-    elif moneda == "USD":
-        monto = st.number_input("Monto inicial a invertir (USD)", min_value=0, step=50, value=None, placeholder="Ej: 100")
-        if monto is not None:
-            st.caption(f"💰 Monto registrado: **${monto:,.0f} USD**".replace(",", "."))
-        aporte = st.number_input("Aporte mensual (USD, opcional)", min_value=0, step=10, value=None, placeholder="Ej: 50")
-        if aporte is not None:
-            st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} USD**".replace(",", "."))
-        
-    st.markdown("---")
-    st.subheader("2. Test de Riesgo")
-    
-    resp_actualizadas = []
-    for i, (pregunta, opciones) in enumerate(motor.PREGUNTAS):
-        textos = [o for o, _ in opciones]
-        r = st.selectbox(pregunta, textos, index=None, key=f"p_{i}", placeholder="Elige una opción")
-        resp_actualizadas.append(r)
-        
-    st.markdown("---")
-    campos_llenos = all([primera, objetivo, moneda, plazo_txt, monto is not None]) and all(resp_actualizadas)
-    
-    if not campos_llenos:
-        st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial para generar el análisis tributario y financiero.")
-        
-    if st.button("Analizar Portafolio", disabled=not campos_llenos):
-        with st.spinner("Calculando impuestos, comisiones y rentabilidades personalizadas por entidad..."):
-            puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
-            perfil = motor.perfil_desde_puntos(puntos)
-            
-            out = motor.recomendar(
-                primera_vez=(primera == "Sí, es mi primera vez"),
-                monto=float(monto),
-                moneda=moneda,
-                trm=trm_vivo, 
-                plazo=plazo_txt,
-                perfil=perfil,
-                pref_moneda="Me da igual",
-                pref_entidad=motor.ENTIDAD_IGUAL,
-                aporte_mensual=float(aporte) if aporte is not None else 0.0,
-                n=10 
-            )
-            
-            st.markdown(f"### Tu Perfil IA: **{perfil}** (Puntaje: {puntos})")
-            monto_usd = motor.a_usd(float(monto), moneda, trm_vivo)
-            aporte_val = float(aporte) if aporte is not None else 0.0
-            
-            for i, r in enumerate(out["resultados"]):
-                act_tipo = r['tipo']
-                
-                # Tasas base predichas por el modelo de IA para este activo
-                tasa_base_ea = r['rendimiento_anual_pct']
-                com_base_pct = r['comision_pct']
-                
-                plataformas_completas = [p for p in motor.PLATAFORMAS if act_tipo in p.get('tipos', [])]
-                
-                if not plataformas_completas:
-                    continue
-
-                html(f"""
-                <div class="card" style="margin-bottom: 5px; margin-top: 20px;">
-                  <div class="card-header" style="margin-bottom: 5px;">
-                    <h3 class="card-title">Opción {i+1}: {act_tipo}</h3>
-                    <span class="badge { 'b-cop' if r['moneda_activo'] == 'COP' else 'b-usd' }">{r['moneda_activo']}</span>
-                  </div>
-                  <p style="margin-top:0; color: #475569;">{r['descripcion']}</p>
-                </div>
-                """)
-                
-                tabs = st.tabs([p['nombre'] for p in plataformas_completas])
-                
-                for idx, p in enumerate(plataformas_completas):
-                    with tabs[idx]:
-                        nombre_ent = p['nombre']
-                        info_ent = PERFIL_ENTIDADES.get(nombre_ent, {
-                            "tipo": "Entidad Financiera / Plataforma",
-                            "que_es": p.get('regulacion', 'Plataforma de inversión.'),
-                            "como_funciona": p.get('nota', 'Permite invertir en este instrumento desde su portal.'),
-                            "delta_tasa": 0.0,
-                            "delta_com": 0.0,
-                        })
-                        
-                        # CÁLCULO DINÁMICO POR ENTIDAD (Varía según tasa y comisión de cada plataforma)
-                        tasa_ent_ea = max(0.5, tasa_base_ea + info_ent["delta_tasa"])
-                        com_ent_pct = max(0.0, com_base_pct + info_ent["delta_com"])
-                        tasa_ent_diaria = ((1 + tasa_ent_ea / 100) ** (1 / 365) - 1) * 100
-                        
-                        # Recalculamos la serie y totales usando motor.proyeccion con los parámetros de ESTA entidad
-                        df_serie = motor.proyeccion(float(monto), aporte_val, tasa_ent_ea, com_ent_pct, plazo_txt)
-                        total_aportado = float(monto) + aporte_val * plazo_txt
-                        valor_final = float(df_serie["Con tu inversión"].iloc[-1])
-                        ganancia_neta = valor_final - total_aportado
-                        descuento_total = total_aportado * (com_ent_pct / 100)
-                        ganancia_bruta = ganancia_neta + descuento_total
-
-                        if monto_usd < p['min_usd']:
-                            st.warning(f"⚠️ **Atención:** El mínimo sugerido aquí es {p['minimo_txt']}. Tu monto actual no alcanza, pero revisa cómo funciona para el futuro.")
-                        
-                        # FICHA DE IDENTIDAD DE LA ENTIDAD (Tipo, Qué es y Cómo funciona)
-                        vigilada_txt = "✅ Vigilada Superfinanciera" if p.get("vigilada_sfc") else "🌐 Regulación Internacional / Sin vigilancia SFC"
-                        html(f"""
-                        <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #0ea5e9; border-radius: 10px; padding: 14px 16px; margin-bottom: 14px;">
-                          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;">
-                            <span style="font-weight: 800; color: #0f172a; font-size: 1.05rem;">🏛️ {nombre_ent} — {info_ent['tipo']}</span>
-                            <span style="background: #e0f2fe; color: #0369a1; padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700;">{vigilada_txt}</span>
-                          </div>
-                          <p style="margin: 4px 0; font-size: 0.9rem; color: #334155;"><b>¿Qué es?:</b> {info_ent['que_es']}</p>
-                          <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: #334155;"><b>¿Cómo funciona?:</b> {info_ent['como_funciona']}</p>
-                        </div>
-                        """)
-                        
-                        col_izq, col_der = st.columns([1.3, 1])
-                        with col_izq:
-                            st.write(f"**💸 Costos/Comisiones (Tarifario):** {p['costos']}")
-                            
-                            catalogo = CATALOGO_FINANCIERO_DETALLADO.get((nombre_ent, act_tipo), [])
-                            if catalogo:
-                                st.markdown("---")
-                                st.markdown(f"**⚖️ Opciones e Impuestos ({act_tipo} en {nombre_ent}):**")
-                                for item in catalogo:
-                                    st.markdown(f"- {item}")
-                            else:
-                                st.info(f"📌 {act_tipo} disponible en {nombre_ent}. Costos e impuestos según política general de la app.")
-                            
-                        with col_der:
-                            with st.container(border=True):
-                                st.markdown(f"##### 💰 Proyección en {nombre_ent}")
-                                st.write(f"📈 **Tasa Estimada:** {tasa_ent_ea:.2f}% E.A. *(~{tasa_ent_diaria:.4f}% diario)*")
-                                st.write(f"🏷️ **Comisión/Costo Est.:** {com_ent_pct:.2f}%")
-                                st.markdown("---")
-                                st.write(f"Capital Aportado: **{motor.fmt(total_aportado, moneda)}**")
-                                st.write(f"Ganancia Bruta: **+ {motor.fmt(ganancia_bruta, moneda)}**")
-                                st.write(f"Desc./Impuestos Est.: **- {motor.fmt(descuento_total, moneda)}**")
-                                st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(valor_final, moneda)}**</span>", unsafe_allow_html=True)
-                            
-                            df_serie.rename(columns={
-                                "Con tu inversión": f"Crecimiento en {nombre_ent}",
-                                "Solo lo que aportas": "Bolsillo"
-                            }, inplace=True)
-                            st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"], height=230)
-                
-if __name__ == "__main__":
-    main()
+        st.info(f"
