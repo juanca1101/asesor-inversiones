@@ -26,111 +26,86 @@ def obtener_trm_actual():
         return motor.TRM_DEFECTO
 
 # ==============================================================================
-# DICCIONARIO AVANZADO: LISTAS DE CATÁLOGO DETALLADO
+# BASE DE DATOS FINANCIERA: DESGLOSE DE IMPUESTOS, COMISIONES Y RENTABILIDAD
 # ==============================================================================
-CATALOGO_DETALLADO = {
+CATALOGO_FINANCIERO_DETALLADO = {
+    # ------------------- TRII -------------------
     ("Trii", "Acciones Individuales"): [
-        "🟢 **Mercado Local (BVC):** Ecopetrol, Bancolombia, ISA, Celsia, Grupo Argos, GEB.",
-        "🌐 **Mercado Global:** Nu Holdings, Apple, Amazon (a través del MGC)."
+        "🟢 **Mercado Local (Ecopetrol, Bancolombia, ISA):** \n- **Ganancia:** Por valorización (sube el precio) y pago de Dividendos.\n- **Retención (Impuesto):** Te descuentan el **10%** sobre los dividendos que te paguen.\n- **Comisión Trii:** Cobran ~$14.900 COP fijos por cada vez que compres o vendas (si el monto es menor a 5M).",
+        "🌐 **Mercado Global (Nu Holdings, Apple en MGC):** \n- **Ganancia:** Cotizan en pesos pero siguen el precio en dólares (te proteges si el dólar sube). No suelen pagar dividendos altos, la ganancia es por crecimiento del precio."
     ],
     ("Trii", "ETFs"): [
-        "📊 **iShares COLCAP (ICOLCAP):** Invierte en las empresas más grandes de Colombia.",
-        "🇺🇸 **iShares S&P 500 (CSPX):** Invierte en las 500 empresas más grandes de EE.UU."
-    ],
-    ("Trii", "Carteras Colectivas"): [
-        "💼 **Fondo Acciones & Valores Vista:** Bajo riesgo, puedes retirar tu dinero rápido."
-    ],
-    ("Trii", "Fondo de Deuda"): [
-        "📈 **Fondo Renta Fija Acciones & Valores:** Invierte en deuda de empresas y estado."
+        "📊 **iShares COLCAP (ICOLCAP):** \n- **Detalle:** Compras las 20 empresas más grandes de Colombia de un solo golpe.\n- **Costos:** Tiene una comisión de administración interna del fondo de aprox **0.60%** anual.\n- **Impuestos:** Retención del 10% sobre dividendos repartidos.",
+        "🇺🇸 **iShares S&P 500 (CSPX):** \n- **Detalle:** Sigue a las 500 top de EE. UU.\n- **Ventaja:** Acumula los dividendos automáticamente para no pagar impuestos en Colombia hasta que lo vendas."
     ],
     ("Trii", "CDT"): [
-        "🏦 **CDT Digital:** Emitido por Acciones & Valores. Se abre directo en la app sin papeleo."
+        "🏦 **CDT Digital Acciones & Valores:** \n- **Ganancia:** Tasa E.A. Fija garantizada.\n- **Retención de Ley:** Se te descuenta el **4% de Retención en la Fuente** de forma automática sobre los intereses que ganes."
     ],
-    
+    ("Trii", "Carteras Colectivas"): [
+        "💼 **Fondo Vista (Liquidez):** \n- **Rentabilidad:** Variable, suele rondar el 6%-8% anual.\n- **Comisión:** El fondo descuenta un % de administración antes de mostrarte tu saldo.\n- **Retención:** 7% de Retención en la Fuente sobre los rendimientos financieros."
+    ],
+
+    # ------------------- HAPI -------------------
     ("Hapi", "Fondos Indexados"): [
-        "📈 **VOO:** Sigue el S&P 500 (Empresas grandes de EE.UU).",
-        "💻 **QQQ:** Sigue el Nasdaq 100 (Sector tecnológico).",
-        "🏭 **DIA:** Sigue el Dow Jones (Sector industrial)."
-    ],
-    ("Hapi", "ETFs"): [
-        "🌎 **VT:** Vanguard Total World (Acciones de todo el mundo).",
-        "🛡️ **VTI:** Vanguard Total Stock Market (Todo el mercado de EE.UU)."
+        "📈 **VOO (S&P 500) / QQQ (Nasdaq 100):** \n- **Rentabilidad Histórica:** ~10% a 12% anual en DÓLARES.\n- **Comisión de Compra:** **0% (Cero dólares)** por operar.\n- **Retención (Impuesto EE.UU.):** Por ser extranjero, el gobierno de EE.UU. te retiene automáticamente el **30% de los dividendos** que paguen estos fondos. La valorización del fondo NO tiene retención en EE.UU.\n- **Costos Ocultos:** Fondeo desde Colombia por PSE cuesta ~0.45% (Mínimo $2.99 USD)."
     ],
     ("Hapi", "Acciones Individuales"): [
-        "🍎 **Apple (AAPL):** Fracciones desde $5 USD.",
-        "🚗 **Tesla (TSLA):** Fracciones desde $5 USD.",
-        "🛒 **Amazon (AMZN):** Fracciones desde $5 USD.",
-        "🤖 **Nvidia (NVDA):** Fracciones desde $5 USD."
+        "🍎 **Apple / Tesla / Amazon / Nvidia:** \n- **Inversión:** Puedes comprar fracciones desde $5 USD.\n- **Riesgo:** Alto (volatilidad diaria).\n- **Impuestos:** Igual que los ETFs, retención del 30% en dividendos. Si vendes con ganancia, debes declararlo como ganancia ocasional en Colombia al traer el dinero."
     ],
-    
+
+    # ------------------- INTERACTIVE BROKERS -------------------
     ("Interactive Brokers", "Fondos Indexados"): [
-        "🏦 **Fondos Vanguard:** VFIAX, VTSAX.",
-        "📈 **ETFs equivalentes:** VOO, IVV."
+        "🏦 **ETFs Globales (VOO, VT):** \n- **Comisión:** Aprox $0.005 USD por acción (Mínimo $1 USD por operación).\n- **Ventaja Pro:** Puedes comprar ETFs domiciliados en Irlanda (Ej. VWRA) para que la retención de dividendos baje del 30% al **15%**, ahorrando muchos impuestos a largo plazo."
     ],
-    ("Interactive Brokers", "Acciones Individuales"): [
-        "🌐 **NYSE & NASDAQ:** Acceso a literalmente todas las acciones de EE.UU.",
-        "🌍 **Mercado Europeo/Asiático:** Acceso a bolsas globales."
-    ],
-    
-    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): [
-        "🟣 **Cajitas Nu:** Mueve tu plata a la cajita para generar rendimiento diario sin cobro de 4x1000 al sacarlo a tu cuenta."
-    ],
+
+    # ------------------- BANCOS: CDTs Y CUENTAS (Nu, Lulo, Pibank, Davivienda) -------------------
     ("Nu Colombia", "CDT"): [
-        "🟣 **CDT Digital Nu:** Desde $50.000 COP, plazos flexibles desde 60 días."
+        "🟣 **CDT Digital Nu (Desde 60 días):** \n- **Tasa:** Fija E.A. (Ej. 9% a 11% dependiendo del plazo).\n- **Impuestos:** Por ley, el banco aplica **4% de Retención en la Fuente** sobre tu ganancia al vencimiento.\n- **Seguro:** Tu capital y ganancias están protegidos por Fogafín hasta por $50 millones de pesos."
     ],
-    
-    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): [
-        "🟡 **Bolsillos Lulo:** Crea una meta, ponle un nombre y guarda ahí el dinero con rentabilidad."
+    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): [
+        "🟣 **Cajitas Nu:** \n- **Rentabilidad:** Tasa E.A. que se liquida a diario.\n- **Retención:** Aplica **7% de Retención en la Fuente** sobre los intereses diarios pagados.\n- **Ventaja:** Cero comisiones de manejo. Al sacar el dinero de la cajita a tu cuenta Nu NO te cobran 4x1000."
     ],
     ("Lulo Bank", "CDT"): [
-        "🟡 **CDT Lulo Bank:** Tasa fija asegurada. Liquidación a término."
+        "🟡 **CDT Lulo Bank:** \n- **Impuestos:** Igual que todos, **4% de retención** sobre la ganancia bruta.\n- **Características:** No permite cancelarlo antes de la fecha (es ilíquido hasta el vencimiento)."
     ],
-    
-    ("tyba", "Carteras Colectivas"): [
-        "💼 **Fondo tyba Pocket:** Muy bajo riesgo.",
-        "📈 **Fondo Acciones Globales:** Alto riesgo, renta variable."
-    ],
-    ("tyba", "CDT"): [
-        "🏦 **CDT Mibanco:** Contratado 100% digital a través de la app tyba."
-    ],
-    
-    ("Bancolombia eTrading", "Acciones Individuales"): [
-        "🇨🇴 **Todas las acciones del COLCAP.**",
-        "🌐 **Mercado Global Colombiano (MGC).**"
-    ],
-    ("Bancolombia eTrading", "Carteras Colectivas"): [
-        "💼 **Fiducuenta:** Alta liquidez (Se busca en la App Personas, no en eTrading).",
-        "🌱 **Plan Semilla:** Ahorro programado."
-    ],
-    
-    ("Pibank", "Cuenta de Ahorro Remunerada"): [
-        "🔴 **Cuenta Pibank:** Liquidación de intereses automática cada mes."
+    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): [
+        "🟡 **Bolsillos Lulo:** \n- **Rentabilidad:** Genera intereses diarios.\n- **Retención:** 7% sobre rendimientos financieros pagados."
     ],
     ("Pibank", "CDT"): [
-        "🔴 **CDT Pibank:** Tradicionalmente ofrece las tasas más competitivas del mercado."
+        "🔴 **CDT Pibank:** \n- **Ventaja Única:** Te permite elegir si quieres que te paguen los intereses mensuales o al final del plazo.\n- **Impuestos:** 4% de retención en la fuente sobre lo que te paguen."
     ],
-    
+    ("Pibank", "Cuenta de Ahorro Remunerada"): [
+        "🔴 **Cuenta Pibank:** \n- **Beneficios:** Da el 100% de la rentabilidad prometida desde el primer peso, sin condiciones. Retención del 7% sobre las ganancias mensuales."
+    ],
     ("Davivienda", "CDT"): [
-        "🏠 **CDT Móvil Davivienda:** Se abre desde la app transaccional del banco."
+        "🏠 **CDT Móvil Davivienda:** \n- **Seguridad:** Banco tradicional, protección Fogafín 50M. \n- **Impuestos:** 4% de retención en la fuente sobre intereses."
     ],
     ("Davivienda", "Fondo de Pensión Voluntaria"): [
-        "🏠 **Dafuturo:** Te permite elegir portafolio Conservador, Moderado o Mayor Riesgo."
+        "🏠 **Dafuturo (Pensión Voluntaria):** \n- **Beneficio Tributario:** El dinero que aportas reduce tu base para el pago de impuesto de Renta (hasta 30% del ingreso).\n- **Comisión:** Cobra comisión de administración anual (~1.5% a 3%).\n- **Condición:** Si retiras la plata antes de 10 años para algo diferente a compra de vivienda, pierdes el beneficio tributario y te cobran la retención de golpe."
     ],
-    
-    ("Porvenir", "Fondo de Pensión Voluntaria"): [
-        "👴 **Portafolio Conservador:** Invierte principalmente en renta fija local.",
-        "🚀 **Portafolio Crecimiento:** Renta variable internacional."
+
+    # ------------------- TYBA -------------------
+    ("tyba", "Carteras Colectivas"): [
+        "💼 **Fondo tyba Pocket (Bajo riesgo):** \n- **Comisión:** Cobra ~1.2% E.A. por administración.\n- **Retención:** 7% sobre rendimientos."
     ],
-    
+    ("tyba", "Fondo de Pensión Voluntaria"): [
+        "💼 **Portafolios Credicorp:** \n- **Estrategia:** Ideal para bajar impuestos anuales.\n- **Condiciones:** Rentabilidad variable según mercado, cobra comisión de administración del fondo."
+    ],
+
+    # ------------------- BANCOLOMBIA -------------------
+    ("Bancolombia eTrading", "Acciones Individuales"): [
+        "🇨🇴 **Comisiones Bancolombia:** \n- Es el más costoso para montos pequeños. Cobra **0.2% + IVA** por operación, con una comisión mínima de **$20.000 COP + IVA** (Si compras $100.000 en acciones, ya pierdes casi el 25% solo en comisión). Ideal solo para montos grandes."
+    ],
+
+    # ------------------- CRIPTOMONEDAS -------------------
     ("Bitso", "Criptomonedas"): [
-        "₿ **Bitcoin (BTC)**",
-        "🦇 **Ethereum (ETH)**",
-        "💵 **USDC (Dólar digital estable)**"
+        "₿ **Bitcoin / Ethereum / USDC:** \n- **Comisión:** Cobran entre 0.5% y 1% en el *spread* (la diferencia entre precio de compra y venta).\n- **Impuestos:** No hay retención en la fuente automática, PERO es tu obligación legal declararlo en tu impuesto de Renta si sacas ganancias a tu cuenta bancaria."
     ],
     ("Binance", "Criptomonedas"): [
-        "₿ **Bitcoin (BTC) & Ethereum (ETH)**",
-        "💵 **USDT (Tether)**",
-        "🚀 **Más de 350 altcoins (Solana, Cardano, etc.)**"
+        "₿ **Cripto Global:** \n- **Comisión:** 0.1% por operación (La más baja del mercado).\n- **Fondeo:** Debes usar P2P (Comprar dólares digitales a otras personas), lo que tiene un ligero sobrecosto en la tasa de cambio."
+    ],
+    ("Wenia", "Criptomonedas"): [
+        "🟣 **COPW (Criptopeso de Bancolombia):** \n- **Ventaja:** Conexión directa y rápida con Nequi o Bancolombia para fondear.\n- **Riesgos:** Está domiciliada en Bermudas, **NO** tiene seguro Fogafín. Comisiones de conversión incluidas en el precio."
     ]
 }
 
@@ -180,10 +155,10 @@ def main():
     campos_llenos = all([primera, objetivo, moneda, plazo_txt, monto is not None]) and all(resp_actualizadas)
     
     if not campos_llenos:
-        st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial.")
+        st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial para generar el análisis tributario y financiero.")
         
     if st.button("Analizar Portafolio", disabled=not campos_llenos):
-        with st.spinner("Desbloqueando todo el catálogo de entidades y opciones exactas..."):
+        with st.spinner("Calculando impuestos, comisiones y rentabilidades de todo el mercado..."):
             puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
             perfil = motor.perfil_desde_puntos(puntos)
             
@@ -212,7 +187,7 @@ def main():
                     continue
 
                 html(f"""
-                <div class="card" style="margin-bottom: 5px;">
+                <div class="card" style="margin-bottom: 5px; margin-top: 20px;">
                   <div class="card-header" style="margin-bottom: 5px;">
                     <h3 class="card-title">Opción {i+1}: {act_tipo}</h3>
                     <span class="badge { 'b-cop' if r['moneda_activo'] == 'COP' else 'b-usd' }">{r['moneda_activo']}</span>
@@ -226,40 +201,39 @@ def main():
                 for idx, p in enumerate(plataformas_completas):
                     with tabs[idx]:
                         if monto_usd < p['min_usd']:
-                            st.warning(f"⚠️ **Atención:** El mínimo sugerido aquí es {p['minimo_txt']}. Tu monto actual no alcanza, pero te mostramos la opción para que la conozcas a futuro.")
+                            st.warning(f"⚠️ **Atención:** El mínimo sugerido aquí es {p['minimo_txt']}. Tu monto no alcanza, pero revisa la estructura de costos para el futuro.")
                         
-                        col_izq, col_der = st.columns([1.2, 1])
+                        col_izq, col_der = st.columns([1.3, 1])
                         with col_izq:
                             st.write(f"**📱 App/Banco:** {p['nombre']}")
-                            st.write(f"**💸 Costos/Comisiones reales:** {p['costos']}")
+                            st.write(f"**💸 Costos/Comisiones (Resumen App):** {p['costos']}")
                             
-                            # RENDERIZAMOS EL CATÁLOGO DETALLADO EN VIÑETAS
-                            catalogo = CATALOGO_DETALLADO.get((p['nombre'], act_tipo), [])
+                            # DESPLIEGUE DEL ANÁLISIS FINANCIERO ESPECÍFICO
+                            catalogo = CATALOGO_FINANCIERO_DETALLADO.get((p['nombre'], act_tipo), [])
                             if catalogo:
                                 st.markdown("---")
-                                st.markdown(f"**📌 Catálogo exacto de {act_tipo} en {p['nombre']}:**")
+                                st.markdown(f"**⚖️ Desglose de Impuestos, Comisiones y Rentabilidad ({act_tipo} en {p['nombre']}):**")
                                 for item in catalogo:
-                                    st.markdown(f"- {item}")
+                                    st.markdown(f"{item}")
+                                    st.markdown("<br>", unsafe_allow_html=True)
                             else:
-                                st.info(f"📌 Búscalo como '{act_tipo}' en el menú principal o buscador de la app.")
+                                st.info(f"📌 Los costos, impuestos y opciones detalladas aplican según las políticas generales de {p['nombre']}.")
                             
                         with col_der:
-                            # Contenedor gris para destacar la matemática
+                            # Contenedor gris para destacar la matemática global del modelo
                             with st.container(border=True):
                                 st.markdown("##### 💰 Proyección Matemática")
                                 st.write(f"Capital Aportado: **{motor.fmt(r['total_aportado'], moneda)}**")
                                 st.write(f"Ganancia Bruta: **+ {motor.fmt(r['ganancia'] + (r['total_aportado'] * (r['comision_pct'] / 100)), moneda)}**")
-                                st.write(f"Descuento/Comisión: **- {motor.fmt(r['total_aportado'] * (r['comision_pct'] / 100), moneda)}**")
-                                st.markdown(f"#### Libre: <span style='color:#059669'>**{motor.fmt(r['valor_final'], moneda)}**</span>", unsafe_allow_html=True)
+                                st.write(f"Desc./Impuestos Total: **- {motor.fmt(r['total_aportado'] * (r['comision_pct'] / 100), moneda)}**")
+                                st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(r['valor_final'], moneda)}**</span>", unsafe_allow_html=True)
                             
                             df_serie = r['serie'].copy()
                             df_serie.rename(columns={
-                                "Con tu inversión": f"Crecimiento",
+                                "Con tu inversión": f"Crecimiento Neto",
                                 "Solo lo que aportas": "Bolsillo"
                             }, inplace=True)
-                            st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"], height=200)
+                            st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"], height=230)
                 
-                st.markdown("<br><hr><br>", unsafe_allow_html=True)
-
 if __name__ == "__main__":
     main()
