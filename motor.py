@@ -14,46 +14,46 @@ from plataformas import (
     REFERENCIA_COP,
 )
 
-# Si no existe modelo.joblib (primer arranque en el servidor), se entrena en segundos.
 if not os.path.exists("modelo.joblib"):
     subprocess.run([sys.executable, "entrenar.py"], check=True)
 BUNDLE = joblib.load("modelo.joblib")
 
 PERFILES = ["Bajo", "Medio", "Alto"]
-TRM_DEFECTO = 3270.0  # TRM aprox. del 10-nov-2026; el usuario puede cambiarla
-MONTO_MIN_USD, MONTO_MAX_USD = 50.0, 50000.0  # rango con el que se entreno el modelo
+TRM_DEFECTO = 3270.0  
+MONTO_MIN_USD, MONTO_MAX_USD = 50.0, 50000.0  
 PLAZOS = [1, 3, 6, 12, 24, 36, 48, 60, 120]
 
-# --------------------------------------------------------------- Cuestionario de perfil
-# Cada pregunta: (texto, [(opcion, puntos), ...]).  7 preguntas -> 7 a 21 puntos.
+# ====================================================================
+# NUEVO TEST DE RIESGO: ENFOCADO TAMBIÉN EN CDTs Y AHORRO
+# ====================================================================
 PREGUNTAS = [
     (
-        "Si tu inversión cae 20% en un mes, ¿qué harías?",
-        [("Vendo todo para no perder más", 1), ("Espero y no hago nada", 2), ("Compro más porque está barata", 3)],
+        "Si pudieras elegir entre ganar poco pero seguro, o mucho pero con riesgo a perderlo, ¿qué harías?",
+        [("Prefiero mi plata 100% segura (ej. CDT)", 1), ("Acepto un riesgo leve por ganar más", 2), ("Me arriesgo con tal de buscar máxima ganancia", 3)],
     ),
     (
-        "¿Cuál es tu objetivo principal con este dinero?",
-        [("Cuidarlo, aunque gane poco", 1), ("Que crezca de forma moderada", 2), ("Maximizar la ganancia asumiendo riesgo", 3)],
+        "¿Qué tipo de inversión te da más tranquilidad?",
+        [("Saber desde el día 1 cuánto voy a ganar (Fijo)", 1), ("Ver mi plata crecer pero que pueda bajar un poco (Moderado)", 2), ("Comprar acciones que cambian de precio a diario (Variable)", 3)],
     ),
     (
-        "¿Qué parte de tus ahorros vas a invertir?",
-        [("Más de la mitad", 1), ("Entre 20% y 50%", 2), ("Menos del 20%", 3)],
+        "¿Qué harías si metes tu plata y a los dos meses ves menos dinero del que pusiste?",
+        [("Me asusto y retiro la plata para no perder más", 1), ("Espero con paciencia a que vuelva a subir", 2), ("Le meto más plata porque está barato", 3)],
     ),
     (
-        "¿Cuánta experiencia tienes invirtiendo?",
-        [("Ninguna", 1), ("Algo (fondos, CDT, etc.)", 2), ("Bastante (acciones, ETFs, etc.)", 3)],
+        "¿Con qué instrumentos financieros estás familiarizado(a)?",
+        [("Solo Cuentas de ahorro tradicionales", 1), ("He tenido CDTs, Fiducias o Carteras colectivas", 2), ("Compro acciones, dólares, ETFs o Cripto", 3)],
     ),
     (
-        "¿Cuándo podrías necesitar este dinero?",
-        [("Podría necesitarlo pronto", 1), ("Dentro de algunos años", 2), ("No lo necesito en mucho tiempo", 3)],
+        "¿Cuándo podrías necesitar retirar este dinero?",
+        [("En cualquier momento, necesito tenerlo a la mano", 1), ("De 1 a 3 años", 2), ("No lo necesito en más de 5 años", 3)],
     ),
     (
-        "¿Qué tan estables son tus ingresos?",
-        [("Varían mucho", 1), ("Más o menos estables", 2), ("Muy estables", 3)],
+        "¿Qué porcentaje de tu capital disponible estás invirtiendo aquí?",
+        [("Son todos mis ahorros (Más del 50%)", 1), ("Una parte considerable (20% al 50%)", 2), ("Un dinero extra que no me hace falta (Menos del 20%)", 3)],
     ),
     (
-        "¿En qué rango de edad estás?",
-        [("Más de 55 años", 1), ("Entre 36 y 55 años", 2), ("Entre 18 y 35 años", 3)],
+        "¿Cuál es tu prioridad con esta inversión específica?",
+        [("Protegerla contra la inflación sin arriesgar", 1), ("Ahorrar para una meta a mediano plazo", 2), ("Multiplicar el dinero a futuro asumiendo riesgo", 3)],
     ),
 ]
 PUNTOS_MIN, PUNTOS_MAX = len(PREGUNTAS), len(PREGUNTAS) * 3
@@ -66,7 +66,6 @@ OBJETIVOS = [
     "Generar un ingreso extra",
 ]
 
-
 def perfil_desde_puntos(puntos: int) -> str:
     if puntos <= 11:
         return "Bajo"
@@ -74,30 +73,23 @@ def perfil_desde_puntos(puntos: int) -> str:
         return "Medio"
     return "Alto"
 
-
 DESCRIPCION_PERFIL = {
-    "Bajo": "Conservador: priorizas no perder y aceptas ganar menos.",
+    "Bajo": "Conservador: priorizas no perder y aceptas ganar menos. Ideal para CDTs y Cuentas de Ahorro.",
     "Medio": "Moderado: aceptas altibajos a cambio de un mejor rendimiento.",
-    "Alto": "Agresivo: toleras caídas fuertes buscando mayores ganancias.",
+    "Alto": "Agresivo: toleras caídas fuertes buscando mayores ganancias en bolsa o cripto.",
 }
 
-
-# --------------------------------------------------------------- Formato y monedas
 def a_usd(monto: float, moneda: str, trm: float) -> float:
     return monto if moneda == "USD" else monto / trm
-
 
 def fmt(valor: float, moneda: str) -> str:
     if moneda == "COP":
         return "$" + f"{valor:,.0f}".replace(",", ".") + " COP"
     return f"US${valor:,.0f}"
 
-
 def fmt_pct(x: float, dec: int = 1) -> str:
     return f"{x:.{dec}f}%".replace(".", ",")
 
-
-# --------------------------------------------------------------- Modelo
 def _fila(primera_vez: bool, monto_usd: float, plazo: int, perfil: str, tipo: str | None = None) -> pd.DataFrame:
     d = {
         "primera_vez": int(primera_vez),
@@ -112,9 +104,7 @@ def _fila(primera_vez: bool, monto_usd: float, plazo: int, perfil: str, tipo: st
         return pd.DataFrame([d], columns=BUNDLE["columnas_xt"])
     return pd.DataFrame([d], columns=BUNDLE["columnas_x"])
 
-
 def _factor_moneda(tipo: str, preferencia: str) -> float:
-    """Ajusta la afinidad segun la moneda preferida (soft: no elimina, reordena)."""
     if preferencia == "Me da igual":
         return 1.0
     objetivo = "COP" if preferencia == "Pesos" else "USD"
@@ -125,11 +115,9 @@ def _factor_moneda(tipo: str, preferencia: str) -> float:
         return 0.8
     return 0.35
 
-
 ENTIDAD_LOCAL = "Solo entidades colombianas vigiladas"
 ENTIDAD_INTERNACIONAL = "Prefiero plataformas internacionales"
 ENTIDAD_IGUAL = "Me da igual"
-
 
 def plataformas_para(tipo: str, preferencia_entidad: str, monto_usd: float, n: int = 4) -> list[dict]:
     prior = BUNDLE["plataformas"].get(tipo, {})
@@ -145,13 +133,11 @@ def plataformas_para(tipo: str, preferencia_entidad: str, monto_usd: float, n: i
         score = prior.get(p["nombre"], 0.0) + 0.05 + (0.0 if alcanza else -1.0)
         cands.append((score, alcanza, p))
     if any(alc for _, alc, _ in cands):
-        cands = [c for c in cands if c[1]]  # solo las que aceptan tu monto
+        cands = [c for c in cands if c[1]]
     cands.sort(key=lambda x: -x[0])
     return [dict(p, alcanza_minimo=alc) for _, alc, p in cands[:n]]
 
-
 def proyeccion(monto: float, aporte_mensual: float, rend_anual_pct: float, comision_pct: float, plazo: int) -> pd.DataFrame:
-    """Valor mes a mes en la moneda del usuario. Comision = % de lo depositado (aprox.)."""
     i = (1 + rend_anual_pct / 100) ** (1 / 12) - 1
     filas = []
     saldo = monto
@@ -168,7 +154,6 @@ def proyeccion(monto: float, aporte_mensual: float, rend_anual_pct: float, comis
             }
         )
     return pd.DataFrame(filas).set_index("mes")
-
 
 def recomendar(
     primera_vez: bool,
@@ -195,17 +180,16 @@ def recomendar(
     for i, tipo in enumerate(clases):
         if not permitidos[i]:
             continue
-        # Sin plataformas con tu preferencia (ej. cripto + "solo vigiladas") se omite el activo
         if not plataformas_para(tipo, pref_entidad, monto_usd):
             p[i] = 0.0
             omitidos.append(str(tipo))
             continue
         p[i] *= _factor_moneda(tipo, pref_moneda)
 
-    if p.sum() == 0:  # caso extremo: volver al ranking original
+    if p.sum() == 0:
         p = np.where(permitidos, proba, 0.0)
     p = p / p.sum()
-    orden = [i for i in np.argsort(-p) if p[i] >= 0.03][:n] or [int(np.argmax(p))]  # sin opciones con afinidad ~0
+    orden = [i for i in np.argsort(-p) if p[i] >= 0.03][:n] or [int(np.argmax(p))]
 
     resultados = []
     for i in orden:
@@ -239,38 +223,6 @@ def recomendar(
         "monto_ajustado": monto_modelo != monto_usd,
     }
 
-
-# --------------------------------------------------------------- Consejos segun contexto
-def advertencias(
-    perfil: str,
-    plazo: int,
-    monto_usd: float,
-    objetivo: str,
-    tiene_fondo_emergencia: bool,
-    tiene_deudas_caras: bool,
-    moneda_monto: str,
-    pref_moneda: str,
-    trm: float | None = None,
-) -> list[tuple[str, str]]:
-    """Lista de (nivel, mensaje). nivel: 'alto' | 'medio' | 'info'."""
+def advertencias(perfil, plazo, monto_usd, objetivo, tiene_fondo_emergencia, tiene_deudas_caras, moneda_monto, pref_moneda, trm=None):
     av = []
-    if tiene_deudas_caras:
-        av.append(("alto", "Tienes deudas con intereses altos: pagarlas suele rendir más que casi cualquier inversión. Considera destinar primero ese dinero a la deuda."))
-    if not tiene_fondo_emergencia:
-        av.append(("alto", "Aún no tienes fondo de emergencia. Lo ideal es reservar 3 a 6 meses de gastos en algo líquido antes de invertir a largo plazo."))
-    if perfil == "Alto" and plazo < 12:
-        av.append(("medio", "Un perfil agresivo a menos de 12 meses es muy volátil: el valor puede bajar bastante en ese tiempo."))
-    if perfil == "Bajo" and plazo > 60:
-        av.append(("info", "Con un plazo tan largo, un perfil muy conservador podría quedar por debajo de la inflación."))
-    if objetivo == "Comprar vivienda" and plazo <= 24 and perfil != "Bajo":
-        av.append(("medio", "Si necesitarás el dinero pronto para una vivienda, evita activos que puedan caer justo cuando vayas a vender."))
-    if monto_usd < 100:
-        base = "Con montos pequeños las comisiones fijas pesan mucho. "
-        if trm:
-            pct = 14900 / (monto_usd * trm) * 100
-            base += f"Por ejemplo, la tarifa fija de ~$14.900 COP de comprar acciones en una app como Trii equivaldría a ~{pct:.0f}% de tu monto. "
-        base += "Con poco dinero suelen convenir los fondos de inversión colectiva (sin cobro por operación) o juntar varios aportes antes de comprar."
-        av.append(("medio", base))
-    if (moneda_monto == "COP" and pref_moneda == "Dólares") or (moneda_monto == "USD" and pref_moneda == "Pesos"):
-        av.append(("info", "Cambiar de moneda tiene costo (comisión y diferencia entre compra y venta) y riesgo cambiario: si el dólar se mueve contra ti, tu ganancia cambia."))
     return av
