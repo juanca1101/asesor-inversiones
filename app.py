@@ -10,6 +10,7 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="collapsed",
 )
+# Cargamos tus estilos que ya estaban perfectos
 st.markdown(CSS, unsafe_allow_html=True)
 
 def html(texto: str) -> None:
@@ -58,7 +59,6 @@ def main():
         
     st.markdown("---")
     
-    # Validación segura 
     campos_llenos = (
         primera is not None and 
         objetivo is not None and 
@@ -71,13 +71,12 @@ def main():
     if not campos_llenos:
         st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial para habilitar el análisis.")
         
-    # El botón se desactiva visual y lógicamente hasta que no se llene todo
     if st.button("Analizar Portafolio", disabled=not campos_llenos):
-        with st.spinner("Analizando miles de registros..."):
+        with st.spinner("Analizando opciones en las plataformas..."):
             puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
             perfil = motor.perfil_desde_puntos(puntos)
             
-            # SOLUCIÓN DEL BUG: Mapeo exacto (kwargs) al motor de entrenamiento original
+            # Conexión exacta a tu motor de inteligencia
             out = motor.recomendar(
                 primera_vez=(primera == "Sí, es mi primera vez"),
                 monto=float(monto),
@@ -90,38 +89,70 @@ def main():
                 aporte_mensual=float(aporte) if aporte is not None else 0.0
             )
             
-            st.markdown(f"### Tu Perfil: **{perfil}** (Puntaje: {puntos})")
+            st.markdown(f"### Tu Perfil IA: **{perfil}** (Puntaje: {puntos})")
+            st.markdown("A continuación, te detallamos las carteras exactas, cuánto ganarás y qué aplicaciones usar:")
             
-            for r in out["resultados"]:
+            # Recorremos cada tipo de activo recomendado
+            for i, r in enumerate(out["resultados"]):
                 act_tipo = r['tipo']
-                pos = "pos" if r['ganancia'] > 0 else ""
                 
+                # Cálculos exactos según el modelo
+                tasa_esp = r['rendimiento_anual_pct']
+                com_esp = r['comision_pct']
+                val_fin = r['valor_final']
+                aportado = r['total_aportado']
+                ganancia_neta = r['ganancia']
+                
+                # Desglose de ganancia bruta vs retenciones/comisiones
+                descuento = aportado * (com_esp / 100)
+                ganancia_bruta = ganancia_neta + descuento
+
+                # Mostramos la tarjeta principal (Categoría)
                 html(f"""
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">{act_tipo}</h3>
+                <div class="card" style="margin-bottom: 5px;">
+                  <div class="card-header" style="margin-bottom: 5px;">
+                    <h3 class="card-title">Opción {i+1}: {act_tipo}</h3>
                     <span class="badge { 'b-cop' if r['moneda_activo'] == 'COP' else 'b-usd' }">{r['moneda_activo']}</span>
                   </div>
-                  <div class="metric-grid">
-                    <div class="metric"><div class="lbl">Tasa Esperada</div><div class="val">{motor.fmt_pct(r['rendimiento_anual_pct'])}</div></div>
-                    <div class="metric"><div class="lbl">Comisión (Estimada)</div><div class="val">{motor.fmt_pct(r['comision_pct'], 2)}</div></div>
-                    <div class="metric"><div class="lbl">Valor Final Estimado</div><div class="val {pos}">{motor.fmt(r['valor_final'], moneda)}</div></div>
-                  </div>
-                  <div class="small">Aportando {motor.fmt(r['total_aportado'], moneda)}, tu ganancia limpia estimada es de <b>{motor.fmt(r['ganancia'], moneda)}</b>.</div>
+                  <p style="margin-top:0; color: #475569;">{r['descripcion']}</p>
                 </div>
                 """)
                 
-            st.markdown("#### Proyección de Crecimiento")
-            if out["resultados"]:
-                mejor_opcion = out["resultados"][0]
-                meses = pd.date_range(start="2026-01-01", periods=plazo_txt, freq="ME")
+                plataformas = r.get('plataformas', [])
+                if not plataformas:
+                    st.info("No encontramos una aplicación vigilada para esta opción con tus filtros.")
+                    continue
                 
-                capital = [float(monto)]
-                for i in range(1, plazo_txt):
-                    capital.append(capital[-1] * (1 + (mejor_opcion['rendimiento_anual_pct']/12)) + (float(aporte) if aporte else 0))
+                # Creamos las pestañas por cada aplicación disponible
+                tabs = st.tabs([p['nombre'] for p in plataformas])
                 
-                df_graf = pd.DataFrame({"Mes": meses, "Capital Proyectado": capital}).set_index("Mes")
-                st.area_chart(df_graf, color="#3b82f6")
+                # Llenamos cada pestaña con la info específica y su gráfico
+                for idx, p in enumerate(plataformas):
+                    with tabs[idx]:
+                        col_izq, col_der = st.columns([1, 1.2])
+                        with col_izq:
+                            st.write(f"**📱 App/Banco:** {p['nombre']}")
+                            st.write(f"**🎯 ¿En qué inviertes aquí?:** {p['ofrece']}")
+                            st.write(f"**💸 Costos/Comisiones reales:** {p['costos']}")
+                            
+                            st.markdown("---")
+                            st.markdown("**💰 Tus números exactos:**")
+                            st.write(f"Tu Capital Aportado: **{motor.fmt(aportado, moneda)}**")
+                            st.write(f"Ganancia Bruta: **+ {motor.fmt(ganancia_bruta, moneda)}**")
+                            st.write(f"Descuento (Comisión/Impuesto): **- {motor.fmt(descuento, moneda)}**")
+                            st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(val_fin, moneda)}**</span>", unsafe_allow_html=True)
+
+                        with col_der:
+                            # Generamos el gráfico individual para esta pestaña
+                            df_serie = r['serie'].copy()
+                            df_serie.rename(columns={
+                                "Con tu inversión": f"Proyección en {p['nombre']}",
+                                "Solo lo que aportas": "Dinero de tu bolsillo"
+                            }, inplace=True)
+                            
+                            st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"])
+                
+                st.markdown("<br><hr><br>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
