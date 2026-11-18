@@ -26,81 +26,112 @@ def obtener_trm_actual():
         return motor.TRM_DEFECTO
 
 # ==============================================================================
-# DICCIONARIO MAESTRO: 100% DE LAS COMBINACIONES MAPEADAS
+# DICCIONARIO AVANZADO: LISTAS DE CATÁLOGO DETALLADO
 # ==============================================================================
-EJEMPLOS_ESPECIFICOS = {
-    # TRII
-    ("Trii", "Acciones Individuales"): "Acciones locales: Ecopetrol, Bancolombia, Celsia, ISA, Grupo Argos. Globales: Nu Holdings, Apple.",
-    ("Trii", "ETFs"): "iShares COLCAP (Bolsa colombiana), ETF S&P 500 (Bolsa de EE.UU.).",
-    ("Trii", "ETFs Sectoriales"): "ETFs de tecnología, energía o financieros disponibles en el MGC.",
-    ("Trii", "Carteras Colectivas"): "Fondo Acciones & Valores Vista (Bajo riesgo, liquidez inmediata).",
-    ("Trii", "Fondo de Deuda"): "Fondo Renta Fija Acciones & Valores.",
-    ("Trii", "CDT"): "CDT Digital Acciones & Valores (Lo abres directamente en la app).",
-    ("Trii", "Fondos Indexados"): "Fondo Indexado Global (Búscalo en la sección de fondos).",
-    ("Trii", "Bonos de Gobierno"): "Fondo mutuo enfocado en TES colombianos.",
+CATALOGO_DETALLADO = {
+    ("Trii", "Acciones Individuales"): [
+        "🟢 **Mercado Local (BVC):** Ecopetrol, Bancolombia, ISA, Celsia, Grupo Argos, GEB.",
+        "🌐 **Mercado Global:** Nu Holdings, Apple, Amazon (a través del MGC)."
+    ],
+    ("Trii", "ETFs"): [
+        "📊 **iShares COLCAP (ICOLCAP):** Invierte en las empresas más grandes de Colombia.",
+        "🇺🇸 **iShares S&P 500 (CSPX):** Invierte en las 500 empresas más grandes de EE.UU."
+    ],
+    ("Trii", "Carteras Colectivas"): [
+        "💼 **Fondo Acciones & Valores Vista:** Bajo riesgo, puedes retirar tu dinero rápido."
+    ],
+    ("Trii", "Fondo de Deuda"): [
+        "📈 **Fondo Renta Fija Acciones & Valores:** Invierte en deuda de empresas y estado."
+    ],
+    ("Trii", "CDT"): [
+        "🏦 **CDT Digital:** Emitido por Acciones & Valores. Se abre directo en la app sin papeleo."
+    ],
     
-    # TYBA
-    ("tyba", "Carteras Colectivas"): "Fondo tyba Pocket (Bajo riesgo), Fondo Acciones Globales (Alto riesgo).",
-    ("tyba", "Fondo de Deuda"): "Fondo Renta Fija Credicorp Capital.",
-    ("tyba", "CDT"): "CDT Digital Mibanco (Contratado directo en tyba sin papeleo).",
-    ("tyba", "Fondos Indexados"): "Fondos indexados Credicorp atados al S&P 500.",
-    ("tyba", "Fondo de Pensión Voluntaria"): "Portafolio de Pensión Voluntaria (Beneficios tributarios).",
-    ("tyba", "Bonos de Gobierno"): "Fondo de inversión enfocado en deuda pública (TES).",
-
-    # LULO BANK & NU COLOMBIA & PIBANK
-    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): "Bolsillos Lulo (Crea una meta y guarda ahí el dinero con rentabilidad).",
-    ("Lulo Bank", "CDT"): "CDT Lulo Bank (Se abre en 2 clics desde la app, tasa fija).",
-    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): "Cajitas Nu (Mueve tu plata a la cajita para generar rendimiento diario).",
-    ("Nu Colombia", "CDT"): "CDT Digital Nu (Plazos desde 60 días, sin 4x1000 al fondear desde Cajitas).",
-    ("Pibank", "Cuenta de Ahorro Remunerada"): "Cuenta Pibank (Liquidación mensual automática).",
-    ("Pibank", "CDT"): "CDT Pibank (Con pago de intereses al vencimiento o mensuales).",
-
-    # DAVIVIENDA
-    ("Davivienda", "CDT"): "CDT Móvil Davivienda (Desde la app transaccional).",
-    ("Davivienda", "Carteras Colectivas"): "Fondo Superior, Fondo Interés.",
-    ("Davivienda", "Fondo de Deuda"): "Fondo Renta Fija Plazo 30.",
-    ("Davivienda", "Fondo de Pensión Voluntaria"): "Dafuturo (Elige el portafolio Conservador o Moderado).",
-
-    # BANCOLOMBIA ETRADING
-    ("Bancolombia eTrading", "Acciones Individuales"): "Acciones locales del COLCAP y Mercado Global Colombiano (MGC).",
-    ("Bancolombia eTrading", "ETFs"): "iShares COLCAP, ETFs globales a través de MGC.",
-    ("Bancolombia eTrading", "Carteras Colectivas"): "Fiducuenta o Plan Semilla (En la App principal de Bancolombia).",
-    ("Bancolombia eTrading", "Fondo de Deuda"): "Fidurenta Bancolombia.",
-    ("Bancolombia eTrading", "CDT"): "CDT Físico o Virtual Bancolombia.",
-    ("Bancolombia eTrading", "Bonos de Gobierno"): "Participación en subastas de TES o fondos de renta fija pública.",
-
-    # HAPI
-    ("Hapi", "Fondos Indexados"): "Busca los tickers indexados: VOO (S&P 500) o QQQ (Nasdaq 100).",
-    ("Hapi", "ETFs"): "VOO, QQQ, DIA (Dow Jones), VTI.",
-    ("Hapi", "ETFs Sectoriales"): "XLK (Tecnología), XLV (Salud), XLE (Energía).",
-    ("Hapi", "Acciones Individuales"): "Fracciones desde $5 USD (Tesla, Apple, Amazon, Nvidia).",
-    ("Hapi", "Carteras Colectivas"): "Portafolios temáticos o fondos mutuos disponibles en la plataforma.",
-    ("Hapi", "Criptomonedas"): "Puedes comprar Bitcoin o Ethereum directamente con tu saldo en USD.",
-
-    # INTERACTIVE BROKERS
-    ("Interactive Brokers", "Fondos Indexados"): "Fondos mutuos indexados de Vanguard (VFIAX) o ETFs equivalentes (VOO, IVV).",
-    ("Interactive Brokers", "ETFs"): "VOO, QQQ, VT (Vanguard Total World).",
-    ("Interactive Brokers", "ETFs Sectoriales"): "Cualquier ETF global (XLF, XLK, ICLN).",
-    ("Interactive Brokers", "Acciones Individuales"): "Cualquier acción listada en NYSE o NASDAQ (AAPL, MSFT, TSLA).",
-    ("Interactive Brokers", "Carteras Colectivas"): "Miles de Mutual Funds (Fondos Mutuos) de BlackRock, Vanguard, Fidelity.",
-    ("Interactive Brokers", "Bonos de Gobierno"): "Bonos del tesoro de EE.UU. (T-Bills, T-Bonds).",
-
-    # ETORO
-    ("eToro", "Acciones Individuales"): "Apple, Microsoft, y copy-trading de inversores reales.",
-    ("eToro", "ETFs"): "VOO, SPY, QQQ.",
-    ("eToro", "ETFs Sectoriales"): "ETFs de tecnología, cannabis, energías limpias.",
-    ("eToro", "Criptomonedas"): "Bitcoin, Cardano, Solana (Compra el activo subyacente).",
-
-    # FONDOS DE PENSIÓN (PORVENIR & PROTECCIÓN)
-    ("Porvenir", "Fondo de Pensión Voluntaria"): "Portafolio Conservador, Moderado o Crecimiento.",
-    ("Protección", "Fondo de Pensión Voluntaria"): "Portafolio Liquidez, Portafolio Acciones Globales.",
-
-    # CRIPTOMONEDAS BÁSICAS
-    ("Wenia", "Criptomonedas"): "COPW (Criptopeso para evitar volatilidad), Bitcoin (BTC), Ethereum (ETH).",
-    ("Bitso", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDC (Dólar digital estable).",
-    ("Binance", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDT, y cientos de altcoins (Alto riesgo).",
-    ("Kraken", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDC.",
-    ("Buda", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDC (Depósito fácil por PSE)."
+    ("Hapi", "Fondos Indexados"): [
+        "📈 **VOO:** Sigue el S&P 500 (Empresas grandes de EE.UU).",
+        "💻 **QQQ:** Sigue el Nasdaq 100 (Sector tecnológico).",
+        "🏭 **DIA:** Sigue el Dow Jones (Sector industrial)."
+    ],
+    ("Hapi", "ETFs"): [
+        "🌎 **VT:** Vanguard Total World (Acciones de todo el mundo).",
+        "🛡️ **VTI:** Vanguard Total Stock Market (Todo el mercado de EE.UU)."
+    ],
+    ("Hapi", "Acciones Individuales"): [
+        "🍎 **Apple (AAPL):** Fracciones desde $5 USD.",
+        "🚗 **Tesla (TSLA):** Fracciones desde $5 USD.",
+        "🛒 **Amazon (AMZN):** Fracciones desde $5 USD.",
+        "🤖 **Nvidia (NVDA):** Fracciones desde $5 USD."
+    ],
+    
+    ("Interactive Brokers", "Fondos Indexados"): [
+        "🏦 **Fondos Vanguard:** VFIAX, VTSAX.",
+        "📈 **ETFs equivalentes:** VOO, IVV."
+    ],
+    ("Interactive Brokers", "Acciones Individuales"): [
+        "🌐 **NYSE & NASDAQ:** Acceso a literalmente todas las acciones de EE.UU.",
+        "🌍 **Mercado Europeo/Asiático:** Acceso a bolsas globales."
+    ],
+    
+    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): [
+        "🟣 **Cajitas Nu:** Mueve tu plata a la cajita para generar rendimiento diario sin cobro de 4x1000 al sacarlo a tu cuenta."
+    ],
+    ("Nu Colombia", "CDT"): [
+        "🟣 **CDT Digital Nu:** Desde $50.000 COP, plazos flexibles desde 60 días."
+    ],
+    
+    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): [
+        "🟡 **Bolsillos Lulo:** Crea una meta, ponle un nombre y guarda ahí el dinero con rentabilidad."
+    ],
+    ("Lulo Bank", "CDT"): [
+        "🟡 **CDT Lulo Bank:** Tasa fija asegurada. Liquidación a término."
+    ],
+    
+    ("tyba", "Carteras Colectivas"): [
+        "💼 **Fondo tyba Pocket:** Muy bajo riesgo.",
+        "📈 **Fondo Acciones Globales:** Alto riesgo, renta variable."
+    ],
+    ("tyba", "CDT"): [
+        "🏦 **CDT Mibanco:** Contratado 100% digital a través de la app tyba."
+    ],
+    
+    ("Bancolombia eTrading", "Acciones Individuales"): [
+        "🇨🇴 **Todas las acciones del COLCAP.**",
+        "🌐 **Mercado Global Colombiano (MGC).**"
+    ],
+    ("Bancolombia eTrading", "Carteras Colectivas"): [
+        "💼 **Fiducuenta:** Alta liquidez (Se busca en la App Personas, no en eTrading).",
+        "🌱 **Plan Semilla:** Ahorro programado."
+    ],
+    
+    ("Pibank", "Cuenta de Ahorro Remunerada"): [
+        "🔴 **Cuenta Pibank:** Liquidación de intereses automática cada mes."
+    ],
+    ("Pibank", "CDT"): [
+        "🔴 **CDT Pibank:** Tradicionalmente ofrece las tasas más competitivas del mercado."
+    ],
+    
+    ("Davivienda", "CDT"): [
+        "🏠 **CDT Móvil Davivienda:** Se abre desde la app transaccional del banco."
+    ],
+    ("Davivienda", "Fondo de Pensión Voluntaria"): [
+        "🏠 **Dafuturo:** Te permite elegir portafolio Conservador, Moderado o Mayor Riesgo."
+    ],
+    
+    ("Porvenir", "Fondo de Pensión Voluntaria"): [
+        "👴 **Portafolio Conservador:** Invierte principalmente en renta fija local.",
+        "🚀 **Portafolio Crecimiento:** Renta variable internacional."
+    ],
+    
+    ("Bitso", "Criptomonedas"): [
+        "₿ **Bitcoin (BTC)**",
+        "🦇 **Ethereum (ETH)**",
+        "💵 **USDC (Dólar digital estable)**"
+    ],
+    ("Binance", "Criptomonedas"): [
+        "₿ **Bitcoin (BTC) & Ethereum (ETH)**",
+        "💵 **USDT (Tether)**",
+        "🚀 **Más de 350 altcoins (Solana, Cardano, etc.)**"
+    ]
 }
 
 def main():
@@ -152,7 +183,7 @@ def main():
         st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial.")
         
     if st.button("Analizar Portafolio", disabled=not campos_llenos):
-        with st.spinner("Desbloqueando todo el catálogo de entidades (Procesando 100% de la base)..."):
+        with st.spinner("Desbloqueando todo el catálogo de entidades y opciones exactas..."):
             puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
             perfil = motor.perfil_desde_puntos(puntos)
             
@@ -175,11 +206,7 @@ def main():
             for i, r in enumerate(out["resultados"]):
                 act_tipo = r['tipo']
                 
-                # REGLA FORZADA: Buscar en el 100% de la base (Si aquí no sale Davivienda o Tyba, es porque no estabas seleccionando un activo que ellos tengan)
-                plataformas_completas = []
-                for p in motor.PLATAFORMAS:
-                    if act_tipo in p.get('tipos', []):
-                        plataformas_completas.append(p)
+                plataformas_completas = [p for p in motor.PLATAFORMAS if act_tipo in p.get('tipos', [])]
                 
                 if not plataformas_completas:
                     continue
@@ -198,33 +225,39 @@ def main():
                 
                 for idx, p in enumerate(plataformas_completas):
                     with tabs[idx]:
-                        # AVISO de montos
                         if monto_usd < p['min_usd']:
                             st.warning(f"⚠️ **Atención:** El mínimo sugerido aquí es {p['minimo_txt']}. Tu monto actual no alcanza, pero te mostramos la opción para que la conozcas a futuro.")
                         
-                        col_izq, col_der = st.columns([1, 1.2])
+                        col_izq, col_der = st.columns([1.2, 1])
                         with col_izq:
                             st.write(f"**📱 App/Banco:** {p['nombre']}")
                             st.write(f"**💸 Costos/Comisiones reales:** {p['costos']}")
                             
-                            # AQUÍ INYECTA EL DICCIONARIO COMPLETO
-                            sugerencia = EJEMPLOS_ESPECIFICOS.get((p['nombre'], act_tipo), f"Búscalo como '{act_tipo}' en la barra de búsqueda de la app.")
-                            st.info(f"**📌 ¿Qué debes buscar exactamente?:**\n\n{sugerencia}")
+                            # RENDERIZAMOS EL CATÁLOGO DETALLADO EN VIÑETAS
+                            catalogo = CATALOGO_DETALLADO.get((p['nombre'], act_tipo), [])
+                            if catalogo:
+                                st.markdown("---")
+                                st.markdown(f"**📌 Catálogo exacto de {act_tipo} en {p['nombre']}:**")
+                                for item in catalogo:
+                                    st.markdown(f"- {item}")
+                            else:
+                                st.info(f"📌 Búscalo como '{act_tipo}' en el menú principal o buscador de la app.")
                             
-                            st.markdown("---")
-                            st.markdown("**💰 Tus números exactos:**")
-                            st.write(f"Capital Aportado: **{motor.fmt(r['total_aportado'], moneda)}**")
-                            st.write(f"Ganancia Bruta: **+ {motor.fmt(r['ganancia'] + (r['total_aportado'] * (r['comision_pct'] / 100)), moneda)}**")
-                            st.write(f"Descuento/Comisión: **- {motor.fmt(r['total_aportado'] * (r['comision_pct'] / 100), moneda)}**")
-                            st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(r['valor_final'], moneda)}**</span>", unsafe_allow_html=True)
-
                         with col_der:
+                            # Contenedor gris para destacar la matemática
+                            with st.container(border=True):
+                                st.markdown("##### 💰 Proyección Matemática")
+                                st.write(f"Capital Aportado: **{motor.fmt(r['total_aportado'], moneda)}**")
+                                st.write(f"Ganancia Bruta: **+ {motor.fmt(r['ganancia'] + (r['total_aportado'] * (r['comision_pct'] / 100)), moneda)}**")
+                                st.write(f"Descuento/Comisión: **- {motor.fmt(r['total_aportado'] * (r['comision_pct'] / 100), moneda)}**")
+                                st.markdown(f"#### Libre: <span style='color:#059669'>**{motor.fmt(r['valor_final'], moneda)}**</span>", unsafe_allow_html=True)
+                            
                             df_serie = r['serie'].copy()
                             df_serie.rename(columns={
-                                "Con tu inversión": f"Proyección en {p['nombre']}",
+                                "Con tu inversión": f"Crecimiento",
                                 "Solo lo que aportas": "Bolsillo"
                             }, inplace=True)
-                            st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"])
+                            st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"], height=200)
                 
                 st.markdown("<br><hr><br>", unsafe_allow_html=True)
 
