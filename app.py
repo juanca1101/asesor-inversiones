@@ -2,7 +2,6 @@ import streamlit as st
 import motor
 from estilos import CSS
 import pandas as pd
-import numpy as np
 import requests
 
 st.set_page_config(
@@ -16,61 +15,98 @@ st.markdown(CSS, unsafe_allow_html=True)
 def html(texto: str) -> None:
     st.markdown(texto, unsafe_allow_html=True)
 
-# ---------------------------------------------------------
-# NUEVO: CONEXIÓN EN VIVO A LA TASA DEL DÓLAR (INTERNET)
-# ---------------------------------------------------------
-@st.cache_data(ttl=3600) # Se actualiza cada hora para que la app sea rápida
+@st.cache_data(ttl=3600)
 def obtener_trm_actual():
     try:
-        # API gratuita que devuelve la tasa del Dólar global
         url = "https://api.exchangerate-api.com/v4/latest/USD"
         respuesta = requests.get(url, timeout=5)
         datos = respuesta.json()
         return float(datos['rates']['COP'])
     except Exception:
-        # Si no hay internet, usa el por defecto del motor
         return motor.TRM_DEFECTO
 
-# Diccionario inteligente para dar nombres reales
+# ==============================================================================
+# DICCIONARIO MAESTRO: 100% DE LAS COMBINACIONES MAPEADAS
+# ==============================================================================
 EJEMPLOS_ESPECIFICOS = {
-    ("Trii", "Acciones Individuales"): "Acciones locales: Ecopetrol, Bancolombia, ISA, Grupo Argos, Nu Holdings.",
-    ("Trii", "ETFs"): "iShares COLCAP (Mercado local), ETF S&P 500 (Mercado Global).",
-    ("Trii", "Carteras Colectivas"): "Fondo Acciones & Valores Vista (Ideal para liquidez inmediata).",
+    # TRII
+    ("Trii", "Acciones Individuales"): "Acciones locales: Ecopetrol, Bancolombia, Celsia, ISA, Grupo Argos. Globales: Nu Holdings, Apple.",
+    ("Trii", "ETFs"): "iShares COLCAP (Bolsa colombiana), ETF S&P 500 (Bolsa de EE.UU.).",
+    ("Trii", "ETFs Sectoriales"): "ETFs de tecnología, energía o financieros disponibles en el MGC.",
+    ("Trii", "Carteras Colectivas"): "Fondo Acciones & Valores Vista (Bajo riesgo, liquidez inmediata).",
     ("Trii", "Fondo de Deuda"): "Fondo Renta Fija Acciones & Valores.",
-    ("Trii", "CDT"): "CDT Digital Acciones & Valores (Gestionado en app).",
-    ("tyba", "Carteras Colectivas"): "Fondo tyba Pocket (Bajo riesgo), Fondo tyba Acciones Globales (Alto riesgo).",
-    ("tyba", "Fondo de Deuda"): "Fondo Renta Fija tyba.",
-    ("tyba", "CDT"): "CDT Digital Mibanco (Contratado directamente en la app tyba).",
-    ("tyba", "Fondo de Pensión Voluntaria"): "Portafolios de pensión voluntaria Credicorp Capital.",
-    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): "Cajitas Nu (Rendimiento diario).",
-    ("Nu Colombia", "CDT"): "CDT Digital Nu (Plazos flexibles desde 60 días).",
-    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): "Bolsillos Lulo (Rendimiento por metas).",
-    ("Lulo Bank", "CDT"): "CDT Lulo Bank (Tasa fija garantizada).",
-    ("Interactive Brokers", "ETFs"): "VOO (S&P 500), QQQ (Nasdaq 100), VT (Vanguard Total World).",
-    ("Interactive Brokers", "Acciones Individuales"): "Apple (AAPL), Microsoft (MSFT), Amazon (AMZN), Nvidia (NVDA).",
-    ("Hapi", "ETFs"): "SPY (S&P 500), QQQ (Nasdaq 100), DIA (Dow Jones).",
-    ("Hapi", "Acciones Individuales"): "Fracciones de acciones de EE.UU. desde $5 USD (Tesla, Apple, Google, Meta).",
-    ("Bancolombia eTrading", "Acciones Individuales"): "Acciones del COLCAP y Mercado Global Colombiano (MGC).",
-    ("Bancolombia eTrading", "ETFs"): "iShares COLCAP, ETFs globales a través de MGC.",
-    ("Bancolombia eTrading", "Carteras Colectivas"): "Fiducuenta, Plan Semilla.",
-    ("Pibank", "Cuenta de Ahorro Remunerada"): "Cuenta Pibank (Liquidación de intereses mensual, sin comisiones).",
-    ("Pibank", "CDT"): "CDT Pibank (Tradicionalmente con las mejores tasas del mercado).",
-    ("Davivienda", "CDT"): "CDT Móvil Davivienda.",
+    ("Trii", "CDT"): "CDT Digital Acciones & Valores (Lo abres directamente en la app).",
+    ("Trii", "Fondos Indexados"): "Fondo Indexado Global (Búscalo en la sección de fondos).",
+    ("Trii", "Bonos de Gobierno"): "Fondo mutuo enfocado en TES colombianos.",
+    
+    # TYBA
+    ("tyba", "Carteras Colectivas"): "Fondo tyba Pocket (Bajo riesgo), Fondo Acciones Globales (Alto riesgo).",
+    ("tyba", "Fondo de Deuda"): "Fondo Renta Fija Credicorp Capital.",
+    ("tyba", "CDT"): "CDT Digital Mibanco (Contratado directo en tyba sin papeleo).",
+    ("tyba", "Fondos Indexados"): "Fondos indexados Credicorp atados al S&P 500.",
+    ("tyba", "Fondo de Pensión Voluntaria"): "Portafolio de Pensión Voluntaria (Beneficios tributarios).",
+    ("tyba", "Bonos de Gobierno"): "Fondo de inversión enfocado en deuda pública (TES).",
+
+    # LULO BANK & NU COLOMBIA & PIBANK
+    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): "Bolsillos Lulo (Crea una meta y guarda ahí el dinero con rentabilidad).",
+    ("Lulo Bank", "CDT"): "CDT Lulo Bank (Se abre en 2 clics desde la app, tasa fija).",
+    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): "Cajitas Nu (Mueve tu plata a la cajita para generar rendimiento diario).",
+    ("Nu Colombia", "CDT"): "CDT Digital Nu (Plazos desde 60 días, sin 4x1000 al fondear desde Cajitas).",
+    ("Pibank", "Cuenta de Ahorro Remunerada"): "Cuenta Pibank (Liquidación mensual automática).",
+    ("Pibank", "CDT"): "CDT Pibank (Con pago de intereses al vencimiento o mensuales).",
+
+    # DAVIVIENDA
+    ("Davivienda", "CDT"): "CDT Móvil Davivienda (Desde la app transaccional).",
     ("Davivienda", "Carteras Colectivas"): "Fondo Superior, Fondo Interés.",
-    ("Davivienda", "Fondo de Pensión Voluntaria"): "Dafuturo (Múltiples portafolios).",
+    ("Davivienda", "Fondo de Deuda"): "Fondo Renta Fija Plazo 30.",
+    ("Davivienda", "Fondo de Pensión Voluntaria"): "Dafuturo (Elige el portafolio Conservador o Moderado).",
+
+    # BANCOLOMBIA ETRADING
+    ("Bancolombia eTrading", "Acciones Individuales"): "Acciones locales del COLCAP y Mercado Global Colombiano (MGC).",
+    ("Bancolombia eTrading", "ETFs"): "iShares COLCAP, ETFs globales a través de MGC.",
+    ("Bancolombia eTrading", "Carteras Colectivas"): "Fiducuenta o Plan Semilla (En la App principal de Bancolombia).",
+    ("Bancolombia eTrading", "Fondo de Deuda"): "Fidurenta Bancolombia.",
+    ("Bancolombia eTrading", "CDT"): "CDT Físico o Virtual Bancolombia.",
+    ("Bancolombia eTrading", "Bonos de Gobierno"): "Participación en subastas de TES o fondos de renta fija pública.",
+
+    # HAPI
+    ("Hapi", "Fondos Indexados"): "Busca los tickers indexados: VOO (S&P 500) o QQQ (Nasdaq 100).",
+    ("Hapi", "ETFs"): "VOO, QQQ, DIA (Dow Jones), VTI.",
+    ("Hapi", "ETFs Sectoriales"): "XLK (Tecnología), XLV (Salud), XLE (Energía).",
+    ("Hapi", "Acciones Individuales"): "Fracciones desde $5 USD (Tesla, Apple, Amazon, Nvidia).",
+    ("Hapi", "Carteras Colectivas"): "Portafolios temáticos o fondos mutuos disponibles en la plataforma.",
+    ("Hapi", "Criptomonedas"): "Puedes comprar Bitcoin o Ethereum directamente con tu saldo en USD.",
+
+    # INTERACTIVE BROKERS
+    ("Interactive Brokers", "Fondos Indexados"): "Fondos mutuos indexados de Vanguard (VFIAX) o ETFs equivalentes (VOO, IVV).",
+    ("Interactive Brokers", "ETFs"): "VOO, QQQ, VT (Vanguard Total World).",
+    ("Interactive Brokers", "ETFs Sectoriales"): "Cualquier ETF global (XLF, XLK, ICLN).",
+    ("Interactive Brokers", "Acciones Individuales"): "Cualquier acción listada en NYSE o NASDAQ (AAPL, MSFT, TSLA).",
+    ("Interactive Brokers", "Carteras Colectivas"): "Miles de Mutual Funds (Fondos Mutuos) de BlackRock, Vanguard, Fidelity.",
+    ("Interactive Brokers", "Bonos de Gobierno"): "Bonos del tesoro de EE.UU. (T-Bills, T-Bonds).",
+
+    # ETORO
+    ("eToro", "Acciones Individuales"): "Apple, Microsoft, y copy-trading de inversores reales.",
+    ("eToro", "ETFs"): "VOO, SPY, QQQ.",
+    ("eToro", "ETFs Sectoriales"): "ETFs de tecnología, cannabis, energías limpias.",
+    ("eToro", "Criptomonedas"): "Bitcoin, Cardano, Solana (Compra el activo subyacente).",
+
+    # FONDOS DE PENSIÓN (PORVENIR & PROTECCIÓN)
     ("Porvenir", "Fondo de Pensión Voluntaria"): "Portafolio Conservador, Moderado o Crecimiento.",
     ("Protección", "Fondo de Pensión Voluntaria"): "Portafolio Liquidez, Portafolio Acciones Globales.",
-    ("Wenia", "Criptomonedas"): "COPW (Criptopeso), Bitcoin (BTC), Ethereum (ETH).",
+
+    # CRIPTOMONEDAS BÁSICAS
+    ("Wenia", "Criptomonedas"): "COPW (Criptopeso para evitar volatilidad), Bitcoin (BTC), Ethereum (ETH).",
     ("Bitso", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDC (Dólar digital estable).",
-    ("Binance", "Criptomonedas"): "Bitcoin, Ethereum, USDT, y cientos de altcoins (Alto riesgo).",
-    ("Kraken", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDC."
+    ("Binance", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDT, y cientos de altcoins (Alto riesgo).",
+    ("Kraken", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDC.",
+    ("Buda", "Criptomonedas"): "Bitcoin (BTC), Ethereum (ETH), USDC (Depósito fácil por PSE)."
 }
 
 def main():
     trm_vivo = obtener_trm_actual()
     
     html('<div class="hero"><h1>🤖 Asesor Inteligente de Inversiones</h1><p>Configura tu perfil para obtener opciones de mercado basadas en IA.</p></div>')
-    
     st.subheader("1. Configura tu Inversión")
     
     primera = st.selectbox("¿Es tu primera vez invirtiendo?", ["Sí, es mi primera vez", "No, ya he invertido antes"], index=None, placeholder="Elige una opción")
@@ -80,9 +116,6 @@ def main():
 
     moneda = "COP" if moneda_txt == "Pesos Colombianos (COP)" else "USD" if moneda_txt == "Dólares (USD)" else None
     
-    # ---------------------------------------------------------
-    # Diseño visual de la tasa en Vivo para USD
-    # ---------------------------------------------------------
     if moneda == "USD":
         st.info(f"🌐 **TRM en Vivo:** El mercado calcula hoy el Dólar a **${trm_vivo:,.2f} COP**")
     
@@ -91,8 +124,7 @@ def main():
         monto = st.number_input("Monto inicial a invertir (COP)", min_value=0, step=50000, value=None, placeholder="Ej: 100000")
         if monto is not None:
             st.caption(f"💰 Monto registrado: **${monto:,.0f} COP**".replace(",", "."))
-            
-        aporte = st.number_input("Aporte mensual estimado (COP, opcional)", min_value=0, step=10000, value=None, placeholder="Ej: 50000")
+        aporte = st.number_input("Aporte mensual (COP, opcional)", min_value=0, step=10000, value=None, placeholder="Ej: 50000")
         if aporte is not None:
             st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} COP**".replace(",", "."))
             
@@ -100,8 +132,7 @@ def main():
         monto = st.number_input("Monto inicial a invertir (USD)", min_value=0, step=50, value=None, placeholder="Ej: 100")
         if monto is not None:
             st.caption(f"💰 Monto registrado: **${monto:,.0f} USD**".replace(",", "."))
-            
-        aporte = st.number_input("Aporte mensual estimado (USD, opcional)", min_value=0, step=10, value=None, placeholder="Ej: 50")
+        aporte = st.number_input("Aporte mensual (USD, opcional)", min_value=0, step=10, value=None, placeholder="Ej: 50")
         if aporte is not None:
             st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} USD**".replace(",", "."))
         
@@ -115,30 +146,21 @@ def main():
         resp_actualizadas.append(r)
         
     st.markdown("---")
-    
-    campos_llenos = (
-        primera is not None and 
-        objetivo is not None and 
-        moneda is not None and 
-        plazo_txt is not None and 
-        monto is not None and 
-        all(r is not None for r in resp_actualizadas)
-    )
+    campos_llenos = all([primera, objetivo, moneda, plazo_txt, monto is not None]) and all(resp_actualizadas)
     
     if not campos_llenos:
-        st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial para habilitar el análisis.")
+        st.info("💡 Faltan campos por llenar. Completa todas las preguntas y el monto inicial.")
         
     if st.button("Analizar Portafolio", disabled=not campos_llenos):
         with st.spinner("Desbloqueando todo el catálogo de entidades (Procesando 100% de la base)..."):
             puntos = sum(dict(o)[r] for (_, o), r in zip(motor.PREGUNTAS, resp_actualizadas))
             perfil = motor.perfil_desde_puntos(puntos)
             
-            # EL TRUCO ESTÁ AQUÍ: "n=10" OBLIGA AL MOTOR A TRAER MÁS OPCIONES
             out = motor.recomendar(
                 primera_vez=(primera == "Sí, es mi primera vez"),
                 monto=float(monto),
                 moneda=moneda,
-                trm=trm_vivo,  # <-- Inyectamos el Dólar en Vivo 
+                trm=trm_vivo, 
                 plazo=plazo_txt,
                 perfil=perfil,
                 pref_moneda="Me da igual",
@@ -148,27 +170,19 @@ def main():
             )
             
             st.markdown(f"### Tu Perfil IA: **{perfil}** (Puntaje: {puntos})")
-            st.markdown("A continuación, te detallamos **todas las carteras y entidades disponibles**, cuánto ganarás y qué activos específicos buscar en cada aplicación:")
-            
             monto_usd = motor.a_usd(float(monto), moneda, trm_vivo)
             
             for i, r in enumerate(out["resultados"]):
                 act_tipo = r['tipo']
                 
+                # REGLA FORZADA: Buscar en el 100% de la base (Si aquí no sale Davivienda o Tyba, es porque no estabas seleccionando un activo que ellos tengan)
                 plataformas_completas = []
                 for p in motor.PLATAFORMAS:
                     if act_tipo in p.get('tipos', []):
-                        if monto_usd >= p['min_usd']:
-                            plataformas_completas.append(p)
+                        plataformas_completas.append(p)
                 
-                tasa_esp = r['rendimiento_anual_pct']
-                com_esp = r['comision_pct']
-                val_fin = r['valor_final']
-                aportado = r['total_aportado']
-                ganancia_neta = r['ganancia']
-                
-                descuento = aportado * (com_esp / 100)
-                ganancia_bruta = ganancia_neta + descuento
+                if not plataformas_completas:
+                    continue
 
                 html(f"""
                 <div class="card" style="margin-bottom: 5px;">
@@ -180,34 +194,35 @@ def main():
                 </div>
                 """)
                 
-                if not plataformas_completas:
-                    st.warning(f"No encontramos una aplicación que acepte el monto actual para {act_tipo}.")
-                    continue
-                
                 tabs = st.tabs([p['nombre'] for p in plataformas_completas])
                 
                 for idx, p in enumerate(plataformas_completas):
                     with tabs[idx]:
+                        # AVISO de montos
+                        if monto_usd < p['min_usd']:
+                            st.warning(f"⚠️ **Atención:** El mínimo sugerido aquí es {p['minimo_txt']}. Tu monto actual no alcanza, pero te mostramos la opción para que la conozcas a futuro.")
+                        
                         col_izq, col_der = st.columns([1, 1.2])
                         with col_izq:
                             st.write(f"**📱 App/Banco:** {p['nombre']}")
                             st.write(f"**💸 Costos/Comisiones reales:** {p['costos']}")
                             
-                            sugerencia = EJEMPLOS_ESPECIFICOS.get((p['nombre'], act_tipo), f"Opciones de {act_tipo} directo en el buscador de la app.")
+                            # AQUÍ INYECTA EL DICCIONARIO COMPLETO
+                            sugerencia = EJEMPLOS_ESPECIFICOS.get((p['nombre'], act_tipo), f"Búscalo como '{act_tipo}' en la barra de búsqueda de la app.")
                             st.info(f"**📌 ¿Qué debes buscar exactamente?:**\n\n{sugerencia}")
                             
                             st.markdown("---")
                             st.markdown("**💰 Tus números exactos:**")
-                            st.write(f"Tu Capital Aportado: **{motor.fmt(aportado, moneda)}**")
-                            st.write(f"Ganancia Bruta: **+ {motor.fmt(ganancia_bruta, moneda)}**")
-                            st.write(f"Descuento (Comisión/Impuesto): **- {motor.fmt(descuento, moneda)}**")
-                            st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(val_fin, moneda)}**</span>", unsafe_allow_html=True)
+                            st.write(f"Capital Aportado: **{motor.fmt(r['total_aportado'], moneda)}**")
+                            st.write(f"Ganancia Bruta: **+ {motor.fmt(r['ganancia'] + (r['total_aportado'] * (r['comision_pct'] / 100)), moneda)}**")
+                            st.write(f"Descuento/Comisión: **- {motor.fmt(r['total_aportado'] * (r['comision_pct'] / 100), moneda)}**")
+                            st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(r['valor_final'], moneda)}**</span>", unsafe_allow_html=True)
 
                         with col_der:
                             df_serie = r['serie'].copy()
                             df_serie.rename(columns={
                                 "Con tu inversión": f"Proyección en {p['nombre']}",
-                                "Solo lo que aportas": "Dinero de tu bolsillo"
+                                "Solo lo que aportas": "Bolsillo"
                             }, inplace=True)
                             st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"])
                 
