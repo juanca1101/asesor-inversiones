@@ -25,13 +25,10 @@ def obtener_trm_actual():
     except Exception:
         return motor.TRM_DEFECTO
 
-# ==============================================================================
-# DICCIONARIO MAESTRO: CUBRE EL 100% DE COMBINACIONES DE LA BASE DE DATOS
-# ==============================================================================
 CATALOGO_FINANCIERO_DETALLADO = {
     # ------------------- TRII -------------------
     ("Trii", "Acciones Individuales"): [
-        "🟢 **Mercado Local (Ecopetrol, Bancolombia, ISA):** \n- **Ganancia:** Por valorización y pago de Dividendos.\n- **Retención:** 10% sobre dividendos.\n- **Comisión Trii:** ~$14.900 COP fijos por cada vez que compres o vendas (si el monto es <5M).",
+        "🟢 **Mercado Local (Ecopetrol, Bancolombia, ISA):** \n- **Ganancia:** Por valorización y pago de Dividendos.\n- **Retención:** 10% sobre dividendos.\n- **Comisión Trii:** ~$14.900 COP fijos por cada vez que compres o vendas (si el monto es menor a 5M).",
         "🌐 **Mercado Global (Nu Holdings, Apple en MGC):** \n- Cotizan en pesos pero siguen el precio en dólares."
     ],
     ("Trii", "ETFs"): [
@@ -45,7 +42,7 @@ CATALOGO_FINANCIERO_DETALLADO = {
         "🌎 **Fondos de Acciones Globales:** Siguen índices mundiales. Cobra comisión de administración anual del fondo."
     ],
     ("Trii", "Carteras Colectivas"): [
-        "💼 **Fondo Vista (Alta Liquidez):** \n- **Rentabilidad:** ~6%-8% anual.\n- **Impuestos:** 7% de Retención en la Fuente sobre rendimientos financieros."
+        "💼 **Fondo Vista (Alta Liquidez):** \n- **Rentabilidad:** ~6% - 8% E.A.\n- **Impuestos:** 7% de Retención en la Fuente sobre rendimientos financieros."
     ],
     ("Trii", "Fondo de Deuda"): [
         "📉 **Fondo Renta Fija Acciones & Valores:** \n- Invierte en deuda de empresas colombianas.\n- **Retención:** 7% sobre las ganancias."
@@ -119,7 +116,7 @@ CATALOGO_FINANCIERO_DETALLADO = {
 
     # ------------------- INTERACTIVE BROKERS -------------------
     ("Interactive Brokers", "Fondos Indexados"): [
-        "🏦 **ETFs Globales (VOO, VT):** \n- **Comisión:** Aprox $0.005 USD por acción (Mínimo $1 USD).\n- **Hack Tributario:** Puedes comprar ETFs de Irlanda (Ej. VWRA) para bajar la retención de dividendos del 30% al **15%**."
+        "🏦 **ETFs Globales (VOO, VT):** \n- **Comisión:** Aprox $0.005 USD por acción (Mínimo $1 USD).\n- **Ventaja Tributaria:** Puedes comprar ETFs de Irlanda (Ej. VWRA) para bajar la retención de dividendos del 30% al **15%**."
     ],
     ("Interactive Brokers", "ETFs"): ["📊 **Miles de ETFs globales:** Vanguard, iShares, Invesco."],
     ("Interactive Brokers", "ETFs Sectoriales"): ["🚀 **Todos los sectores:** Desde Inteligencia Artificial hasta Energías Limpias."],
@@ -130,11 +127,11 @@ CATALOGO_FINANCIERO_DETALLADO = {
     ],
 
     # ------------------- BANCOS LOCALES (Nu, Lulo, Pibank, Davivienda) -------------------
-    ("Nu Colombia", "CDT"): ["🟣 **CDT Digital Nu:** Tasa Fija E.A. **4% de Retención en la Fuente**. Seguro Fogafín."],
-    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): ["🟣 **Cajitas Nu:** Rentabilidad diaria. **7% de Retención** sobre intereses. Sin cuota de manejo."],
-    ("Lulo Bank", "CDT"): ["🟡 **CDT Lulo Bank:** Tasa Fija. 4% de retención. No se puede cancelar antes del plazo."],
-    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): ["🟡 **Bolsillos Lulo:** Intereses diarios. 7% de retención sobre rendimientos."],
-    ("Pibank", "CDT"): ["🔴 **CDT Pibank:** Puedes pedir que te paguen los intereses mensuales a tu cuenta."],
+    ("Nu Colombia", "CDT"): ["🟣 **CDT Digital Nu:** Tasa Fija E.A. (~9.7% a 11%). **4% de Retención en la Fuente**. Seguro Fogafín."],
+    ("Nu Colombia", "Cuenta de Ahorro Remunerada"): ["🟣 **Cajitas Nu:** Rentabilidad diaria (~8.75% E.A.). **7% de Retención** sobre intereses. Sin cuota de manejo."],
+    ("Lulo Bank", "CDT"): ["🟡 **CDT Lulo Bank:** Tasa Fija (~11% a 13% E.A.). 4% de retención. No se puede cancelar antes del plazo."],
+    ("Lulo Bank", "Cuenta de Ahorro Remunerada"): ["🟡 **Bolsillos Lulo:** Intereses diarios (~8% E.A.). 7% de retención sobre rendimientos."],
+    ("Pibank", "CDT"): ["🔴 **CDT Pibank:** Hasta ~13% E.A. Puedes pedir que te paguen los intereses mensuales a tu cuenta."],
     ("Pibank", "Cuenta de Ahorro Remunerada"): ["🔴 **Cuenta Pibank:** Liquidación automática cada mes. Da el 100% de la tasa desde $1 peso."],
     ("Davivienda", "CDT"): ["🏠 **CDT Móvil Davivienda:** 4% de retención en la fuente sobre intereses. Seguro Fogafín."],
     ("Davivienda", "Carteras Colectivas"): ["🏠 **Fondo Superior / Fondo Interés:** Administrados por Fiduciaria Davivienda."],
@@ -229,6 +226,10 @@ def main():
             for i, r in enumerate(out["resultados"]):
                 act_tipo = r['tipo']
                 
+                # CÁLCULO DE TASA EFECTIVA ANUAL Y DIARIA
+                tasa_ea = r['rendimiento_anual_pct']
+                tasa_diaria = ((1 + tasa_ea / 100) ** (1 / 365) - 1) * 100
+                
                 plataformas_completas = [p for p in motor.PLATAFORMAS if act_tipo in p.get('tipos', [])]
                 
                 if not plataformas_completas:
@@ -256,7 +257,6 @@ def main():
                             st.write(f"**📱 App/Banco:** {p['nombre']}")
                             st.write(f"**💸 Costos/Comisiones (Resumen App):** {p['costos']}")
                             
-                            # DESPLIEGUE DEL ANÁLISIS FINANCIERO ESPECÍFICO (Ahora sí cubre el 100%)
                             catalogo = CATALOGO_FINANCIERO_DETALLADO.get((p['nombre'], act_tipo), [])
                             if catalogo:
                                 st.markdown("---")
@@ -270,6 +270,8 @@ def main():
                         with col_der:
                             with st.container(border=True):
                                 st.markdown("##### 💰 Proyección Matemática")
+                                st.write(f"📈 **Rentabilidad Estimada:** {tasa_ea:.2f}% E.A. *(~{tasa_diaria:.4f}% diario)*")
+                                st.markdown("---")
                                 st.write(f"Capital Aportado: **{motor.fmt(r['total_aportado'], moneda)}**")
                                 st.write(f"Ganancia Bruta: **+ {motor.fmt(r['ganancia'] + (r['total_aportado'] * (r['comision_pct'] / 100)), moneda)}**")
                                 st.write(f"Desc./Impuestos Total: **- {motor.fmt(r['total_aportado'] * (r['comision_pct'] / 100), moneda)}**")
@@ -277,7 +279,7 @@ def main():
                             
                             df_serie = r['serie'].copy()
                             df_serie.rename(columns={
-                                "Con tu inversión": f"Crecimiento Neto",
+                                "Con tu inversión": "Crecimiento Neto",
                                 "Solo lo que aportas": "Bolsillo"
                             }, inplace=True)
                             st.area_chart(df_serie, color=["#0ea5e9", "#94a3b8"], height=230)
