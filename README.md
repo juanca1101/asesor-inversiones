@@ -36,6 +36,6 @@ El sistema entrena tres algoritmos independientes de *Gradient Boosting* (`sciki
 ├── estilos.py                          # Estilos CSS personalizados para la interfaz
 ├── generar_dataset.py                  # Ampliación estadística de 500 registros base a 2.000 registros
 ├── dataset_asesor_inversiones_2000.csv # Dataset de entrenamiento (2.000 registros, 11 activos, 17 entidades)
-├── requirements.txt                    # Dependencias del proyecto[cite: 2]
-├── .streamlit/config.toml              # Configuración visual del tema en Streamlit[cite: 2]
-└── .gitignore                          # Exclusión de archivos temporales y modelo.joblib[cite: 2, 5]
+├── requirements.txt                    # Dependencias del proyecto
+├── .streamlit/config.toml              # Configuración visual del tema en Streamlit
+└── .gitignore                          # Exclusión de archivos temporales y modelo.joblib
