@@ -273,6 +273,10 @@ def formatear_plazo(meses: int) -> str:
     anios = meses // 12
     return f"{meses} meses ({anios} año)" if anios == 1 else f"{meses} meses ({anios} años)"
 
+def fmt_cop_equiv(valor_usd: float, trm: float) -> str:
+    cop = valor_usd * trm
+    return "$" + f"{cop:,.0f}".replace(",", ".") + " COP"
+
 def main():
     trm_vivo = obtener_trm_actual()
     
@@ -287,7 +291,7 @@ def main():
     moneda = "COP" if moneda_txt == "Pesos Colombianos (COP)" else "USD" if moneda_txt == "Dólares (USD)" else None
     
     if moneda == "USD":
-        st.info(f"🌐 **TRM en Vivo:** El mercado calcula hoy el Dólar a **${trm_vivo:,.2f} COP**")
+        st.info(f"🌐 **TRM en Vivo:** Hoy 1 USD equivale a **${trm_vivo:,.2f} COP**".replace(",", "."))
     
     monto, aporte = None, None
     if moneda == "COP":
@@ -301,10 +305,12 @@ def main():
     elif moneda == "USD":
         monto = st.number_input("Monto inicial a invertir (USD)", min_value=0, step=50, value=None, placeholder="Ej: 100")
         if monto is not None:
-            st.caption(f"💰 Monto registrado: **${monto:,.0f} USD**".replace(",", "."))
+            equiv_monto = fmt_cop_equiv(float(monto), trm_vivo)
+            st.caption(f"💰 Monto registrado: **${monto:,.0f} USD** *(aprox. **{equiv_monto}**)*")
         aporte = st.number_input("Aporte mensual (USD, opcional)", min_value=0, step=10, value=None, placeholder="Ej: 50")
         if aporte is not None:
-            st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} USD**".replace(",", "."))
+            equiv_aporte = fmt_cop_equiv(float(aporte), trm_vivo)
+            st.caption(f"🔄 Aporte mensual: **${aporte:,.0f} USD** *(aprox. **{equiv_aporte}**)*")
         
     st.markdown("---")
     st.subheader("2. Test de Riesgo")
@@ -344,9 +350,13 @@ def main():
             st.markdown(f"### Tu Perfil IA: **{perfil}** (Puntaje: {puntos})")
             
             monto_str = motor.fmt(float(monto), moneda)
+            if moneda == "USD":
+                monto_str += f" (~{fmt_cop_equiv(float(monto), trm_vivo)})"
             texto_info = f"⏱️ **Parámetros de simulación:** Capital inicial de **{monto_str}** | Plazo elegido: **{plazo_legible}**"
             if aporte:
                 aporte_str = motor.fmt(float(aporte), moneda)
+                if moneda == "USD":
+                    aporte_str += f" (~{fmt_cop_equiv(float(aporte), trm_vivo)})"
                 texto_info += f" | Aporte mensual: **{aporte_str}**"
             st.info(texto_info)
             
@@ -397,6 +407,7 @@ def main():
                 for idx, p in enumerate(plataformas_completas):
                     with tabs[idx]:
                         nombre_ent = p['nombre']
+                        url_ent = p.get('url', '')
                         info_ent = PERFIL_ENTIDADES.get(nombre_ent, {
                             "tipo": "Entidad Financiera / Plataforma",
                             "que_es": p.get('regulacion', 'Plataforma de inversión.'),
@@ -445,6 +456,10 @@ def main():
                             else:
                                 st.info(f"📌 {act_tipo} disponible en {nombre_ent}. Costos e impuestos según política general de la app.")
                             
+                            if url_ent:
+                                st.markdown("<br>", unsafe_allow_html=True)
+                                st.link_button(f"🌐 Ir al sitio oficial de {nombre_ent}", url_ent, use_container_width=True)
+                            
                         with col_der:
                             with st.container(border=True):
                                 st.markdown(f"##### 💰 Proyección en {nombre_ent}")
@@ -453,10 +468,22 @@ def main():
                                 st.write(f"🗓️ **Tasa Mes Vencido:** {tasa_ent_mv:.2f}% M.V. *(~{tasa_ent_diaria:.4f}% diario)*")
                                 st.write(f"🏷️ **Comisión/Costo Est.:** {com_ent_pct:.2f}%")
                                 st.markdown("---")
-                                st.write(f"Capital Aportado: **{motor.fmt(total_aportado, moneda)}**")
-                                st.write(f"Ganancia Bruta: **+ {motor.fmt(ganancia_bruta, moneda)}**")
-                                st.write(f"Desc./Impuestos Est.: **- {motor.fmt(descuento_total, moneda)}**")
-                                st.markdown(f"#### Libre para ti: <span style='color:#059669'>**{motor.fmt(valor_final, moneda)}**</span>", unsafe_allow_html=True)
+                                
+                                cap_txt = f"**{motor.fmt(total_aportado, moneda)}**"
+                                bruto_txt = f"**+ {motor.fmt(ganancia_bruta, moneda)}**"
+                                desc_txt = f"**- {motor.fmt(descuento_total, moneda)}**"
+                                libre_txt = f"**{motor.fmt(valor_final, moneda)}**"
+                                
+                                if moneda == "USD":
+                                    cap_txt += f" *(~{fmt_cop_equiv(total_aportado, trm_vivo)})*"
+                                    bruto_txt += f" *(~{fmt_cop_equiv(ganancia_bruta, trm_vivo)})*"
+                                    desc_txt += f" *(~{fmt_cop_equiv(descuento_total, trm_vivo)})*"
+                                    libre_txt += f" <span style='font-size:0.85rem; color:#475569; font-weight:normal;'>(~{fmt_cop_equiv(valor_final, trm_vivo)})</span>"
+                                
+                                st.write(f"Capital Aportado: {cap_txt}")
+                                st.write(f"Ganancia Bruta: {bruto_txt}")
+                                st.write(f"Desc./Impuestos Est.: {desc_txt}")
+                                st.markdown(f"#### Libre para ti: <span style='color:#059669'>{libre_txt}</span>", unsafe_allow_html=True)
                             
                             df_serie.rename(columns={
                                 "Con tu inversión": f"Crecimiento en {nombre_ent}",
